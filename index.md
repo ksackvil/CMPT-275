@@ -25,11 +25,11 @@ Yuxiang Huang
 
 ### Assignments
 
-Assignment 1 - Project Plan
-Assignment 2 - Version 1
-Assignment 3 - Version 2
-Assignment 4 - Version 3
-Assignment 5 - Final
+- Assignment 1 - Project Plan
+- Assignment 2 - Version 1
+- Assignment 3 - Version 2
+- Assignment 4 - Version 3
+- Assignment 5 - Final
 
 ### Meetings
 
