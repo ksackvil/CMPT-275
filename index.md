@@ -18,7 +18,9 @@ Takunda Mwinjilo
 
 Yuxiang Huang
 
-### Meeting Notes
+### Meetings
+
+Below you can find all documents pertaining to our meetings sorted by date.
 
 #### Minutes
 [Sept 11, 2019](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/First Meeting!!!.pdf)
