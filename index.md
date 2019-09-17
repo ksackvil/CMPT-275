@@ -6,7 +6,17 @@
 
 ### Team Members
 
-sed molestie ante egestas quis. Suspendisse sapien odio, feugiat ultricies venenatis sed, imperdiet vel nulla. Suspendisse tempus lacus eget diam tempus blandit. Fusce pellentesque sed turpis eu bibendum. Fusce elementum fermentum tincidunt. Pellentesque non neque fermentum, facilisis nisl bibendum, ornare felis. Nam vitae arcu ligula. Ut odio nisl, consectetur vitae efficitur ac, consectetur vitae sapien. Donec eu tellus quis sem gravida ultricies. Maecenas metus magna, luctus in ornare vitae, fermentum eu ipsum. Donec auctor, lorem at tincidunt congue, metus urna fringilla massa, nec interdum velit tortor in dui.
+Kai Sackville-Hii
+
+Armaan Bandali
+
+Negar Hariri
+
+Rachel Djauhari
+
+Takunda Mwinjilo
+
+Yuxiang Huang
 
 ### Meeting Notes
 
