@@ -2,12 +2,13 @@
 
 ### Table of Contents  
 
-1. [Quickstart](#quickstart)
-2. [Team Members](#team-members)
-3. [Assignments](#assignments)
-4. [Meetings](#meetings)  
-&nbsp;4.1 [Minutes](#minutes)
-&nbsp;4.2 [Agendas](#agendas)
+1. [Quickstart](#1.-quickstart)
+2. [Team Members](#2.-team-members)
+3. [Assignments](#3.-assignments)
+4. [Meetings](#4.-meetings)  
+    4.1 [Minutes](#4.1-minutes)
+    4.2 [Agendas](#4.2-agendas)
+  
 ### 1. Quickstart
 
 ### 2. Team Members
