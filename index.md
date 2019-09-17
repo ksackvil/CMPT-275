@@ -1,4 +1,5 @@
 ## Tanker (Group 6)
+![tanker](https://image.flaticon.com/icons/png/512/1895/1895961.png)
 
 ### Table of Contents  
 
