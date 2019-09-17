@@ -1,12 +1,10 @@
 ## Tanker (Group 6)
 
 ### Table of Contents  
+
 [Quickstart](#quickstart)
-
 [Team Members](#team-members)
-
 [Assignments](#assignments)
-
 [Meeting Notes](#meeting-notes)  
 
 ### Quickstart
@@ -37,7 +35,7 @@ Assignment 5 - Final
 
 Below you can find all documents pertaining to our meetings sorted by date.
 
-#### Minutes
+##### Minutes
 [Sept 11, 2019](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/First Meeting!!!.pdf)
 
-#### Agendas
+##### Agendas
