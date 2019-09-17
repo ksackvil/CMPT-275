@@ -11,17 +11,17 @@
 
 ### Team Members
 
-Kai Sackville-Hii
+Kai Sackville-Hii (Front End - Swift)
 
-Armaan Bandali
+Armaan Bandali (Game Dev - Unity)
 
-Negar Hariri
+Negar Hariri 
 
-Rachel Djauhari
+Rachel Djauhari (Game Dev - Unity)
 
-Takunda Mwinjilo
+Takunda Mwinjilo (Front End - Swift)
 
-Yuxiang Huang
+Yuxiang Huang (Back End - Node.js)
 
 ### Assignments
 
