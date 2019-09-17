@@ -37,8 +37,8 @@ Assignment 5 - Final
 
 Below you can find all documents pertaining to our meetings sorted by date.
 
-##### 4.1 Minutes
+#### 4.1 Minutes
 
 [Sept 11, 2019](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/First Meeting!!!.pdf)
 
-##### 4.2 Agendas
+#### 4.2 Agendas
