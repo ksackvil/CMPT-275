@@ -1,5 +1,5 @@
 ## Tanker (Group 6)
-![tanker](https://image.flaticon.com/icons/png/512/1895/1895961.png)
+![tanker](https://cdn4.iconfinder.com/data/icons/transportation-190/1000/oil_tanker_ship_tanker_oil_tanker_gas_tank_ship-512.png)
 
 ### Table of Contents  
 
