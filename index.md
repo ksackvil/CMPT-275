@@ -1,11 +1,10 @@
 ## Tanker (Group 6)
 
 ##### Table of Contents  
-[Headers](#headers)  
-[Emphasis](#emphasis)  
+[Team Members](#Team Members)  
+[Meeting Notes](#Meeting Notes)  
 
-### About
+### Teamb Members
 
-// ADD STUF ABOUT EACH MEMEBER HERE
 
-### Meeting Minutes
+### Meeting Notes
