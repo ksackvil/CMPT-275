@@ -2,8 +2,11 @@
 
 ### Table of Contents  
 [Quickstart](#quickstart)
+
 [Team Members](#team-members)
+
 [Assignments](#assignments)
+
 [Meeting Notes](#meeting-notes)  
 
 ### Quickstart
