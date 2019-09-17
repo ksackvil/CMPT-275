@@ -1,6 +1,6 @@
 ## Tanker (Group 6)
 
-##### Table of Contents  
+### Table of Contents  
 [Team Members](#Team Members)  
 [Meeting Notes](#Meeting Notes)  
 
