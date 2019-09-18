@@ -12,9 +12,9 @@
 
 ### Team Members
 
-#### Kai Sackville-Hii (ksackvil@sfu.ca)
-
 ![Kai Sackville-Hii](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/images/Kai.JPG)
+
+##### Kai Sackville-Hii (ksackvil@sfu.ca)
 
 Team Roles:
   * Front End - Swift
