@@ -16,7 +16,7 @@ Kai Sackville-Hii (Front End - Swift)
 
 Armaan Bandali (Game Dev - Unity)
 
-Negar Hariri 
+Negar Hariri (Front End - Swift)
 
 Rachel Djauhari (Game Dev - Unity)
 
