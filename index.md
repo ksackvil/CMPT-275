@@ -12,38 +12,76 @@
 
 ### Team Members
 
-Kai Sackville-Hii (Front End - Swift)
+#### Kai Sackville-Hii (ksackvil@sfu.ca)
 
-Armaan Bandali (Game Dev - Unity)
+![Kai Sackville-Hii](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/images/Kai.JPG)
 
-Negar Hariri (Front End - Swift)
+Team Roles:
+  * Front End - Swift
 
-Rachel Djauhari (Game Dev - Unity)
+Relevant Experience/Skills:
+  * Software Developer (R&I) at SAP Canada Inc
 
-Takunda Mwinjilo (Front End - Swift)
+Intrests:
+
+#### Armaan Bandali ()
+
+Team Roles:
+  * Game Dev - Unity
+
+Relevant Experience/Skills:
+
+Intrests:
+
+#### Negar Hariri ()
+
+Team Roles:
+  * Front End - Swift
+
+Relevant Experience/Skills:
+
+Intrests:
+
+#### Rachel Djauhari ()
+
+Team Roles:
+  * Game Dev - Unity
+
+Relevant Experience/Skills:
+
+Intrests:
+
+#### Takunda Mwinjilo ()
+
+Team Roles:
+  * Front End - Swift
+
+Relevant Experience/Skills:
+
+Intrests:
 
 #### Yuxiang Huang (yuxiangh@sfu.ca)
 
 ![Yuxiang Huang](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/images/YuxiangHuang.png)
 
-Team Roles: 
-- Back End - Node.js
+Team Roles:
+  * Back End - Node.js
 
 Relevant Experience/Skills: 
 
-- Software Developer In Test Co-op - DDS Wireless International
-  - Developed automated test for mobile applications, executed test on real devices and AWS Devices Farm.
-  - Developed automated test for APIs, generated and analyzed code coverage and pass rate.
-  - Maintained and developed Node.js simulator server for automated testing. 
-- Research Assistant - SFU Menrva Research Group
-  - Configured and built customized armband to read and send force myographic data.
-  - Developed and optimized embedded software to interface with sensors.
-  - Developed Matlab scripts and functions to read real-time force myographic data from serial, trained the machine with LDA       algorithm and finally performed gesture prediction.
-  - Assisted with development of test setup and data collection for project improvement.
+  * Software Developer In Test Co-op - DDS Wireless International
+    * Developed automated test for mobile applications, executed test on real devices and AWS Devices Farm.
+    * Developed automated test for APIs, generated and analyzed code coverage and pass rate.
+    * Maintained and developed Node.js simulator server for automated testing. 
+    * Research Assistant - SFU Menrva Research Group
+  * Configured and built customized armband to read and send force myographic data.
+    * Developed and optimized embedded software to interface with sensors.
+    * Developed Matlab scripts and functions to read real-time force myographic data from serial, trained the machine with LDA       algorithm and finally performed gesture prediction.
+    * Assisted with development of test setup and data collection for project improvement.
   
 Intrests:
-- Full stack web development (Javascript, Java)
-- Real time system (C/C++)
+  * Full stack web development (Javascript, Java)
+  * Real time system (C/C++)
 
 ### Assignments
 
