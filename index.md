@@ -1,5 +1,5 @@
 ## Tanker (Group 6)
-![tanker](https://cdn4.iconfinder.com/data/icons/transportation-190/1000/oil_tanker_ship_tanker_oil_tanker_gas_tank_ship-512.png)
+![tanker](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/images/Tanker.png)
 
 ### Table of Contents  
 
@@ -22,7 +22,28 @@ Rachel Djauhari (Game Dev - Unity)
 
 Takunda Mwinjilo (Front End - Swift)
 
-Yuxiang Huang (Back End - Node.js)
+#### Yuxiang Huang (yuxiangh@sfu.ca)
+
+![Yuxiang Huang](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/images/YuxiangHuang.png)
+
+Team Roles: 
+- Back End - Node.js
+
+Relevant Experience/Skills: 
+
+- Software Developer In Test Co-op - DDS Wireless International
+  - Developed automated test for mobile applications, executed test on real devices and AWS Devices Farm.
+  - Developed automated test for APIs, generated and analyzed code coverage and pass rate.
+  - Maintained and developed Node.js simulator server for automated testing. 
+- Research Assistant - SFU Menrva Research Group
+  - Configured and built customized armband to read and send force myographic data.
+  - Developed and optimized embedded software to interface with sensors.
+  - Developed Matlab scripts and functions to read real-time force myographic data from serial, trained the machine with LDA       algorithm and finally performed gesture prediction.
+  - Assisted with development of test setup and data collection for project improvement.
+  
+Intrests:
+- Full stack web development (Javascript, Java)
+- Real time system (C/C++)
 
 ### Assignments
 
@@ -38,6 +59,7 @@ Below you can find all documents pertaining to our meetings sorted by date.
 
 #### Minutes
 
-- [Sept 11, 2019](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/First Meeting!!!.pdf)
+- [Sept 16, 2019](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/First Meeting!!!.pdf)
+- [Sept 17, 2019](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/Meeting 2.pdf)
 
 #### Agendas
