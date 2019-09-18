@@ -20,7 +20,7 @@ Team Roles:
   * Front End - Swift
 
 Relevant Experience/Skills:
-  * Software Developer (R&I) at SAP Canada Inc
+  * Software Developer (R&I) at SAP Canada Inc (Jan 2018 - Jan 2019)
 
 Intrests:
 
