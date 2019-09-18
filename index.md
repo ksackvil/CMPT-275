@@ -24,7 +24,7 @@ Relevant Experience/Skills:
 
 Intrests:
 
-#### Armaan Bandali ()
+##### Armaan Bandali ()
 
 Team Roles:
   * Game Dev - Unity
@@ -33,7 +33,7 @@ Relevant Experience/Skills:
 
 Intrests:
 
-#### Negar Hariri ()
+##### Negar Hariri ()
 
 Team Roles:
   * Front End - Swift
@@ -42,7 +42,7 @@ Relevant Experience/Skills:
 
 Intrests:
 
-#### Rachel Djauhari ()
+##### Rachel Djauhari ()
 
 Team Roles:
   * Game Dev - Unity
@@ -51,7 +51,7 @@ Relevant Experience/Skills:
 
 Intrests:
 
-#### Takunda Mwinjilo ()
+##### Takunda Mwinjilo ()
 
 Team Roles:
   * Front End - Swift
@@ -59,10 +59,10 @@ Team Roles:
 Relevant Experience/Skills:
 
 Intrests:
-
-#### Yuxiang Huang (yuxiangh@sfu.ca)
 
 ![Yuxiang Huang](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/images/YuxiangHuang.png)
+
+##### Yuxiang Huang (yuxiangh@sfu.ca)
 
 Team Roles:
   * Back End - Node.js
