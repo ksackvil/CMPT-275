@@ -22,7 +22,7 @@ Team Roles:
 Relevant Experience/Skills:
   * Software Developer (R&I) at SAP Canada Inc (Jan 2018 - Jan 2019)
 
-Intrests:
+Interests:
 
 ##### Armaan Bandali ()
 
@@ -31,7 +31,7 @@ Team Roles:
 
 Relevant Experience/Skills:
 
-Intrests:
+Interests:
 
 ##### Negar Hariri ()
 
@@ -40,7 +40,7 @@ Team Roles:
 
 Relevant Experience/Skills:
 
-Intrests:
+Interests:
 
 ##### Rachel Djauhari ()
 
@@ -49,7 +49,7 @@ Team Roles:
 
 Relevant Experience/Skills:
 
-Intrests:
+Interests:
 
 ![Takunda Mwinjilo](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/images/Takunda.jpg)
 
@@ -75,13 +75,13 @@ Relevant Experience/Skills:
     * Developed automated test for mobile applications, executed test on real devices and AWS Devices Farm.
     * Developed automated test for APIs, generated and analyzed code coverage and pass rate.
     * Maintained and developed Node.js simulator server for automated testing. 
-    * Research Assistant - SFU Menrva Research Group
-  * Configured and built customized armband to read and send force myographic data.
+  * Research Assistant - SFU Menrva Research Group
+    * Configured and built customized armband to read and send force myographic data.
     * Developed and optimized embedded software to interface with sensors.
     * Developed Matlab scripts and functions to read real-time force myographic data from serial, trained the machine with LDA       algorithm and finally performed gesture prediction.
     * Assisted with development of test setup and data collection for project improvement.
   
-Intrests:
+Interests:
   * Full stack web development (Javascript, Java)
   * Real time system (C/C++)
 
