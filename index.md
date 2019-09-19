@@ -37,8 +37,18 @@ Interests:
 
 Team Roles:
   * Front End - Swift
+  
 
 Relevant Experience/Skills:
+* Software Test Engineer, Sierra Wireless 
+   * Designing and executing test Case for SMACK, Kernel Modules and AirVantage with clear objective to cover the API                functionality and customer’s use cases
+   * Improving and maintained automation scripts using bash and python
+   * Executing manual and automating test cases in Linux OS in order to open source platform (Legato ) API and target tools
+     using modems and development board.
+* Test Engineer, Maxim integrated ( Icron )
+  *  Automation/Regression/Manual testing to ensure the reliability of the products for client satisfaction
+ 
+   
 
 Interests:
 
@@ -59,6 +69,7 @@ Team Roles:
   * Front End - Swift
 
 Relevant Experience/Skills:
+  
 
 Intrests:
 
