@@ -51,6 +51,8 @@ Relevant Experience/Skills:
 
 Intrests:
 
+![Takunda Mwinjilo](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/images/Takunda.jpg)
+
 ##### Takunda Mwinjilo ()
 
 Team Roles:
