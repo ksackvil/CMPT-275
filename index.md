@@ -12,6 +12,24 @@
 
 ### Team Members
 
+![Rachel](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/images/Rachel.jpg)
+
+##### Rachel Djauhari ()
+
+Team Roles:
+  * Project Manager
+  * Game Dev - Unity
+
+Relevant Experience/Skills:
+  * Cellula Robotics Ltd. (Control Systems Engineer Co-op)
+    * UI for testing a battery system (C#)
+    * Review/Creation of technical reports and electrical drawings
+  * Lumohacks 2018
+    * Designed mobile app using Android Studio (Java) 
+    * Finding a solution for people with PTSD and OSI
+
+Interests:
+
 ![Kai Sackville-Hii](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/images/Kai.JPG)
 
 ##### Kai Sackville-Hii (ksackvil@sfu.ca)
@@ -21,8 +39,12 @@ Team Roles:
 
 Relevant Experience/Skills:
   * Software Developer (R&I) at SAP Canada Inc (Jan 2018 - Jan 2019)
+    * Designed and implemented WASP, an internal tool for managing and cataloging web services used in SAP products.
+    * Full stack development, React JS front end with RESTful Python-Flask backend. 
 
 Interests:
+  * Cycling
+  * Mobile development
 
 ##### Armaan Bandali ()
 
@@ -35,10 +57,8 @@ Interests:
 
 ##### Negar Hariri (nbagheri@sfu.ca)
 
-
 Team Roles:
-  * Front End - Swift
-  
+  * Front End - Swift 
 
 Relevant Experience/Skills:
 * Software Test Engineer, Sierra Wireless 
@@ -49,17 +69,6 @@ Relevant Experience/Skills:
 * Test Engineer, Maxim integrated ( Icron )
   *  Automation/Regression/Manual testing to ensure the reliability of the products for client satisfaction
  
-   
-
-Interests:
-
-##### Rachel Djauhari ()
-
-Team Roles:
-  * Game Dev - Unity
-
-Relevant Experience/Skills:
-
 Interests:
 
 ![Takunda Mwinjilo](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/images/Takunda.jpg)
@@ -71,7 +80,6 @@ Team Roles:
 
 Relevant Experience/Skills:
   
-
 Intrests:
 
 ![Yuxiang Huang](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/images/YuxiangHuang.png)
@@ -113,5 +121,8 @@ Below you can find all documents pertaining to our meetings sorted by date.
 
 - [Sept 16, 2019](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/First Meeting!!!.pdf)
 - [Sept 17, 2019](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/Meeting 2.pdf)
+- [Sept 19, 2019](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/Meeting 3.pdf)
 
 #### Agendas
+
+- [Sept 19, 2019](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/Agenda for Meeting 3.pdf)
