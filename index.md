@@ -33,7 +33,8 @@ Relevant Experience/Skills:
 
 Interests:
 
-##### Negar Hariri ()
+##### Negar Hariri (nbagheri@sfu.ca)
+
 
 Team Roles:
   * Front End - Swift
@@ -42,7 +43,7 @@ Team Roles:
 Relevant Experience/Skills:
 * Software Test Engineer, Sierra Wireless 
    * Designing and executing test Case for SMACK, Kernel Modules and AirVantage with clear objective to cover the API                functionality and customer’s use cases
-   * Improving and maintained automation scripts using bash and python
+   * Improving and writing scripts using bash and python and C
    * Executing manual and automating test cases in Linux OS in order to open source platform (Legato ) API and target tools
      using modems and development board.
 * Test Engineer, Maxim integrated ( Icron )
