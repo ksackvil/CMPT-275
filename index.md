@@ -96,7 +96,7 @@ Relevant Experience/Skills:
     * Using Speech-to-Text to track keywords in speech to determine a user’s mood
     * Utilizing Siri, calender and microphone functionality on the iPhone as well as setting up pop-up notifications
 
-Intrests:
+Interests:
   * Data collection and UI design
   * Developing Quality of life apps
   * Sports and fitness
