@@ -135,7 +135,7 @@ Interests:
 
 ### Meetings
 
-Below you can find all documents pertaining to our meetings sorted by date.
+Below you can find all documents pertaining to our meetings sorted by date. Our schedualed meeting times are Tuesday and Thursday 10:30 am in the Applied Science Building.
 
 #### Minutes
 
