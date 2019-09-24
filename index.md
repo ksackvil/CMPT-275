@@ -10,7 +10,7 @@
   
 ### Quickstart Guide
 
-Our subversion repository is located at https://github.com/ksackvil/CMPT-275
+Our subversion repository is located at [this Github repo](https://github.com/ksackvil/CMPT-275).
 
 To get access to our source code you can download the zip file [here](https://github.com/ksackvil/CMPT-275), or you can use git via the following command:
 
