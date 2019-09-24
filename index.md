@@ -3,22 +3,30 @@
 
 ### Table of Contents  
 
-1. [Quickstart](#quickstart)
+1. [Quickstart Guide](#quickstart-guide)
 2. [Team Members](#team-members)
 3. [Assignments](#assignments)
 4. [Meetings](#meetings)  
   
-### Quickstart
+### Quickstart Guide
+
+Our subversion repository is located at https://github.com/ksackvil/CMPT-275
+
+To get access to our source code you can download the zip file [here](https://github.com/ksackvil/CMPT-275), or you can use git via the following command:
+
+```
+git clone https://github.com/ksackvil/CMPT-275.git
+```
 
 ### Team Members
 
 ![Rachel](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/images/Rachel.jpg)
 
-##### Rachel Djauhari ()
+##### Rachel Djauhari (rdjauhar@sfu.ca)
 
 Team Roles:
   * Project Manager
-  * Game Dev - Unity
+  * Game Development
 
 Relevant Experience/Skills:
   * Cellula Robotics Ltd. (Control Systems Engineer Co-op)
@@ -35,7 +43,7 @@ Interests:
 ##### Kai Sackville-Hii (ksackvil@sfu.ca)
 
 Team Roles:
-  * Front End - Swift
+  * Front End Development
 
 Relevant Experience/Skills:
   * Software Developer (R&I) at SAP Canada Inc (Jan 2018 - Jan 2019)
@@ -49,7 +57,7 @@ Interests:
 ##### Armaan Bandali ()
 
 Team Roles:
-  * Game Dev - Unity
+  * Game Development
 
 Relevant Experience/Skills:
 
@@ -58,7 +66,7 @@ Interests:
 ##### Negar Hariri (nbagheri@sfu.ca)
 
 Team Roles:
-  * Front End - Swift 
+  * Front End Development
 
 Relevant Experience/Skills:
 * Software Test Engineer, Sierra Wireless 
@@ -73,21 +81,33 @@ Interests:
 
 ![Takunda Mwinjilo](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/images/Takunda.jpg)
 
-##### Takunda Mwinjilo ()
+##### Takunda Mwinjilo (tmwinjil@sfu.ca)
 
 Team Roles:
-  * Front End - Swift
+  * Front End Development
 
 Relevant Experience/Skills:
-  
+  * Bluetooth Software Engineer Co-op: Keytechs Systems and Innovative Solutions
+    * Researching Bluetooth communication protocol and new features
+    * Programing Bluetooth SoCs with demos for customers in C
+    * Writing technical documentation to report new Bluetooth and Nordic SDK features
+  * Hackathon: Psychological Health Resource Locator
+    * Programming a multi-page user interface with SWIFT 
+    * Using Speech-to-Text to track keywords in speech to determine a user’s mood
+    * Utilizing Siri, calender and microphone functionality on the iPhone as well as setting up pop-up notifications
+
 Intrests:
+  * Data collection and UI design
+  * Developing Quality of life apps
+  * Sports and fitness
+
 
 ![Yuxiang Huang](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/images/YuxiangHuang.png)
 
 ##### Yuxiang Huang (yuxiangh@sfu.ca)
 
 Team Roles:
-  * Back End - Node.js
+  * Back End Development
 
 Relevant Experience/Skills: 
 
