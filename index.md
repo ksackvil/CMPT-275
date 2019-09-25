@@ -80,6 +80,8 @@ Interests:
   * Soccer
   * Learning new programming languages
 
+![Negar Hariri](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/images/Negar.jpg)
+
 ##### Negar Hariri (nbagheri@sfu.ca)
 
 Team Roles:
