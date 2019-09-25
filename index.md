@@ -20,6 +20,8 @@ git clone https://github.com/ksackvil/CMPT-275.git
 
 ### Team Members
 
+![Kai Sackville-Hii](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/images/test.PNG)
+
 ![Rachel](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/images/Rachel.jpg)
 
 ##### Rachel Djauhari (rdjauhar@sfu.ca)
@@ -170,4 +172,3 @@ Below you can find all documents pertaining to our meetings sorted by date. Our 
 - [Sept 19, 2019](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/Agenda for Meeting 3.pdf)
 - [Sept 25, 2019](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/Agenda for Meeting 4.pdf)
 
-![Yuxiang Huang](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/images/test.PNG)
