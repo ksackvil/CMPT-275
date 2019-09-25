@@ -53,7 +53,11 @@ Relevant Experience/Skills:
   * Software Developer (R&I) at SAP Canada Inc (Jan 2018 - Jan 2019)
     * Designed and implemented WASP, an internal tool for managing and cataloging web services used in SAP products.
     * Full stack development, React JS front end with RESTful Python-Flask backend. 
-
+  * Apptize Virtual Menu (Oct 2018 - Present)
+    * Appetize is a platform which connects food industry vendors with their customers, digitalizing the restaurant experience.
+    * Designed overall architecture for both the web and mobile solution. 
+    * Managed agile development, ensuring new features get successfully implemented.
+    
 Interests:
   * Cycling
   * Mobile development
