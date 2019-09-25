@@ -62,7 +62,7 @@ Interests:
   * Cycling
   * Mobile development
 
-![Armaan Bandali](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/images/Armaan.JPG)
+![Armaan Bandali](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/images/Armaan.png)
 
 ##### Armaan Bandali (Abandali@sfu.ca)
 
