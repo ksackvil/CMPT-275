@@ -37,6 +37,10 @@ Relevant Experience/Skills:
     * Finding a solution for people with PTSD and OSI
 
 Interests:
+  * Video Games (playing and creating them!)
+  * UI design
+  * Music
+  * Outdoors
 
 ![Kai Sackville-Hii](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/images/Kai.JPG)
 
@@ -69,15 +73,18 @@ Team Roles:
   * Front End Development
 
 Relevant Experience/Skills:
-* Software Test Engineer, Sierra Wireless 
-   * Designing and executing test Case for SMACK, Kernel Modules and AirVantage with clear objective to cover the API                functionality and customer’s use cases
-   * Improving and writing scripts using bash and python and C
-   * Executing manual and automating test cases in Linux OS in order to open source platform (Legato ) API and target tools
-     using modems and development board.
-* Test Engineer, Maxim integrated ( Icron )
-  *  Automation/Regression/Manual testing to ensure the reliability of the products for client satisfaction
- 
+  * Software Test Engineer, Sierra Wireless 
+     * Designing and executing test Case for SMACK, Kernel Modules and AirVantage with clear objective to cover the API                functionality and customer’s use cases
+     * Improving and writing scripts using bash and python and C
+     * Executing manual and automating test cases in Linux OS in order to open source platform (Legato ) API and target tools
+       using modems and development board.
+  * Test Engineer, Maxim integrated ( Icron )
+    *  Automation/Regression/Manual testing to ensure the reliability of the products for client satisfaction
+
 Interests:
+  * Kick Boxing and fitness
+  * Database Design 				
+  * Learning programming languages.
 
 ![Takunda Mwinjilo](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/images/Takunda.jpg)
 
@@ -142,7 +149,9 @@ Below you can find all documents pertaining to our meetings sorted by date. Our 
 - [Sept 16, 2019](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/First Meeting!!!.pdf)
 - [Sept 17, 2019](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/Meeting 2.pdf)
 - [Sept 19, 2019](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/Meeting 3.pdf)
+- [Sept 25, 2019](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/Meeting 4.pdf)
 
 #### Agendas
 
 - [Sept 19, 2019](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/Agenda for Meeting 3.pdf)
+- [Sept 25, 2019](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/Agenda for Meeting 4.pdf)
