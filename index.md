@@ -68,6 +68,11 @@ Team Roles:
   * Game Development
 
 Relevant Experience/Skills:
+  * Technology Coordinator, Science AL!VE
+    * Managed robotics hardware usage, maintenance, and debugging for all students in summer camps, including Vex, EV3, and Edison
+    * Developed curricula for and led programming workshops and camps for elementary and middle school students
+    * Implemented test scripts to determine limitations of hardware and software as well as robustness of different coding languages to overcome firmware issues and design flaws
+
 
 Interests:
 
