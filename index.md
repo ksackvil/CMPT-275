@@ -62,7 +62,9 @@ Interests:
   * Cycling
   * Mobile development
 
-##### Armaan Bandali ()
+![Armaan Bandali](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/images/Armaan.JPG)
+
+##### Armaan Bandali (Abandali@sfu.ca)
 
 Team Roles:
   * Game Development
@@ -72,9 +74,11 @@ Relevant Experience/Skills:
     * Managed robotics hardware usage, maintenance, and debugging for all students in summer camps, including Vex, EV3, and Edison
     * Developed curricula for and led programming workshops and camps for elementary and middle school students
     * Implemented test scripts to determine limitations of hardware and software as well as robustness of different coding languages to overcome firmware issues and design flaws
-
-
+    
 Interests:
+  * Playing, collecting, and developing video games
+  * Soccer
+  * Learning new programming languages
 
 ##### Negar Hariri (nbagheri@sfu.ca)
 
@@ -116,7 +120,6 @@ Interests:
   * Data collection and UI design
   * Developing Quality of life apps
   * Sports and fitness
-
 
 ![Yuxiang Huang](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/images/YuxiangHuang.png)
 
