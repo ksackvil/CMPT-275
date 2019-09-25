@@ -169,3 +169,5 @@ Below you can find all documents pertaining to our meetings sorted by date. Our 
 
 - [Sept 19, 2019](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/Agenda for Meeting 3.pdf)
 - [Sept 25, 2019](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/Agenda for Meeting 4.pdf)
+
+![Yuxiang Huang](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/images/test.PNG)
