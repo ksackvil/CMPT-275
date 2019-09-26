@@ -73,11 +73,11 @@ Interests:
 
 ---
 
-![Armaan Bandali](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/images/Armaan.png)
+##### Armaan Bandali (Abandali@sfu.ca)
 
 ---
 
-##### Armaan Bandali (Abandali@sfu.ca)
+![Armaan Bandali](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/images/Armaan.png)
 
 Team Roles:
   * Game Development
