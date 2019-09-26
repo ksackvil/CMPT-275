@@ -45,12 +45,15 @@ Interests:
   * UI design
   * Music
   * Outdoors
-  
+ 
+---
+
+##### Kai Sackville-Hii (ksackvil@sfu.ca)
+
 ---
 
 ![Kai Sackville-Hii](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/images/Kai.JPG)
 
-##### Kai Sackville-Hii (ksackvil@sfu.ca)
 
 Team Roles:
   * Front End Development
@@ -72,6 +75,8 @@ Interests:
 
 ![Armaan Bandali](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/images/Armaan.png)
 
+---
+
 ##### Armaan Bandali (Abandali@sfu.ca)
 
 Team Roles:
@@ -90,9 +95,11 @@ Interests:
 
 ---
 
-![Negar Hariri](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/images/Negar.jpg)
-
 ##### Negar Hariri (nbagheri@sfu.ca)
+
+---
+
+![Negar Hariri](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/images/Negar.jpg)
 
 Team Roles:
   * Front End Development
@@ -113,9 +120,11 @@ Interests:
 
 ---
 
-![Takunda Mwinjilo](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/images/Takunda.jpg)
-
 ##### Takunda Mwinjilo (tmwinjil@sfu.ca)
+
+---
+
+![Takunda Mwinjilo](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/images/Takunda.jpg)
 
 Team Roles:
   * Front End Development
@@ -137,9 +146,11 @@ Interests:
 
 ---
 
-![Yuxiang Huang](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/images/YuxiangHuang.png)
-
 ##### Yuxiang Huang (yuxiangh@sfu.ca)
+
+---
+
+![Yuxiang Huang](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/images/YuxiangHuang.png)
 
 Team Roles:
   * Back End Development
@@ -159,8 +170,6 @@ Relevant Experience/Skills:
 Interests:
   * Full stack web development (Javascript, Java)
   * Real time system (C/C++)
-
----
 
 ### Assignments
 
