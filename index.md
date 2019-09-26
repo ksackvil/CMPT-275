@@ -19,11 +19,7 @@ git clone https://github.com/ksackvil/CMPT-275.git
 ```
 
 ### Team Members
-
-![Kai Sackville-Hii](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/images/kai_bio.PNG)
-
-![Rachel](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/images/rachel_bio.PNG)
-
+---
 ![Rachel](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/images/Rachel.jpg)
 
 ##### Rachel Djauhari (rdjauhar@sfu.ca)
@@ -45,7 +41,7 @@ Interests:
   * UI design
   * Music
   * Outdoors
-
+---
 ![Kai Sackville-Hii](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/images/Kai.JPG)
 
 ##### Kai Sackville-Hii (ksackvil@sfu.ca)
