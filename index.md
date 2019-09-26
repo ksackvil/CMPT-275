@@ -20,7 +20,9 @@ git clone https://github.com/ksackvil/CMPT-275.git
 
 ### Team Members
 
-![Kai Sackville-Hii](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/images/test.PNG)
+![Kai Sackville-Hii](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/images/kai_bio.PNG)
+
+![Rachel](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/images/rachel_bio.PNG)
 
 ![Rachel](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/images/Rachel.jpg)
 
