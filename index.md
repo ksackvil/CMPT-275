@@ -22,9 +22,11 @@ git clone https://github.com/ksackvil/CMPT-275.git
 
 ---
 
-![Rachel](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/images/Rachel.jpg)
-
 ##### Rachel Djauhari (rdjauhar@sfu.ca)
+
+---
+
+![Rachel](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/images/Rachel.jpg)
 
 Team Roles:
   * Project Manager
