@@ -19,7 +19,9 @@ git clone https://github.com/ksackvil/CMPT-275.git
 ```
 
 ### Team Members
+
 ---
+
 ![Rachel](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/images/Rachel.jpg)
 
 ##### Rachel Djauhari (rdjauhar@sfu.ca)
@@ -41,7 +43,9 @@ Interests:
   * UI design
   * Music
   * Outdoors
+  
 ---
+
 ![Kai Sackville-Hii](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/images/Kai.JPG)
 
 ##### Kai Sackville-Hii (ksackvil@sfu.ca)
@@ -62,6 +66,8 @@ Interests:
   * Cycling
   * Mobile development
 
+---
+
 ![Armaan Bandali](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/images/Armaan.png)
 
 ##### Armaan Bandali (Abandali@sfu.ca)
@@ -79,6 +85,8 @@ Interests:
   * Playing, collecting, and developing video games
   * Soccer
   * Learning new programming languages
+
+---
 
 ![Negar Hariri](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/images/Negar.jpg)
 
@@ -100,6 +108,8 @@ Interests:
   * Kick Boxing and fitness
   * Database Design 				
   * Learning programming languages.
+
+---
 
 ![Takunda Mwinjilo](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/images/Takunda.jpg)
 
@@ -124,6 +134,8 @@ Interests:
   * Sports and fitness
 
 ![Yuxiang Huang](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/images/YuxiangHuang.png)
+
+---
 
 ##### Yuxiang Huang (yuxiangh@sfu.ca)
 
