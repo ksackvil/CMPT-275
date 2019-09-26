@@ -133,9 +133,9 @@ Interests:
   * Developing Quality of life apps
   * Sports and fitness
 
-![Yuxiang Huang](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/images/YuxiangHuang.png)
-
 ---
+
+![Yuxiang Huang](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/images/YuxiangHuang.png)
 
 ##### Yuxiang Huang (yuxiangh@sfu.ca)
 
@@ -157,6 +157,8 @@ Relevant Experience/Skills:
 Interests:
   * Full stack web development (Javascript, Java)
   * Real time system (C/C++)
+
+---
 
 ### Assignments
 
