@@ -42,7 +42,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 * **Takunda Mwinjilo** - *Developer*
 * **Yuxiang Huang** - *Developer*
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/ksackvil/CMPT-275/graphs/contributors) who participated in this project.
 
 ## License
 
