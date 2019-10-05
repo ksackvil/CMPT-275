@@ -8,18 +8,18 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-To run this project you will need the following:
-1. An Apple computer runing macOS
-2. Xcode installed
+To run this project, you will need the following:
+1. An Apple computer running macOS
+2. XCode installed
 3. iOS simulator installed
 
 ## Running the project
 
-To run the project in xcode, use the keybord shortcut [cmd][R] or in the toolbar click Product->Run. If the build succeeded then the iOS simulator should appear with the build project. If the build failed check the console for the errors.
+To run the project in XCode, use the keyboard shortcut [cmd][R] or in the toolbar click Product->Run. If the build succeeded, then the iOS simulator should appear with the build project. If the build failed check the console for the errors.
 
 ## Running the tests
 
-To run tests on the project in xcode, use the keybord shortcut [cmd][U] or in the toolbar click Product->Test. You should see the status of each test (pass or fail) in the left sidebar.
+To run tests on the project in XCode, use the keyboard shortcut [cmd][U] or in the toolbar click Product->Test. You should see the status of each test (pass or fail) in the left sidebar.
 
 ### Break down into end to end tests
 
