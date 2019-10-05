@@ -173,7 +173,7 @@ Interests:
 
 ### Assignments
 
-- Assignment 1 - Project Plan
+- [Assignment 1 - Project Plan](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/Group-06-ProjectPlan.pdf)
 - Assignment 2 - Version 1
 - Assignment 3 - Version 2
 - Assignment 4 - Version 3
@@ -185,13 +185,17 @@ Below you can find all documents pertaining to our meetings sorted by date. Our 
 
 #### Minutes
 
-- [Sept 16, 2019](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/First Meeting!!!.pdf)
-- [Sept 17, 2019](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/Meeting 2.pdf)
-- [Sept 19, 2019](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/Meeting 3.pdf)
-- [Sept 25, 2019](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/Meeting 4.pdf)
+- [Meeting 1: Sept 16, 2019](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/First Meeting!!!.pdf)
+- [Meeting 2: Sept 17, 2019](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/Meeting 2.pdf)
+- [Meeting 3: Sept 19, 2019](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/Meeting 3.pdf)
+- [Meeting 4: Sept 24, 2019](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/Meeting 4.pdf)
+- [Meeting 5: Oct 1, 2019](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/Meeting 5.pdf)
+- [Meeting 6: Oct 3, 2019](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/Meeting 6.pdf)
 
 #### Agendas
 
-- [Sept 19, 2019](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/Agenda for Meeting 3.pdf)
-- [Sept 25, 2019](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/Agenda for Meeting 4.pdf)
+- [Meeting 3: Sept 19, 2019](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/Agenda for Meeting 3.pdf)
+- [Meeting 4: Sept 25, 2019](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/Agenda for Meeting 4.pdf)
+- [Meeting 5: Oct 1, 2019](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/Agenda for Meeting 5.pdf)
+- [Meeting 6: Oct 3, 2019](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/Agenda for Meeting 6.pdf)
 
