@@ -174,10 +174,7 @@ Interests:
 ### Assignments
 
 - [Assignment 1 - Project Plan](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/Group-06-ProjectPlan.pdf)
-- Assignment 2 - Version 1
-    - [Design Document](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/Group-06-Design.pdf)
-    - [QA Document](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/Group-06-QA.pdf)
-    - [Requirements Document](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/Group-06-Requirements.pdf)
+- [Assignment 2 - Version 1](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/Group-06-A2.pdf)
 - Assignment 3 - Version 2
 - Assignment 4 - Version 3
 - Assignment 5 - Final
