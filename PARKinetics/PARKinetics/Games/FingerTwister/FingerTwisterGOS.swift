@@ -26,28 +26,15 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
-import UIKit
+import Foundation
 import SpriteKit
 
-class TestGameViewController: UIViewController {
-    override func loadView() {
-        self.view = SKView()
-        AppUtility.lockOrientation(.landscape)
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-         
-        let scene = TestGameScene(size: view.bounds.size)
-        let skView = view as! SKView
-        skView.showsFPS = true
-        skView.showsNodeCount = true
-        skView.ignoresSiblingOrder = true
-        scene.scaleMode = .resizeFill
-        skView.presentScene(scene)
-    }
-
-    override var prefersStatusBarHidden: Bool {
-    return true
-    }
+class FingerTwisterGOS: SKScene {
+  init(size: CGSize, won:Bool) {
+    super.init(size: size)
+  }
+  
+  required init(coder aDecoder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
 }

@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F748B50F2356E0C9009A10B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F748B5082356E0C9009A10B0 /* Assets.xcassets */; };
+		F748B5102356E0C9009A10B0 /* FingerTwisterGOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748B5092356E0C9009A10B0 /* FingerTwisterGOS.swift */; };
+		F748B5112356E0C9009A10B0 /* FingerTwisterGS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748B50A2356E0C9009A10B0 /* FingerTwisterGS.swift */; };
+		F748B5122356E0C9009A10B0 /* FingerTwisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748B50B2356E0C9009A10B0 /* FingerTwisterVC.swift */; };
+		F748B5132356E0C9009A10B0 /* background-music-aac.caf in Resources */ = {isa = PBXBuildFile; fileRef = F748B50D2356E0C9009A10B0 /* background-music-aac.caf */; };
+		F748B5142356E0C9009A10B0 /* pew-pew-lei.caf in Resources */ = {isa = PBXBuildFile; fileRef = F748B50E2356E0C9009A10B0 /* pew-pew-lei.caf */; };
 		F7EABAD02348710F00D94B1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EABACF2348710F00D94B1C /* AppDelegate.swift */; };
 		F7EABAD22348710F00D94B1C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EABAD12348710F00D94B1C /* ViewController.swift */; };
 		F7EABAD52348710F00D94B1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7EABAD32348710F00D94B1C /* Main.storyboard */; };
@@ -40,6 +46,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F748B5082356E0C9009A10B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F748B5092356E0C9009A10B0 /* FingerTwisterGOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FingerTwisterGOS.swift; sourceTree = "<group>"; };
+		F748B50A2356E0C9009A10B0 /* FingerTwisterGS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FingerTwisterGS.swift; sourceTree = "<group>"; };
+		F748B50B2356E0C9009A10B0 /* FingerTwisterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FingerTwisterVC.swift; sourceTree = "<group>"; };
+		F748B50D2356E0C9009A10B0 /* background-music-aac.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "background-music-aac.caf"; sourceTree = "<group>"; };
+		F748B50E2356E0C9009A10B0 /* pew-pew-lei.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pew-pew-lei.caf"; sourceTree = "<group>"; };
 		F7EABACC2348710F00D94B1C /* PARKinetics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PARKinetics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7EABACF2348710F00D94B1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7EABAD12348710F00D94B1C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -89,9 +101,31 @@
 		F71B368323491B9600D0E44F /* Games */ = {
 			isa = PBXGroup;
 			children = (
+				F748B5072356E09F009A10B0 /* FingerTwister */,
 				F7EABAFD2348712600D94B1C /* TestGame */,
 			);
 			path = Games;
+			sourceTree = "<group>";
+		};
+		F748B5072356E09F009A10B0 /* FingerTwister */ = {
+			isa = PBXGroup;
+			children = (
+				F748B5082356E0C9009A10B0 /* Assets.xcassets */,
+				F748B50C2356E0C9009A10B0 /* Sounds */,
+				F748B5092356E0C9009A10B0 /* FingerTwisterGOS.swift */,
+				F748B50A2356E0C9009A10B0 /* FingerTwisterGS.swift */,
+				F748B50B2356E0C9009A10B0 /* FingerTwisterVC.swift */,
+			);
+			path = FingerTwister;
+			sourceTree = "<group>";
+		};
+		F748B50C2356E0C9009A10B0 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				F748B50D2356E0C9009A10B0 /* background-music-aac.caf */,
+				F748B50E2356E0C9009A10B0 /* pew-pew-lei.caf */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 		F7EABAC32348710F00D94B1C = {
@@ -271,12 +305,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F748B5132356E0C9009A10B0 /* background-music-aac.caf in Resources */,
 				F7EABADA2348710F00D94B1C /* LaunchScreen.storyboard in Resources */,
 				F7EABB0F2348712600D94B1C /* background-music-aac.caf in Resources */,
 				F7EABB102348712600D94B1C /* pew-pew-lei.caf in Resources */,
 				F7EABAD72348710F00D94B1C /* Assets.xcassets in Resources */,
 				F7EABAD52348710F00D94B1C /* Main.storyboard in Resources */,
 				F7EABB0C2348712600D94B1C /* Assets.xcassets in Resources */,
+				F748B50F2356E0C9009A10B0 /* Assets.xcassets in Resources */,
+				F748B5142356E0C9009A10B0 /* pew-pew-lei.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,6 +338,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F748B5122356E0C9009A10B0 /* FingerTwisterVC.swift in Sources */,
+				F748B5102356E0C9009A10B0 /* FingerTwisterGOS.swift in Sources */,
+				F748B5112356E0C9009A10B0 /* FingerTwisterGS.swift in Sources */,
 				F7EABB122348712600D94B1C /* TestGameScene.swift in Sources */,
 				F7EABAD22348710F00D94B1C /* ViewController.swift in Sources */,
 				F7EABB0B2348712600D94B1C /* TestGameViewController.swift in Sources */,

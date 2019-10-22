@@ -26,28 +26,9 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
-import UIKit
 import SpriteKit
 
-class TestGameViewController: UIViewController {
-    override func loadView() {
-        self.view = SKView()
-        AppUtility.lockOrientation(.landscape)
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-         
-        let scene = TestGameScene(size: view.bounds.size)
-        let skView = view as! SKView
-        skView.showsFPS = true
-        skView.showsNodeCount = true
-        skView.ignoresSiblingOrder = true
-        scene.scaleMode = .resizeFill
-        skView.presentScene(scene)
-    }
-
-    override var prefersStatusBarHidden: Bool {
-    return true
-    }
+// MARK: GameScene
+class FingerTwisterGS: SKScene {
+    
 }

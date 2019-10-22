@@ -29,7 +29,7 @@
 import UIKit
 import SpriteKit
 
-class TestGameViewController: UIViewController {
+class FingerTwisterVC: UIViewController {
     override func loadView() {
         self.view = SKView()
         AppUtility.lockOrientation(.landscape)
@@ -37,17 +37,11 @@ class TestGameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-         
-        let scene = TestGameScene(size: view.bounds.size)
-        let skView = view as! SKView
-        skView.showsFPS = true
-        skView.showsNodeCount = true
-        skView.ignoresSiblingOrder = true
-        scene.scaleMode = .resizeFill
-        skView.presentScene(scene)
+        
+        print("in finger twister")
     }
 
     override var prefersStatusBarHidden: Bool {
-    return true
+        return true
     }
 }
