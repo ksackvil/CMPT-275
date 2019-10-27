@@ -3,16 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		30807DC4AB5560A952E7BC98 /* Pods_PARKineticsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05BEC29F49BA65EC09808E92 /* Pods_PARKineticsTests.framework */; };
+		3494E906C151D9F90396C08C /* Pods_PARKinetics_PARKineticsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2FA72305AD131C6CE2C4339 /* Pods_PARKinetics_PARKineticsUITests.framework */; };
+		79139E72B6730D5D40A76375 /* Pods_PARKinetics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8369F5BCA9489A30AB759198 /* Pods_PARKinetics.framework */; };
+		F7103C33236521480008AD74 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F7103C32236521480008AD74 /* GoogleService-Info.plist */; };
 		F748B50F2356E0C9009A10B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F748B5082356E0C9009A10B0 /* Assets.xcassets */; };
 		F748B5102356E0C9009A10B0 /* FingerTwisterGOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748B5092356E0C9009A10B0 /* FingerTwisterGOS.swift */; };
 		F748B5112356E0C9009A10B0 /* FingerTwisterGS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748B50A2356E0C9009A10B0 /* FingerTwisterGS.swift */; };
 		F748B5122356E0C9009A10B0 /* FingerTwisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748B50B2356E0C9009A10B0 /* FingerTwisterVC.swift */; };
-		F748B5132356E0C9009A10B0 /* background-music-aac.caf in Resources */ = {isa = PBXBuildFile; fileRef = F748B50D2356E0C9009A10B0 /* background-music-aac.caf */; };
-		F748B5142356E0C9009A10B0 /* pew-pew-lei.caf in Resources */ = {isa = PBXBuildFile; fileRef = F748B50E2356E0C9009A10B0 /* pew-pew-lei.caf */; };
 		F7EABAD02348710F00D94B1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EABACF2348710F00D94B1C /* AppDelegate.swift */; };
 		F7EABAD22348710F00D94B1C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EABAD12348710F00D94B1C /* ViewController.swift */; };
 		F7EABAD52348710F00D94B1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7EABAD32348710F00D94B1C /* Main.storyboard */; };
@@ -46,12 +48,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0205599F74CE616B1153D64D /* Pods-PARKineticsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PARKineticsTests.debug.xcconfig"; path = "Target Support Files/Pods-PARKineticsTests/Pods-PARKineticsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		05BEC29F49BA65EC09808E92 /* Pods_PARKineticsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PARKineticsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5382359DEB9B3FA07E8CE971 /* Pods-PARKinetics-PARKineticsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PARKinetics-PARKineticsUITests.debug.xcconfig"; path = "Target Support Files/Pods-PARKinetics-PARKineticsUITests/Pods-PARKinetics-PARKineticsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		692F2A08088FBCD649695F17 /* Pods-PARKineticsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PARKineticsTests.release.xcconfig"; path = "Target Support Files/Pods-PARKineticsTests/Pods-PARKineticsTests.release.xcconfig"; sourceTree = "<group>"; };
+		6D07B02284CFA7CF35F58FCA /* Pods-PARKinetics.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PARKinetics.debug.xcconfig"; path = "Target Support Files/Pods-PARKinetics/Pods-PARKinetics.debug.xcconfig"; sourceTree = "<group>"; };
+		8088F3AB86A6AD8C0FBA733B /* Pods-PARKinetics-PARKineticsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PARKinetics-PARKineticsUITests.release.xcconfig"; path = "Target Support Files/Pods-PARKinetics-PARKineticsUITests/Pods-PARKinetics-PARKineticsUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8369F5BCA9489A30AB759198 /* Pods_PARKinetics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PARKinetics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A07F838A1C789363E1844CC5 /* Pods-PARKinetics.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PARKinetics.release.xcconfig"; path = "Target Support Files/Pods-PARKinetics/Pods-PARKinetics.release.xcconfig"; sourceTree = "<group>"; };
+		F2FA72305AD131C6CE2C4339 /* Pods_PARKinetics_PARKineticsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PARKinetics_PARKineticsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7103C32236521480008AD74 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F748B5082356E0C9009A10B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F748B5092356E0C9009A10B0 /* FingerTwisterGOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FingerTwisterGOS.swift; sourceTree = "<group>"; };
 		F748B50A2356E0C9009A10B0 /* FingerTwisterGS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FingerTwisterGS.swift; sourceTree = "<group>"; };
 		F748B50B2356E0C9009A10B0 /* FingerTwisterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FingerTwisterVC.swift; sourceTree = "<group>"; };
-		F748B50D2356E0C9009A10B0 /* background-music-aac.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "background-music-aac.caf"; sourceTree = "<group>"; };
-		F748B50E2356E0C9009A10B0 /* pew-pew-lei.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pew-pew-lei.caf"; sourceTree = "<group>"; };
 		F7EABACC2348710F00D94B1C /* PARKinetics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PARKinetics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7EABACF2348710F00D94B1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7EABAD12348710F00D94B1C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79139E72B6730D5D40A76375 /* Pods_PARKinetics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30807DC4AB5560A952E7BC98 /* Pods_PARKineticsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,12 +104,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3494E906C151D9F90396C08C /* Pods_PARKinetics_PARKineticsUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		32BF948F50627223E84DBEF8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6D07B02284CFA7CF35F58FCA /* Pods-PARKinetics.debug.xcconfig */,
+				A07F838A1C789363E1844CC5 /* Pods-PARKinetics.release.xcconfig */,
+				5382359DEB9B3FA07E8CE971 /* Pods-PARKinetics-PARKineticsUITests.debug.xcconfig */,
+				8088F3AB86A6AD8C0FBA733B /* Pods-PARKinetics-PARKineticsUITests.release.xcconfig */,
+				0205599F74CE616B1153D64D /* Pods-PARKineticsTests.debug.xcconfig */,
+				692F2A08088FBCD649695F17 /* Pods-PARKineticsTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C622B007D6F7DEFAB01EDD26 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8369F5BCA9489A30AB759198 /* Pods_PARKinetics.framework */,
+				F2FA72305AD131C6CE2C4339 /* Pods_PARKinetics_PARKineticsUITests.framework */,
+				05BEC29F49BA65EC09808E92 /* Pods_PARKineticsTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F71B368323491B9600D0E44F /* Games */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,8 +158,6 @@
 		F748B50C2356E0C9009A10B0 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				F748B50D2356E0C9009A10B0 /* background-music-aac.caf */,
-				F748B50E2356E0C9009A10B0 /* pew-pew-lei.caf */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -135,6 +169,8 @@
 				F7EABAE32348710F00D94B1C /* PARKineticsTests */,
 				F7EABAEE2348710F00D94B1C /* PARKineticsUITests */,
 				F7EABACD2348710F00D94B1C /* Products */,
+				32BF948F50627223E84DBEF8 /* Pods */,
+				C622B007D6F7DEFAB01EDD26 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -157,6 +193,7 @@
 				F7EABAD32348710F00D94B1C /* Main.storyboard */,
 				F7EABAD62348710F00D94B1C /* Assets.xcassets */,
 				F7EABAD82348710F00D94B1C /* LaunchScreen.storyboard */,
+				F7103C32236521480008AD74 /* GoogleService-Info.plist */,
 				F7EABADB2348710F00D94B1C /* Info.plist */,
 			);
 			path = PARKinetics;
@@ -208,9 +245,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F7EABAF42348710F00D94B1C /* Build configuration list for PBXNativeTarget "PARKinetics" */;
 			buildPhases = (
+				A0BE28164CF14245CFDB267C /* [CP] Check Pods Manifest.lock */,
 				F7EABAC82348710F00D94B1C /* Sources */,
 				F7EABAC92348710F00D94B1C /* Frameworks */,
 				F7EABACA2348710F00D94B1C /* Resources */,
+				92CA7D33DD00E9432562085C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -225,6 +264,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F7EABAF72348710F00D94B1C /* Build configuration list for PBXNativeTarget "PARKineticsTests" */;
 			buildPhases = (
+				2CEBB89C3FC32CD775EE37C1 /* [CP] Check Pods Manifest.lock */,
 				F7EABADC2348710F00D94B1C /* Sources */,
 				F7EABADD2348710F00D94B1C /* Frameworks */,
 				F7EABADE2348710F00D94B1C /* Resources */,
@@ -243,9 +283,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F7EABAFA2348710F00D94B1C /* Build configuration list for PBXNativeTarget "PARKineticsUITests" */;
 			buildPhases = (
+				26183C358E2FCD5E437DC3DE /* [CP] Check Pods Manifest.lock */,
 				F7EABAE72348710F00D94B1C /* Sources */,
 				F7EABAE82348710F00D94B1C /* Frameworks */,
 				F7EABAE92348710F00D94B1C /* Resources */,
+				E1CF2E338305513C6D7EB57D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -305,15 +347,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F748B5132356E0C9009A10B0 /* background-music-aac.caf in Resources */,
 				F7EABADA2348710F00D94B1C /* LaunchScreen.storyboard in Resources */,
 				F7EABB0F2348712600D94B1C /* background-music-aac.caf in Resources */,
 				F7EABB102348712600D94B1C /* pew-pew-lei.caf in Resources */,
 				F7EABAD72348710F00D94B1C /* Assets.xcassets in Resources */,
 				F7EABAD52348710F00D94B1C /* Main.storyboard in Resources */,
 				F7EABB0C2348712600D94B1C /* Assets.xcassets in Resources */,
+				F7103C33236521480008AD74 /* GoogleService-Info.plist in Resources */,
 				F748B50F2356E0C9009A10B0 /* Assets.xcassets in Resources */,
-				F748B5142356E0C9009A10B0 /* pew-pew-lei.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,6 +373,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		26183C358E2FCD5E437DC3DE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PARKinetics-PARKineticsUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2CEBB89C3FC32CD775EE37C1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PARKineticsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		92CA7D33DD00E9432562085C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PARKinetics/Pods-PARKinetics-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PARKinetics/Pods-PARKinetics-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PARKinetics/Pods-PARKinetics-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A0BE28164CF14245CFDB267C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PARKinetics-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E1CF2E338305513C6D7EB57D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PARKinetics-PARKineticsUITests/Pods-PARKinetics-PARKineticsUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PARKinetics-PARKineticsUITests/Pods-PARKinetics-PARKineticsUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PARKinetics-PARKineticsUITests/Pods-PARKinetics-PARKineticsUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F7EABAC82348710F00D94B1C /* Sources */ = {
@@ -518,6 +662,7 @@
 		};
 		F7EABAF52348710F00D94B1C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D07B02284CFA7CF35F58FCA /* Pods-PARKinetics.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -535,6 +680,7 @@
 		};
 		F7EABAF62348710F00D94B1C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A07F838A1C789363E1844CC5 /* Pods-PARKinetics.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -552,6 +698,7 @@
 		};
 		F7EABAF82348710F00D94B1C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0205599F74CE616B1153D64D /* Pods-PARKineticsTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -572,6 +719,7 @@
 		};
 		F7EABAF92348710F00D94B1C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 692F2A08088FBCD649695F17 /* Pods-PARKineticsTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -592,6 +740,7 @@
 		};
 		F7EABAFB2348710F00D94B1C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5382359DEB9B3FA07E8CE971 /* Pods-PARKinetics-PARKineticsUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -611,6 +760,7 @@
 		};
 		F7EABAFC2348710F00D94B1C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8088F3AB86A6AD8C0FBA733B /* Pods-PARKinetics-PARKineticsUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

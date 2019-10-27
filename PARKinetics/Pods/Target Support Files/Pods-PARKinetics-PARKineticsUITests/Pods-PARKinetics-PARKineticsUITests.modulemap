@@ -1,0 +1,6 @@
+framework module Pods_PARKinetics_PARKineticsUITests {
+  umbrella header "Pods-PARKinetics-PARKineticsUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

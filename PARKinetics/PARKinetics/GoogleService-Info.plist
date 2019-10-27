@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>656833071448-hmk7d9mliackngbvd2g26k9sdlffspcj.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.656833071448-hmk7d9mliackngbvd2g26k9sdlffspcj</string>
+	<key>API_KEY</key>
+	<string>AIzaSyD44lnGgyWIovhAzVgkP_KapQAJ1jxjqlA</string>
+	<key>GCM_SENDER_ID</key>
+	<string>656833071448</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.PARKinetics</string>
+	<key>PROJECT_ID</key>
+	<string>parkinestics</string>
+	<key>STORAGE_BUCKET</key>
+	<string>parkinestics.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:656833071448:ios:b1d4fcec48e25cbc427d2d</string>
+	<key>DATABASE_URL</key>
+	<string>https://parkinestics.firebaseio.com</string>
+</dict>
+</plist>
