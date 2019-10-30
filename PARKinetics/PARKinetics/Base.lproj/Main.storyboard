@@ -97,7 +97,7 @@
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="bhE-Hv-tMX"/>
+                        <viewLayoutGuide key="safeArea" id="B09-w0-zcf"/>
                     </view>
                     <connections>
                         <outlet property="adventureStory" destination="qvf-Wu-NSQ" id="Uei-sj-j6E"/>
@@ -115,19 +115,23 @@
         <!--Finger TwisterVC-->
         <scene sceneID="JVC-5x-qYN">
             <objects>
-                <viewController id="sJy-ZL-YgR" customClass="FingerTwisterVC" customModule="PARKinetics" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="dbc-9w-8NF">
-                        <rect key="frame" x="0.0" y="0.0" width="712" height="984"/>
+                <viewController modalPresentationStyle="overFullScreen" id="sJy-ZL-YgR" customClass="FingerTwisterVC" customModule="PARKinetics" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="dbc-9w-8NF">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="FingerTwisterBlank-2" translatesAutoresizingMaskIntoConstraints="NO" id="rps-6V-Cen">
-                                <rect key="frame" x="0.0" y="0.0" width="712" height="984"/>
+                            <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="FingerTwisterBlank-2" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rps-6V-Cen">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" link="YES" image="YES" notEnabled="YES"/>
+                                </accessibility>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="Ahd-q5-G9U"/>
+                        <viewLayoutGuide key="safeArea" id="8g8-4L-IAL"/>
                     </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="768" height="1024"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FX0-gU-SDk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -135,7 +139,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="FingerTwisterBlank-2" width="2048" height="2732"/>
+        <image name="FingerTwisterBlank-2" width="1024" height="1366"/>
         <image name="stock1" width="101" height="115"/>
         <image name="stock2" width="111" height="111"/>
         <image name="stock3" width="121" height="99"/>
