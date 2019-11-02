@@ -15,7 +15,12 @@ class GameMenuVC: UIViewController {
     @IBOutlet weak var resume: UIButton!
     
     @IBAction func closeModal(_ sender: Any) {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "modalDissmised"), object: nil)
         dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func goToHome(_ sender: Any) {
+        performSegue(withIdentifier: "unwindToHomeFromGameMenu", sender: self)
     }
     
     override func viewDidLoad() {

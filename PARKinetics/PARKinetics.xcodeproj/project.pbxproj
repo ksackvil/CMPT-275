@@ -20,6 +20,7 @@
 		F748B5102356E0C9009A10B0 /* FingerTwisterGOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748B5092356E0C9009A10B0 /* FingerTwisterGOS.swift */; };
 		F748B5112356E0C9009A10B0 /* FingerTwisterGS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748B50A2356E0C9009A10B0 /* FingerTwisterGS.swift */; };
 		F748B5122356E0C9009A10B0 /* FingerTwisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748B50B2356E0C9009A10B0 /* FingerTwisterVC.swift */; };
+		F7A90FFC23700CB600C81ADA /* GameOverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A90FFB23700CB600C81ADA /* GameOverVC.swift */; };
 		F7EABAD02348710F00D94B1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EABACF2348710F00D94B1C /* AppDelegate.swift */; };
 		F7EABAD22348710F00D94B1C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EABAD12348710F00D94B1C /* ViewController.swift */; };
 		F7EABAD52348710F00D94B1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7EABAD32348710F00D94B1C /* Main.storyboard */; };
@@ -72,6 +73,7 @@
 		F748B5092356E0C9009A10B0 /* FingerTwisterGOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FingerTwisterGOS.swift; sourceTree = "<group>"; };
 		F748B50A2356E0C9009A10B0 /* FingerTwisterGS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FingerTwisterGS.swift; sourceTree = "<group>"; };
 		F748B50B2356E0C9009A10B0 /* FingerTwisterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FingerTwisterVC.swift; sourceTree = "<group>"; };
+		F7A90FFB23700CB600C81ADA /* GameOverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverVC.swift; sourceTree = "<group>"; };
 		F7EABACC2348710F00D94B1C /* PARKinetics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PARKinetics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7EABACF2348710F00D94B1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7EABAD12348710F00D94B1C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 		F7042182236D472D00F3BC3B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F7A90FFB23700CB600C81ADA /* GameOverVC.swift */,
 				F73934A2236E52A200BE4463 /* ProgressViewController.swift */,
 				F7042184236D47AD00F3BC3B /* GameMenuVC.swift */,
 			);
@@ -517,6 +520,7 @@
 			files = (
 				F748B5122356E0C9009A10B0 /* FingerTwisterVC.swift in Sources */,
 				F748B5102356E0C9009A10B0 /* FingerTwisterGOS.swift in Sources */,
+				F7A90FFC23700CB600C81ADA /* GameOverVC.swift in Sources */,
 				F748B5112356E0C9009A10B0 /* FingerTwisterGS.swift in Sources */,
 				F73934A3236E52A200BE4463 /* ProgressViewController.swift in Sources */,
 				F7042185236D47AD00F3BC3B /* GameMenuVC.swift in Sources */,
