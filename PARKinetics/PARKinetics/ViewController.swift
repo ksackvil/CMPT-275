@@ -46,11 +46,6 @@ class ViewController: UIViewController {
         shadowDdr.clipsToBounds = true
         shadowDdr.tag = 3
         
-        // Make font labels bold
-        fingerTwister.titleLabel?.font = UIFont.boldSystemFont(ofSize: 40)
-        adventureStory.titleLabel?.font = UIFont.boldSystemFont(ofSize: 40)
-        shadowDdr.titleLabel?.font = UIFont.boldSystemFont(ofSize: 40)
-        
 //        drawUserProgressLayer()
 //        updateUserProgress(inc: 200.0)
 //        userProgLabel.layer.zPosition = 1

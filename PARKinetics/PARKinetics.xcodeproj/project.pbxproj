@@ -11,6 +11,7 @@
 		3494E906C151D9F90396C08C /* Pods_PARKinetics_PARKineticsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2FA72305AD131C6CE2C4339 /* Pods_PARKinetics_PARKineticsUITests.framework */; };
 		79139E72B6730D5D40A76375 /* Pods_PARKinetics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8369F5BCA9489A30AB759198 /* Pods_PARKinetics.framework */; };
 		F7042181236D017800F3BC3B /* DbHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7042180236D017800F3BC3B /* DbHelper.swift */; };
+		F7042185236D47AD00F3BC3B /* GameMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7042184236D47AD00F3BC3B /* GameMenuVC.swift */; };
 		F7103C33236521480008AD74 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F7103C32236521480008AD74 /* GoogleService-Info.plist */; };
 		F748B50F2356E0C9009A10B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F748B5082356E0C9009A10B0 /* Assets.xcassets */; };
 		F748B5102356E0C9009A10B0 /* FingerTwisterGOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748B5092356E0C9009A10B0 /* FingerTwisterGOS.swift */; };
@@ -60,6 +61,7 @@
 		A07F838A1C789363E1844CC5 /* Pods-PARKinetics.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PARKinetics.release.xcconfig"; path = "Target Support Files/Pods-PARKinetics/Pods-PARKinetics.release.xcconfig"; sourceTree = "<group>"; };
 		F2FA72305AD131C6CE2C4339 /* Pods_PARKinetics_PARKineticsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PARKinetics_PARKineticsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7042180236D017800F3BC3B /* DbHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DbHelper.swift; sourceTree = "<group>"; };
+		F7042184236D47AD00F3BC3B /* GameMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMenuVC.swift; sourceTree = "<group>"; };
 		F7103C32236521480008AD74 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F748B5082356E0C9009A10B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F748B5092356E0C9009A10B0 /* FingerTwisterGOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FingerTwisterGOS.swift; sourceTree = "<group>"; };
@@ -138,6 +140,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F7042182236D472D00F3BC3B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F7AE61A62367CB88000041C5 /* ProgressViewController.swift */,
+				F7042184236D47AD00F3BC3B /* GameMenuVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F7042183236D479100F3BC3B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F7042180236D017800F3BC3B /* DbHelper.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		F71B368323491B9600D0E44F /* Games */ = {
 			isa = PBXGroup;
 			children = (
@@ -192,11 +211,11 @@
 			isa = PBXGroup;
 			children = (
 				F71B368323491B9600D0E44F /* Games */,
+				F7042182236D472D00F3BC3B /* Controllers */,
+				F7042183236D479100F3BC3B /* Services */,
 				F7EABACF2348710F00D94B1C /* AppDelegate.swift */,
 				F7EABAD12348710F00D94B1C /* ViewController.swift */,
 				F7EABAD32348710F00D94B1C /* Main.storyboard */,
-				F7AE61A62367CB88000041C5 /* ProgressViewController.swift */,
-				F7042180236D017800F3BC3B /* DbHelper.swift */,
 				F7EABAD62348710F00D94B1C /* Assets.xcassets */,
 				F7EABAD82348710F00D94B1C /* LaunchScreen.storyboard */,
 				F7103C32236521480008AD74 /* GoogleService-Info.plist */,
@@ -491,6 +510,7 @@
 				F748B5122356E0C9009A10B0 /* FingerTwisterVC.swift in Sources */,
 				F748B5102356E0C9009A10B0 /* FingerTwisterGOS.swift in Sources */,
 				F748B5112356E0C9009A10B0 /* FingerTwisterGS.swift in Sources */,
+				F7042185236D47AD00F3BC3B /* GameMenuVC.swift in Sources */,
 				F7042181236D017800F3BC3B /* DbHelper.swift in Sources */,
 				F7EABB122348712600D94B1C /* TestGameScene.swift in Sources */,
 				F7EABAD22348710F00D94B1C /* ViewController.swift in Sources */,
