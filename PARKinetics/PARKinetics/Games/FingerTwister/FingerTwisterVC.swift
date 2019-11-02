@@ -30,35 +30,22 @@ import UIKit
 import SpriteKit
 
 class FingerTwisterVC: UIViewController {
-    /*
     override func loadView() {
         self.view = SKView()
         //AppUtility.lockOrientation(.landscape)
-        
     }
- */
 
-    @IBAction func ButtonPressed(_ sender: UIButton) {
-        print("MENU PRESSED")
-        self.performSegue(withIdentifier: "MenuView", sender:self)
-      
-    }
-    
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-        
         backgroundImage.image = UIImage(named: "FingerTwisterBlank-2.png")
         backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
         
         print("in finger twister")
-        
     }
 
-    
-    
-    
-   
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
 }
