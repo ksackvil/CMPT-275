@@ -13,6 +13,9 @@ class ProgressViewController: UIViewController {
     
 //    @IBOutlet weak var userProgress: UIView!
 //    @IBOutlet weak var userProgLabel: UILabel!
+    @IBOutlet weak var userProgress: UIView!
+    @IBOutlet weak var userProgLabel: UILabel!
+    
     @IBOutlet weak var radarChart: RadarChartView!
     
     let userProgressCornerRadius: CGFloat = 100
@@ -28,9 +31,9 @@ class ProgressViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
                 
-//        drawUserProgressLayer()
-//        userProgLabel.layer.zPosition = 1
-//        updateUserProgress(inc: 80.0)
+        drawUserProgressLayer()
+        updateUserProgress(inc: 200.0)
+        userProgLabel.layer.zPosition = 1
         
         radarChart.chartDescription?.enabled = false
         radarChart.webLineWidth = 2
@@ -46,7 +49,7 @@ class ProgressViewController: UIViewController {
         xAxis.yOffset = 0
         xAxis.drawLabelsEnabled = true
         xAxis.valueFormatter = RadarChartXValueFormatter(withLabels: labels)
-        xAxis.labelTextColor = baseColor
+        xAxis.labelTextColor = .white
         
         let yAxis = radarChart.yAxis
         yAxis.labelFont = .systemFont(ofSize: 22, weight: .regular)
@@ -69,38 +72,38 @@ class ProgressViewController: UIViewController {
         radarChart.animate(xAxisDuration: 1.4, yAxisDuration: 1.4, easingOption: .easeOutBack)
     }
     
-//    private func drawUserProgressLayer() {
-//        let bezierPath = UIBezierPath(roundedRect: userProgress.bounds, cornerRadius: userProgressCornerRadius)
-//
-//        bezierPath.close()
-//        userProgressBorderLayer.path = bezierPath.cgPath
-//        userProgressBorderLayer.fillColor = baseColor.cgColor
-//        userProgressBorderLayer.strokeEnd = 0
-//
-//        let innerBezierPath = UIBezierPath(roundedRect: CGRect( x: 5, y: 5, width: userProgress.bounds.width-10, height: userProgress.bounds.height-10), cornerRadius: userProgressCornerRadius)
-//
-//        innerBezierPath.close()
-//        userProgressInnerLayer.path = innerBezierPath.cgPath
-//        userProgressInnerLayer.fillColor = UIColor.white.cgColor
-//        userProgressInnerLayer.strokeEnd = 0
-//
-//        userProgress.layer.addSublayer(userProgressBorderLayer)
-//        userProgress.layer.addSublayer(userProgressInnerLayer)
-//    }
-//
-//    private func updateUserProgress(inc: CGFloat) {
-//
-//        if (inc <= userProgress.bounds.width - 10) {
-//            userProgressLayer.removeFromSuperlayer()
-//
-//            let bezierPathProg = UIBezierPath(roundedRect: CGRect( x: 4, y: 5, width: inc, height: userProgress.bounds.height-10), cornerRadius: userProgressCornerRadius)
-//            bezierPathProg.close()
-//            userProgressLayer.path = bezierPathProg.cgPath
-//            userProgressLayer.fillColor = UIColor(red: 255, green: 141, blue: 156).cgColor
-//            userProgress.layer.addSublayer(userProgressLayer)
-//
-//        }
-//    }
+    private func drawUserProgressLayer() {
+        let bezierPath = UIBezierPath(roundedRect: userProgress.bounds, cornerRadius: userProgressCornerRadius)
+        
+        bezierPath.close()
+        userProgressBorderLayer.path = bezierPath.cgPath
+        userProgressBorderLayer.fillColor = UIColor.white.cgColor
+        userProgressBorderLayer.strokeEnd = 0
+        
+        let innerBezierPath = UIBezierPath(roundedRect: CGRect( x: 2, y: 2, width: userProgress.bounds.width-4, height: userProgress.bounds.height-4), cornerRadius: userProgressCornerRadius)
+        
+        innerBezierPath.close()
+        userProgressInnerLayer.path = innerBezierPath.cgPath
+        userProgressInnerLayer.fillColor = UIColor(red: 42, green: 44, blue: 46).cgColor
+        userProgressInnerLayer.strokeEnd = 0
+        
+        userProgress.layer.addSublayer(userProgressBorderLayer)
+        userProgress.layer.addSublayer(userProgressInnerLayer)
+    }
+    
+    public func updateUserProgress(inc: CGFloat) {
+        
+        if (inc <= userProgress.bounds.width - 10) {
+            userProgressLayer.removeFromSuperlayer()
+            
+            let bezierPathProg = UIBezierPath(roundedRect: CGRect( x: 1.4, y: 2, width: inc, height: userProgress.bounds.height-4), cornerRadius: userProgressCornerRadius)
+            bezierPathProg.close()
+            userProgressLayer.path = bezierPathProg.cgPath
+            userProgressLayer.fillColor = UIColor(red: 255, green: 99, blue: 119).cgColor
+            userProgress.layer.addSublayer(userProgressLayer)
+            
+        }
+    }
     
     private func radarChartUpdate() {
         self.setChartData()
@@ -108,7 +111,7 @@ class ProgressViewController: UIViewController {
     
     func setChartData() {
         let mult: UInt32 = 80
-        let min: UInt32 = 20
+        let min: UInt32 = 10
         let cnt = 5
         
         let block: (Int) -> RadarChartDataEntry = { _ in return RadarChartDataEntry(value: Double(arc4random_uniform(mult) + min))}
@@ -116,8 +119,8 @@ class ProgressViewController: UIViewController {
         let entries2 = (0..<cnt).map(block)
         
         let set1 = RadarChartDataSet(entries: entries1, label: "Last Week")
-        set1.setColor(UIColor(red: 103/255, green: 110/255, blue: 129/255, alpha: 1))
-        set1.fillColor = UIColor(red: 103/255, green: 110/255, blue: 129/255, alpha: 1)
+        set1.setColor(UIColor(red: 122, green: 124, blue: 129))
+        set1.fillColor = UIColor(red: 122, green: 124, blue: 129)
         set1.drawFilledEnabled = true
         set1.fillAlpha = 0.7
         set1.lineWidth = 2
@@ -125,8 +128,8 @@ class ProgressViewController: UIViewController {
         set1.setDrawHighlightIndicators(false)
         
         let set2 = RadarChartDataSet(entries: entries2, label: "This Week")
-        set2.setColor(UIColor(red: 121/255, green: 162/255, blue: 175/255, alpha: 1))
-        set2.fillColor = UIColor(red: 121/255, green: 162/255, blue: 175/255, alpha: 1)
+        set2.setColor(UIColor(red: 255, green: 99, blue: 119))
+        set2.fillColor = UIColor(red: 255, green: 99, blue: 119)
         set2.drawFilledEnabled = true
         set2.fillAlpha = 0.7
         set2.lineWidth = 2

@@ -17,10 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var shadowDdrLabel: UILabel!
     @IBOutlet weak var toolBar: UIBarButtonItem!
     
-    
-    @IBOutlet weak var userProgress: UIView!
-    @IBOutlet weak var userProgLabel: UILabel!
-    //    @IBOutlet weak var userProgress: UIView!
+        //    @IBOutlet weak var userProgress: UIView!
 //    @IBOutlet weak var userProgLabel: UILabel!
 
     let userProgressCornerRadius: CGFloat = 100
@@ -54,43 +51,43 @@ class ViewController: UIViewController {
         adventureStory.titleLabel?.font = UIFont.boldSystemFont(ofSize: 40)
         shadowDdr.titleLabel?.font = UIFont.boldSystemFont(ofSize: 40)
         
-        drawUserProgressLayer()
-        updateUserProgress(inc: 200.0)
-        userProgLabel.layer.zPosition = 1
+//        drawUserProgressLayer()
+//        updateUserProgress(inc: 200.0)
+//        userProgLabel.layer.zPosition = 1
     }
     
-    private func drawUserProgressLayer() {
-        let bezierPath = UIBezierPath(roundedRect: userProgress.bounds, cornerRadius: userProgressCornerRadius)
-
-        bezierPath.close()
-        userProgressBorderLayer.path = bezierPath.cgPath
-        userProgressBorderLayer.fillColor = UIColor.white.cgColor
-        userProgressBorderLayer.strokeEnd = 0
-
-        let innerBezierPath = UIBezierPath(roundedRect: CGRect( x: 2, y: 2, width: userProgress.bounds.width-4, height: userProgress.bounds.height-4), cornerRadius: userProgressCornerRadius)
-
-        innerBezierPath.close()
-        userProgressInnerLayer.path = innerBezierPath.cgPath
-        userProgressInnerLayer.fillColor = UIColor(red: 42, green: 44, blue: 46).cgColor
-        userProgressInnerLayer.strokeEnd = 0
-
-        userProgress.layer.addSublayer(userProgressBorderLayer)
-        userProgress.layer.addSublayer(userProgressInnerLayer)
-    }
-
-    public func updateUserProgress(inc: CGFloat) {
-
-        if (inc <= userProgress.bounds.width - 10) {
-            userProgressLayer.removeFromSuperlayer()
-
-            let bezierPathProg = UIBezierPath(roundedRect: CGRect( x: 1.4, y: 2, width: inc, height: userProgress.bounds.height-4), cornerRadius: userProgressCornerRadius)
-            bezierPathProg.close()
-            userProgressLayer.path = bezierPathProg.cgPath
-            userProgressLayer.fillColor = UIColor(red: 255, green: 141, blue: 156).cgColor
-            userProgress.layer.addSublayer(userProgressLayer)
-
-        }
-    }
+//    private func drawUserProgressLayer() {
+//        let bezierPath = UIBezierPath(roundedRect: userProgress.bounds, cornerRadius: userProgressCornerRadius)
+//
+//        bezierPath.close()
+//        userProgressBorderLayer.path = bezierPath.cgPath
+//        userProgressBorderLayer.fillColor = UIColor.white.cgColor
+//        userProgressBorderLayer.strokeEnd = 0
+//
+//        let innerBezierPath = UIBezierPath(roundedRect: CGRect( x: 2, y: 2, width: userProgress.bounds.width-4, height: userProgress.bounds.height-4), cornerRadius: userProgressCornerRadius)
+//
+//        innerBezierPath.close()
+//        userProgressInnerLayer.path = innerBezierPath.cgPath
+//        userProgressInnerLayer.fillColor = UIColor(red: 42, green: 44, blue: 46).cgColor
+//        userProgressInnerLayer.strokeEnd = 0
+//
+//        userProgress.layer.addSublayer(userProgressBorderLayer)
+//        userProgress.layer.addSublayer(userProgressInnerLayer)
+//    }
+//
+//    public func updateUserProgress(inc: CGFloat) {
+//
+//        if (inc <= userProgress.bounds.width - 10) {
+//            userProgressLayer.removeFromSuperlayer()
+//
+//            let bezierPathProg = UIBezierPath(roundedRect: CGRect( x: 1.4, y: 2, width: inc, height: userProgress.bounds.height-4), cornerRadius: userProgressCornerRadius)
+//            bezierPathProg.close()
+//            userProgressLayer.path = bezierPathProg.cgPath
+//            userProgressLayer.fillColor = UIColor(red: 255, green: 99, blue: 119).cgColor
+//            userProgress.layer.addSublayer(userProgressLayer)
+//
+//        }
+//    }
 
 }
 
