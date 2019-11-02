@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08BD4C83236CF89B002A2CE5 /* FingerTwisterMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BD4C82236CF89B002A2CE5 /* FingerTwisterMenuVC.swift */; };
 		30807DC4AB5560A952E7BC98 /* Pods_PARKineticsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05BEC29F49BA65EC09808E92 /* Pods_PARKineticsTests.framework */; };
 		3494E906C151D9F90396C08C /* Pods_PARKinetics_PARKineticsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2FA72305AD131C6CE2C4339 /* Pods_PARKinetics_PARKineticsUITests.framework */; };
 		79139E72B6730D5D40A76375 /* Pods_PARKinetics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8369F5BCA9489A30AB759198 /* Pods_PARKinetics.framework */; };
@@ -52,6 +53,7 @@
 /* Begin PBXFileReference section */
 		0205599F74CE616B1153D64D /* Pods-PARKineticsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PARKineticsTests.debug.xcconfig"; path = "Target Support Files/Pods-PARKineticsTests/Pods-PARKineticsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		05BEC29F49BA65EC09808E92 /* Pods_PARKineticsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PARKineticsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		08BD4C82236CF89B002A2CE5 /* FingerTwisterMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FingerTwisterMenuVC.swift; sourceTree = "<group>"; };
 		5382359DEB9B3FA07E8CE971 /* Pods-PARKinetics-PARKineticsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PARKinetics-PARKineticsUITests.debug.xcconfig"; path = "Target Support Files/Pods-PARKinetics-PARKineticsUITests/Pods-PARKinetics-PARKineticsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		692F2A08088FBCD649695F17 /* Pods-PARKineticsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PARKineticsTests.release.xcconfig"; path = "Target Support Files/Pods-PARKineticsTests/Pods-PARKineticsTests.release.xcconfig"; sourceTree = "<group>"; };
 		6D07B02284CFA7CF35F58FCA /* Pods-PARKinetics.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PARKinetics.debug.xcconfig"; path = "Target Support Files/Pods-PARKinetics/Pods-PARKinetics.debug.xcconfig"; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				F748B5092356E0C9009A10B0 /* FingerTwisterGOS.swift */,
 				F748B50A2356E0C9009A10B0 /* FingerTwisterGS.swift */,
 				F748B50B2356E0C9009A10B0 /* FingerTwisterVC.swift */,
+				08BD4C82236CF89B002A2CE5 /* FingerTwisterMenuVC.swift */,
 			);
 			path = FingerTwister;
 			sourceTree = "<group>";

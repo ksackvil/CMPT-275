@@ -161,23 +161,43 @@
         <!--Finger TwisterVC-->
         <scene sceneID="JVC-5x-qYN">
             <objects>
-                <viewController modalPresentationStyle="overFullScreen" id="sJy-ZL-YgR" customClass="FingerTwisterVC" customModule="PARKinetics" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FingerTwisterVC" modalPresentationStyle="overFullScreen" id="sJy-ZL-YgR" customClass="FingerTwisterVC" customModule="PARKinetics" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="dbc-9w-8NF">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="FingerTwisterBlank-2" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rps-6V-Cen">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="FingerTwisterBlank-2" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rps-6V-Cen">
+                                <rect key="frame" x="0.0" y="-20" width="768" height="1044"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" link="YES" image="YES" notEnabled="YES"/>
                                 </accessibility>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zIY-3f-WA5">
+                                <rect key="frame" x="0.0" y="20" width="768" height="67"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="46"/>
+                                <state key="normal" title="Menu">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="ButtonPressed:" destination="sJy-ZL-YgR" eventType="touchUpInside" id="dT3-Nf-Ig7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="8g8-4L-IAL" firstAttribute="trailing" secondItem="zIY-3f-WA5" secondAttribute="trailing" id="96E-JF-x3n"/>
+                            <constraint firstItem="zIY-3f-WA5" firstAttribute="top" secondItem="8g8-4L-IAL" secondAttribute="top" id="A7C-FE-CA9"/>
+                            <constraint firstItem="rps-6V-Cen" firstAttribute="trailing" secondItem="8g8-4L-IAL" secondAttribute="trailing" id="H7K-Ad-Gqw"/>
+                            <constraint firstItem="rps-6V-Cen" firstAttribute="top" secondItem="dbc-9w-8NF" secondAttribute="top" id="JYt-yx-nu1"/>
+                            <constraint firstItem="rps-6V-Cen" firstAttribute="leading" secondItem="8g8-4L-IAL" secondAttribute="leading" id="wOx-Cv-bPK"/>
+                            <constraint firstItem="zIY-3f-WA5" firstAttribute="leading" secondItem="8g8-4L-IAL" secondAttribute="leading" id="yMs-qh-ovM"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="8g8-4L-IAL"/>
                     </view>
                     <value key="contentSizeForViewInPopover" type="size" width="768" height="1024"/>
+                    <connections>
+                        <segue destination="LkT-5O-TMY" kind="showDetail" identifier="MenuView" id="Xk7-dF-Ml3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FX0-gU-SDk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -271,8 +291,14 @@
     </scenes>
     <resources>
         <image name="FingerTwisterBlank-2" width="1024" height="1366"/>
+        <image name="HomepageIcon" width="225" height="225"/>
+        <image name="ResumeGameIcon" width="512" height="368"/>
         <image name="stock1" width="101" height="115"/>
         <image name="stock2" width="111" height="111"/>
         <image name="stock3" width="61" height="60"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Xk7-dF-Ml3"/>
+        <segue reference="pGd-r5-aZT"/>
+    </inferredMetricsTieBreakers>
 </document>
