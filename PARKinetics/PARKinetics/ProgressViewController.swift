@@ -23,7 +23,7 @@ class ProgressViewController: UIViewController {
     
     var userProgressBorderLayer: CAShapeLayer = CAShapeLayer()
 
-    let labels = ["Burger", "Steak", "Salad", "Pasta", "Pizza"]
+    let labels = ["Posture", "Balance", "Speech", "Dexterity", "Facial"]
     
     override func viewDidLoad() {
         super.viewDidLoad()

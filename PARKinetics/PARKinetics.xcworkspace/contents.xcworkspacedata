@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/kaisackville-hii/Documents/School/CMPT-275/PARKinetics/PARKinetics/ProgressViewController.swift">
-   </FileRef>
-   <FileRef
       location = "group:PARKinetics.xcodeproj">
    </FileRef>
    <FileRef

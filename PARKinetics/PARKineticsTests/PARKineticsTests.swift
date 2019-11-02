@@ -23,6 +23,12 @@ class PARKineticsTests: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        var uid = DbHelper.createUser(username: "Evan1", email: "evanh@sfu.ca")
+        print(uid)
+        DbHelper.uploadGame(uid: uid, type: "Finger Twister", balance: "1", facial: "2", speech: "3", dexterity: "4", posture: "5")
+        DbHelper.retrieveAllGames(uid: uid, closure: { (games) in
+            print(games)
+        })
     }
 
     func testPerformanceExample() {
