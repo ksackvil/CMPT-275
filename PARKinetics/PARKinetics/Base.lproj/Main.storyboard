@@ -18,13 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PARKinetics" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bUG-J2-0Hw">
-                                <rect key="frame" x="237" y="51" width="294" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="46"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="neV-80-dKf">
                                 <rect key="frame" x="20" y="403" width="728" height="265"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -115,6 +108,13 @@
                                     </imageView>
                                 </subviews>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PARKinetics" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bUG-J2-0Hw">
+                                <rect key="frame" x="143" y="483" width="483" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="50"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.16470588235294117" green="0.17254901960784313" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
@@ -139,10 +139,14 @@
                     <connections>
                         <outlet property="adventureStory" destination="qvf-Wu-NSQ" id="Uei-sj-j6E"/>
                         <outlet property="adventureStoryLabel" destination="Y2V-8d-TLM" id="VGW-Y0-gFF"/>
+                        <outlet property="adventureStoryView" destination="neV-80-dKf" id="cvf-Ew-Fbo"/>
                         <outlet property="fingerTwister" destination="dGL-zQ-JMn" id="Vif-on-3nQ"/>
                         <outlet property="fingerTwisterLabel" destination="u5U-XN-I6g" id="ddm-EJ-TeL"/>
+                        <outlet property="fingerTwisterView" destination="w1c-6F-Hr6" id="iqJ-iQ-1Um"/>
+                        <outlet property="mainTitle" destination="bUG-J2-0Hw" id="ifo-F6-cB3"/>
                         <outlet property="shadowDdr" destination="Da3-Tw-8wR" id="y6H-at-z7h"/>
                         <outlet property="shadowDdrLabel" destination="Mne-PK-ZiB" id="JkN-zN-MBI"/>
+                        <outlet property="shadowDdrView" destination="mGk-ax-FHo" id="Ema-db-qZt"/>
                         <outlet property="toolBar" destination="ICJ-vr-wMe" id="Qgr-Yk-pdt"/>
                     </connections>
                 </viewController>
@@ -488,7 +492,7 @@
         <image name="stock3" width="61" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="QYD-Lx-l2O"/>
+        <segue reference="mYh-3T-3O1"/>
         <segue reference="8MS-yg-EMZ"/>
     </inferredMetricsTieBreakers>
 </document>

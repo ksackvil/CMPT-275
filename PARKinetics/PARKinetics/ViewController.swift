@@ -16,9 +16,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var shadowDdr: UIButton!
     @IBOutlet weak var shadowDdrLabel: UILabel!
     @IBOutlet weak var toolBar: UIBarButtonItem!
-    
-        //    @IBOutlet weak var userProgress: UIView!
-//    @IBOutlet weak var userProgLabel: UILabel!
+    @IBOutlet weak var mainTitle: UILabel!
+    @IBOutlet weak var adventureStoryView: UIView!
+    @IBOutlet weak var fingerTwisterView: UIView!
+    @IBOutlet weak var shadowDdrView: UIView!
 
     let userProgressCornerRadius: CGFloat = 100
     let userProgressLayer: CAShapeLayer = CAShapeLayer()
@@ -46,44 +47,27 @@ class ViewController: UIViewController {
         shadowDdr.clipsToBounds = true
         shadowDdr.tag = 3
         
-//        drawUserProgressLayer()
-//        updateUserProgress(inc: 200.0)
-//        userProgLabel.layer.zPosition = 1
+        adventureStoryView.isHidden = true
+        fingerTwisterView.isHidden = true
+        shadowDdrView.isHidden = true
+        
+        UIView.animateKeyframes(withDuration: 1.0, delay: 1.0, options: [], animations: {
+            self.mainTitle.transform = CGAffineTransform(scaleX: 1.6, y: 1.6)
+            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.5, animations: {
+                self.mainTitle.transform = CGAffineTransform(translationX: 0, y: -453)
+            })
+        }, completion: {_ in
+            UIView.transition(with: self.adventureStoryView, duration: 0.5, options: .transitionCrossDissolve, animations: {
+                self.adventureStoryView.isHidden = false
+            }, completion: nil)
+            UIView.transition(with: self.fingerTwisterView, duration: 0.5, options: .transitionCrossDissolve, animations: {
+                self.fingerTwisterView.isHidden = false
+            }, completion: nil)
+            UIView.transition(with: self.shadowDdrView, duration: 0.5, options: .transitionCrossDissolve, animations: {
+                self.shadowDdrView.isHidden = false
+            }, completion: nil)
+        })
     }
-    
-//    private func drawUserProgressLayer() {
-//        let bezierPath = UIBezierPath(roundedRect: userProgress.bounds, cornerRadius: userProgressCornerRadius)
-//
-//        bezierPath.close()
-//        userProgressBorderLayer.path = bezierPath.cgPath
-//        userProgressBorderLayer.fillColor = UIColor.white.cgColor
-//        userProgressBorderLayer.strokeEnd = 0
-//
-//        let innerBezierPath = UIBezierPath(roundedRect: CGRect( x: 2, y: 2, width: userProgress.bounds.width-4, height: userProgress.bounds.height-4), cornerRadius: userProgressCornerRadius)
-//
-//        innerBezierPath.close()
-//        userProgressInnerLayer.path = innerBezierPath.cgPath
-//        userProgressInnerLayer.fillColor = UIColor(red: 42, green: 44, blue: 46).cgColor
-//        userProgressInnerLayer.strokeEnd = 0
-//
-//        userProgress.layer.addSublayer(userProgressBorderLayer)
-//        userProgress.layer.addSublayer(userProgressInnerLayer)
-//    }
-//
-//    public func updateUserProgress(inc: CGFloat) {
-//
-//        if (inc <= userProgress.bounds.width - 10) {
-//            userProgressLayer.removeFromSuperlayer()
-//
-//            let bezierPathProg = UIBezierPath(roundedRect: CGRect( x: 1.4, y: 2, width: inc, height: userProgress.bounds.height-4), cornerRadius: userProgressCornerRadius)
-//            bezierPathProg.close()
-//            userProgressLayer.path = bezierPathProg.cgPath
-//            userProgressLayer.fillColor = UIColor(red: 255, green: 99, blue: 119).cgColor
-//            userProgress.layer.addSublayer(userProgressLayer)
-//
-//        }
-//    }
-
 }
 
 extension UIColor {
