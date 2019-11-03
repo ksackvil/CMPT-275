@@ -33,78 +33,8 @@ import Foundation
 
 class FingerTwisterVC: UIViewController {
     
-    /*override func loadView() {
-     self.view = SKView()
-     AppUtility.lockOrientation(.portrait)
-     }*/
-    
-   /* override func viewWillAppear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        self.navigationController?.setToolbarHidden(true, animated: animated)
-    }*/
-    
-    /*override func viewWillDisappear (_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        self.navigationController?.setToolbarHidden(false, animated: animated)
-    }*/
-    
-    
-    
-    public var checkOn: [Int] = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
-    public var checkTouched: [Int] = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
-    public var correctTap = 0
-    
-    
-    @IBOutlet var buttons: [UIButton]!
-    
-    @IBAction func touchedDown(_ sender: UIButton) {
-        sender.isSelected = !sender.isSelected
-        //let index = buttons.firstIndex(of: sender)!
-        for i in buttons.indices {
-            if buttons[i].isHighlighted{
-                checkTouched[i] = 1
-                print("this",checkTouched[i])
-                for j in checkTouched{
-                    print("touchedDown",checkTouched[j])
-                }
-            }
-        }
-        successfulNote()
-    }
-    
-    public func successfulNote(){
-        for k in checkTouched{
-            if checkTouched[k]==1{
-                print("yes")
-            }
-            else{
-         //       print("no")
-            }
-        }
-        for i in checkOn {
-            if checkOn[i]==1{
-                print("inside",checkTouched[i])
-                if checkOn[i] != checkTouched[i]{
-                    correctTap = 0
-                    for j in checkTouched{
-                       // checkTouched[j] = 0
-                    }
-                }
-                else {
-                    correctTap = 1
-                }
-            }
-        }
-        if correctTap==1{
-            print("success")
-        }
-        else {
-            print("failure")
-        }
-    }
-    
-    
     override func viewDidLoad() {
+
         super.viewDidLoad()
         //buttons.randomElement()
         self.view.isMultipleTouchEnabled = true
@@ -119,21 +49,106 @@ class FingerTwisterVC: UIViewController {
         self.view.insertSubview(backgroundImage, at: 0)
     }
     
-    /*override func viewDidLoad() {
-     super.viewDidLoad()
-     
-     let scene = FingerTwisterGS(size: view.bounds.size)
-     let skView = view as! SKView
-     skView.showsFPS = true
-     skView.showsNodeCount = true
-     skView.ignoresSiblingOrder = true
-     //print(scene.size) //returns zero for some reason
-     //will need to be fixed later for universal resizing
-     scene.scaleMode = SKSceneScaleMode.resizeFill
-     skView.presentScene(scene)
-     }*/
+   
+    
+   /* override func viewWillAppear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.setToolbarHidden(true, animated: animated)
+    }*/
+    
+    /*override func viewWillDisappear (_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.setToolbarHidden(false, animated: animated)
+    }*/
+    
+    
+    
+    public var checkOn: [Int] = [0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0]
+    public var checkTouched: [Int] = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+    public var correctTap = 0
+    var j = 0
+    var i = 0
+    var k = 0
+    //var start = 0
+    //var startTimer = Timer()
+    
+    var gameTime = 5
+    var gameTimer = Timer()
+    
+    /*                gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(FingerTwisterVC.timerFunc), userInfo: nil, repeats: true) */ //waiting initialize Func
+    
+    
+    @objc func timerFunc() {
+        
+        gameTime -= 1
+        if gameTime == 0 {
+            gameTimer.invalidate()
+            print("TIME IS zero")
+            //RESET FUNCTION HAS TO GO INSIDE
+        }
+    }
+    
+    @IBOutlet var buttons: [UIButton]!
+    
+    @IBAction func touchedDown(_ sender: UIButton) {
+        
+
+        sender.isSelected = !sender.isSelected
+        //let index = buttons.firstIndex(of: sender)!
+        for i in buttons.indices {
+            if buttons[i].isHighlighted{
+                checkTouched[i] = 1
+                print("this",checkTouched[i])
+                j = 0
+                while (j < 16){
+                    print("touchedDown",checkTouched[j])
+                    j+=1
+                }
+            }
+        }
+        successfulNote()
+    }
+    
+    public func successfulNote(){
+        k = 0
+        i = 0
+        j = 0
+        while (k < 16){
+            if checkTouched[k]==1{
+                print("yes")
+            }
+            else{
+         //       print("no")
+            }
+            k+=1
+        }
+        while (i < 16) {
+            if checkOn[i]==1{
+                print("inside",checkTouched[i])
+                if checkOn[i] != checkTouched[i]{
+                    correctTap = 0
+                    while (j < 16){
+                        checkTouched[j] = 0
+                        j+=1
+                    }
+                }
+                else {
+                    correctTap = 1
+                }
+            }
+            i+=1
+        }
+        if correctTap==1{
+            print("success")
+        }
+        else {
+            print("failure")
+        }
+    }
+
     
     override var prefersStatusBarHidden: Bool {
         return true
     }
+    
 }

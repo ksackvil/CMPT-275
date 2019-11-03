@@ -336,7 +336,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FX0-gU-SDk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1715" y="133"/>
+            <point key="canvasLocation" x="1714.84375" y="132.421875"/>
         </scene>
         <!--Progress-->
         <scene sceneID="eRb-Av-cil">
@@ -375,7 +375,7 @@
                     </view>
                     <toolbarItems>
                         <barButtonItem style="plain" id="k1W-9A-Mks">
-                            <pageControl key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" currentPage="1" id="opo-uq-Q91">
+                            <pageControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" currentPage="1" id="opo-uq-Q91">
                                 <rect key="frame" x="20" y="6.5" width="672" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="pageIndicatorTintColor" red="0.63921568630000003" green="0.72549019609999998" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -486,7 +486,6 @@
         <image name="stock3" width="61" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hdN-cT-nja"/>
         <segue reference="QYD-Lx-l2O"/>
         <segue reference="8MS-yg-EMZ"/>
     </inferredMetricsTieBreakers>
