@@ -38,29 +38,21 @@ class FingerTwisterVC: UIViewController {
      AppUtility.lockOrientation(.portrait)
      }*/
     
-    override func viewWillAppear(_ animated: Bool) {
+   /* override func viewWillAppear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationController?.setToolbarHidden(true, animated: animated)
-    }
+    }*/
     
-    override func viewWillDisappear (_ animated: Bool) {
+    /*override func viewWillDisappear (_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationController?.setToolbarHidden(false, animated: animated)
-    }
+    }*/
     
-    public func successfulNote(touchArray: [Int]){
-        for i in checkOn {
-            if checkOn[i] != checkTouched[i]{
-                incorrectTap = 1
-            }
-            else {
-                incorrectTap = 0
-            }
-        }
-    }
-    public var checkOn: [Int] = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+    
+    
+    public var checkOn: [Int] = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
     public var checkTouched: [Int] = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
-    public var incorrectTap = 1
+    public var correctTap = 0
     
     
     @IBOutlet var buttons: [UIButton]!
@@ -71,18 +63,51 @@ class FingerTwisterVC: UIViewController {
         for i in buttons.indices {
             if buttons[i].isHighlighted{
                 checkTouched[i] = 1
+                print("this",checkTouched[i])
+                for j in checkTouched{
+                    print("touchedDown",checkTouched[j])
+                }
             }
         }
+        successfulNote()
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
-        
+    public func successfulNote(){
+        for k in checkTouched{
+            if checkTouched[k]==1{
+                print("yes")
+            }
+            else{
+         //       print("no")
+            }
+        }
+        for i in checkOn {
+            if checkOn[i]==1{
+                print("inside",checkTouched[i])
+                if checkOn[i] != checkTouched[i]{
+                    correctTap = 0
+                    for j in checkTouched{
+                       // checkTouched[j] = 0
+                    }
+                }
+                else {
+                    correctTap = 1
+                }
+            }
+        }
+        if correctTap==1{
+            print("success")
+        }
+        else {
+            print("failure")
+        }
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //buttons.randomElement()
+        self.view.isMultipleTouchEnabled = true
         buttons.forEach {
             $0.layer.borderWidth = 1.0
             $0.layer.borderColor = UIColor.black.cgColor
@@ -92,8 +117,6 @@ class FingerTwisterVC: UIViewController {
         backgroundImage.image = UIImage(named: "FingerTwisterBlank-2.png")
         backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
-        
-        print("in finger twister")
     }
     
     /*override func viewDidLoad() {
