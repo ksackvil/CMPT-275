@@ -76,6 +76,11 @@ class FingerTwisterVC: UIViewController {
         return true
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setToolbarHidden(true, animated: animated)
+    }
+    
     // MARK: Actions
     @IBAction func touchedDown(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
@@ -154,11 +159,16 @@ class FingerTwisterVC: UIViewController {
         var i = 0
         correctTap = 0
         while i<4 {//4 can be changed to however many tiles we want pressed
-            let n = Int.random(in: 0 ... 15)
+            let n = (i * 4) + Int.random(in: 0 ... 3)
             if checkOn[n] == 0 {
                 checkOn[n] = 1
-                buttons[n].backgroundColor = .yellow
-                i += 1
+                for j in 1...15 {
+                    if buttons[j].tag == n {
+                        buttons[j].backgroundColor = .yellow
+                        i += 1
+                        break
+                    }
+                }
             }
         }
     }
@@ -167,7 +177,7 @@ class FingerTwisterVC: UIViewController {
     {
         noteCount+=1
         
-        if noteCount >= 2 {
+        if noteCount >= 4 {
             
             audioPlayer.stop() //@Negar: Stop the Song
             gameTimer.invalidate()
@@ -212,9 +222,7 @@ class FingerTwisterVC: UIViewController {
     }
     
     func gameOverHandler(result:Double) {
-//        let govc = GameOverVC()
-//        govc.score = result
-//        self.navigationController?.pushViewController(GameOverVC(), animated: true)
+        performSegue(withIdentifier: "FingerTwisterGO", sender: self)
     }
 }
 

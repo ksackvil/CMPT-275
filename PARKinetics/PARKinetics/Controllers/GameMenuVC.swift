@@ -19,6 +19,10 @@ class GameMenuVC: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func goToHome(_ sender: Any) {
+        performSegue(withIdentifier: "unwindToHomeFromGameMenu", sender: self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

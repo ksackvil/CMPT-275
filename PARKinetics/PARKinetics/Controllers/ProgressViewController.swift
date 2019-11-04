@@ -66,7 +66,6 @@ class ProgressViewController: UIViewController {
         legendSet2.layer.cornerRadius = 10
         legendSet2.clipsToBounds = true
         legendSet2.tag = 1
-
         
 //        let l = radarChart.legend
 //        l.horizontalAlignment = .center

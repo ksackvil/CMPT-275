@@ -30,8 +30,9 @@ class ViewController: UIViewController {
 
 
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
+        super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        self.navigationController?.setToolbarHidden(false, animated: animated)
     }
 
     override func viewDidLoad() {
@@ -68,6 +69,10 @@ class ViewController: UIViewController {
                 self.shadowDdrView.isHidden = false
             }, completion: nil)
         })
+    }
+    
+    @IBAction func unwindToViewController(segue: UIStoryboardSegue) {
+//        performSegue(withIdentifier: "unwindToHome", sender: self)
     }
     
 }

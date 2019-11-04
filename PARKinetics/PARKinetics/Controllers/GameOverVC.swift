@@ -12,6 +12,10 @@ import UIKit
 class GameOverVC: UIViewController {
     var score:Double = -1;
     
+    @IBAction func goToHome(_ sender: Any) {
+        performSegue(withIdentifier: "unwindToHome", sender: self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
