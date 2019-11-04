@@ -47,6 +47,7 @@ class FingerTwisterVC: UIViewController {
         backgroundImage.image = UIImage(named: "FingerTwisterBlank-2.png")
         backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
+        Reset()
     }
     
    
@@ -62,20 +63,21 @@ class FingerTwisterVC: UIViewController {
     }*/
     
     
-    
-    public var checkOn: [Int] = [0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0]
+   
+    public var checkOn: [Int] = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
     public var checkTouched: [Int] = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
     public var correctTap = 0
+    public var noteCount = 0
     var j = 0
     var i = 0
     var k = 0
     //var start = 0
     //var startTimer = Timer()
     
-    var gameTime = 5
-    var gameTimer = Timer()
     
-    /*                gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(FingerTwisterVC.timerFunc), userInfo: nil, repeats: true) */ //waiting initialize Func
+    var gameTimer = Timer()
+    var gameTime = 5
+
     
     
     @objc func timerFunc() {
@@ -84,6 +86,7 @@ class FingerTwisterVC: UIViewController {
         if gameTime == 0 {
             gameTimer.invalidate()
             print("TIME IS zero")
+             Reset()
             //RESET FUNCTION HAS TO GO INSIDE
         }
     }
@@ -123,7 +126,9 @@ class FingerTwisterVC: UIViewController {
             k+=1
         }
         while (i < 16) {
+            
             if checkOn[i]==1{
+               
                 print("inside",checkTouched[i])
                 if checkOn[i] != checkTouched[i]{
                     correctTap = 0
@@ -136,19 +141,98 @@ class FingerTwisterVC: UIViewController {
                     correctTap = 1
                 }
             }
+          
             i+=1
         }
         if correctTap==1{
             print("success")
+            Reset()
         }
         else {
             print("failure")
         }
     }
-
+    //TK -Display the buttons to be pressed
+    @objc func initialize() {
+        
+        var i = 0
+        correctTap = 0
+        while i<4 {//4 can be changed to however many tiles we want pressed
+            let n = Int.random(in: 0 ... 15)
+            if checkOn[n] == 0 {
+                checkOn[n] = 1
+                buttons[n].backgroundColor = .yellow
+                print("Lighting up Buttons")
+                i += 1
+            }
+        }
+       
+//        delay(bySeconds: 2) {
+//            i = 0
+//            while (i<16){
+//                self.buttons[i].backgroundColor = .gray
+//                i+=1
+//            }
+//        }
+    }
+    
+    public func Reset()
+    {
+        noteCount+=1
+        if noteCount >= 20 {
+            
+            //GAMEOVER SCREEN
+            //SWITCH TO THE PROFILE SCREEN 
+        }
+        checkOn = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+        checkTouched = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+        var i = 0
+        i = 0
+        while (i<16){
+            self.buttons[i].backgroundColor = .gray
+            print("GREY")
+            i+=1
+        }
+        delay(bySeconds: 2) {
+            self.gameTime = 5
+            self.gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self,selector:#selector(FingerTwisterVC.timerFunc), userInfo: nil, repeats: true)  //waiting initialize Func
+            self.initialize()
+            print("DELAY")
+        }
+      
+        
+    }
     
     override var prefersStatusBarHidden: Bool {
         return true
     }
+
+    
+    
     
 }
+//TK -Function To help generate delay. Only works for calling thread. does not delay other threads
+public func delay(bySeconds seconds: Double, dispatchLevel: DispatchLevel = .main, closure: @escaping () -> Void) {
+    let dispatchTime = DispatchTime.now() + seconds
+    dispatchLevel.dispatchQueue.asyncAfter(deadline: dispatchTime, execute: closure)
+}
+
+public enum DispatchLevel {
+    case main, userInteractive, userInitiated, utility, background
+    var dispatchQueue: DispatchQueue {
+        switch self {
+        case .main:                 return DispatchQueue.main
+        case .userInteractive:      return DispatchQueue.global(qos: .userInteractive)
+        case .userInitiated:        return DispatchQueue.global(qos: .userInitiated)
+        case .utility:              return DispatchQueue.global(qos: .utility)
+        case .background:           return DispatchQueue.global(qos: .background)
+        }
+    }
+}
+
+    
+    
+
+    
+
+
