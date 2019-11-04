@@ -2,13 +2,24 @@
 //  ViewController.swift
 //  PARKinetics
 //
-//  Created by Kai Sackville-Hii on 2019-10-04.
-//  Copyright © 2019 Kai Sackville-Hii. All rights reserved.
+//  Created by TANKER on 2019-10-04.
+//  Copyright © 2019 TANKER. All rights reserved.
+//
+//  Contributors:
+//      Kai Sackville-Hii
+//          - File creation
+//          - viewWillAppear() view setup and animations
+//          - unwindToViewController() segue
+//          - UIColor extension
 //
 
 import UIKit
 
+//  This file is the view controller for the Home screen. This is the root
+//  controller for the PARKinetics project.
 class ViewController: UIViewController {
+    
+    // MARK: Outlets
     @IBOutlet weak var fingerTwister: UIButton!
     @IBOutlet weak var fingerTwisterLabel: UILabel!
     @IBOutlet weak var adventureStory: UIButton!
@@ -21,14 +32,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var fingerTwisterView: UIView!
     @IBOutlet weak var shadowDdrView: UIView!
 
-    
-    let userProgressCornerRadius: CGFloat = 100
-    let userProgressLayer: CAShapeLayer = CAShapeLayer()
-    let userProgressInnerLayer: CAShapeLayer = CAShapeLayer()
-
-    var userProgressBorderLayer: CAShapeLayer = CAShapeLayer()
-
-
+    // MARK: Overides
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
@@ -72,11 +76,12 @@ class ViewController: UIViewController {
     }
     
     @IBAction func unwindToViewController(segue: UIStoryboardSegue) {
-//        performSegue(withIdentifier: "unwindToHome", sender: self)
+        // custom unwind handler
     }
     
 }
 
+// MARK: Helpers
 extension UIColor {
     convenience init(red: Int, green: Int, blue: Int) {
         assert(red >= 0 && red <= 255, "Invalid red component")
