@@ -53,7 +53,6 @@ class FingerTwisterVC: UIViewController {
         Reset()
         
     }
-    
 
     public var checkOn: [Int] = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
     public var checkTouched: [Int] = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
@@ -185,14 +184,14 @@ class FingerTwisterVC: UIViewController {
         i = 0
         while (i<16){
             self.buttons[i].backgroundColor = .gray
-            print("GREY")
+//            print("GREY")
             i+=1
         }
         delay(bySeconds: 1) {
             self.gameTime = 4
             self.gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self,selector:#selector(FingerTwisterVC.timerFunc), userInfo: nil, repeats: true)  //waiting initialize Func
             self.initialize()
-            print("DELAY")
+//            print("DELAY")
         }
     }
     
