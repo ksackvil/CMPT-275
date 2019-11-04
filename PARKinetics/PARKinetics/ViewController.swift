@@ -21,6 +21,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var fingerTwisterView: UIView!
     @IBOutlet weak var shadowDdrView: UIView!
 
+    
     let userProgressCornerRadius: CGFloat = 100
     let userProgressLayer: CAShapeLayer = CAShapeLayer()
     let userProgressInnerLayer: CAShapeLayer = CAShapeLayer()
@@ -51,10 +52,10 @@ class ViewController: UIViewController {
         fingerTwisterView.isHidden = true
         shadowDdrView.isHidden = true
         
-        UIView.animateKeyframes(withDuration: 1.0, delay: 1.0, options: [], animations: {
+        UIView.animateKeyframes(withDuration: 1.0, delay: 0.3, options: [], animations: {
             self.mainTitle.transform = CGAffineTransform(scaleX: 1.6, y: 1.6)
-            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.5, animations: {
-                self.mainTitle.transform = CGAffineTransform(translationX: 0, y: -453)
+            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.6, animations: {
+                self.mainTitle.transform = CGAffineTransform(translationX: 0, y: -230)
             })
         }, completion: {_ in
             UIView.transition(with: self.adventureStoryView, duration: 0.5, options: .transitionCrossDissolve, animations: {

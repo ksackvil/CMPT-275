@@ -15,6 +15,8 @@ class ProgressViewController: UIViewController {
 //    @IBOutlet weak var userProgLabel: UILabel!
     @IBOutlet weak var userProgress: UIView!
     @IBOutlet weak var userProgLabel: UILabel!
+    @IBOutlet weak var legendSet2: UIView!
+    @IBOutlet weak var legendSet1: UIView!
     
     @IBOutlet weak var radarChart: RadarChartView!
     
@@ -57,6 +59,14 @@ class ProgressViewController: UIViewController {
         yAxis.axisMinimum = 0
         yAxis.axisMaximum = 80
         yAxis.drawLabelsEnabled = false
+        
+        legendSet1.layer.cornerRadius = 10
+        legendSet1.clipsToBounds = true
+        legendSet1.tag = 1
+        legendSet2.layer.cornerRadius = 10
+        legendSet2.clipsToBounds = true
+        legendSet2.tag = 1
+
         
 //        let l = radarChart.legend
 //        l.horizontalAlignment = .center

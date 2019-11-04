@@ -40,6 +40,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      didFinishLaunchingWithOptions launchOptions:
         [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
+        // Delay 1 second
+        RunLoop.current.run(until: Date(timeIntervalSinceNow: 1.0))
         return true
     }
     

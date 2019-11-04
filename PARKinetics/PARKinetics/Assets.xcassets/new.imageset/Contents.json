@@ -2,12 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "projectile.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "projectile@2x.png",
+      "filename" : "new.png",
       "scale" : "2x"
     },
     {
