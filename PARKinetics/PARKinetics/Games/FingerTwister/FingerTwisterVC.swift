@@ -33,8 +33,6 @@ import Foundation
 
 class FingerTwisterVC: UIViewController {
     
-    
-    
     var audioPlayer = AVAudioPlayer()
     
     override func viewDidLoad() {
@@ -72,25 +70,19 @@ class FingerTwisterVC: UIViewController {
     
     var gameTimer = Timer()
     var gameTime = 5
-
-    
     
     @objc func timerFunc() {
-        
         gameTime -= 1
         if gameTime == 0 {
             gameTimer.invalidate()
             print("TIME IS zero")
              Reset()
-            
         }
     }
     
     @IBOutlet var buttons: [UIButton]!
     
     @IBAction func touchedDown(_ sender: UIButton) {
-        
-
         sender.isSelected = !sender.isSelected
         //let index = buttons.firstIndex(of: sender)!
         for i in buttons.indices {
@@ -107,6 +99,10 @@ class FingerTwisterVC: UIViewController {
         successfulNote()
     }
     
+    @IBAction func menuButtonPressed(_ sender: Any) {
+        audioPlayer.pause()
+    }
+    
     public func successfulNote(){
         k = 0
         i = 0
@@ -121,7 +117,6 @@ class FingerTwisterVC: UIViewController {
             k+=1
         }
         while (i < 16) {
-            
             if checkOn[i]==1{
                
                 print("inside",checkTouched[i])
@@ -136,7 +131,6 @@ class FingerTwisterVC: UIViewController {
                     correctTap = 1
                 }
             }
-          
             i+=1
         }
         if correctTap==1{
@@ -200,8 +194,6 @@ class FingerTwisterVC: UIViewController {
             self.initialize()
             print("DELAY")
         }
-      
-        
     }
     
     func music(fileNamed: String)
