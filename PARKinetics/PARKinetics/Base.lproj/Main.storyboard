@@ -18,13 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PARKinetics" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bUG-J2-0Hw">
-                                <rect key="frame" x="237" y="51" width="294" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="46"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="neV-80-dKf">
                                 <rect key="frame" x="20" y="403" width="728" height="265"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -115,6 +108,13 @@
                                     </imageView>
                                 </subviews>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PARKinetics" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bUG-J2-0Hw">
+                                <rect key="frame" x="143" y="258" width="483" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="50"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.16470588235294117" green="0.17254901960784313" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
@@ -139,10 +139,14 @@
                     <connections>
                         <outlet property="adventureStory" destination="qvf-Wu-NSQ" id="Uei-sj-j6E"/>
                         <outlet property="adventureStoryLabel" destination="Y2V-8d-TLM" id="VGW-Y0-gFF"/>
+                        <outlet property="adventureStoryView" destination="neV-80-dKf" id="cvf-Ew-Fbo"/>
                         <outlet property="fingerTwister" destination="dGL-zQ-JMn" id="Vif-on-3nQ"/>
                         <outlet property="fingerTwisterLabel" destination="u5U-XN-I6g" id="ddm-EJ-TeL"/>
+                        <outlet property="fingerTwisterView" destination="w1c-6F-Hr6" id="iqJ-iQ-1Um"/>
+                        <outlet property="mainTitle" destination="bUG-J2-0Hw" id="ifo-F6-cB3"/>
                         <outlet property="shadowDdr" destination="Da3-Tw-8wR" id="y6H-at-z7h"/>
                         <outlet property="shadowDdrLabel" destination="Mne-PK-ZiB" id="JkN-zN-MBI"/>
+                        <outlet property="shadowDdrView" destination="mGk-ax-FHo" id="Ema-db-qZt"/>
                         <outlet property="toolBar" destination="ICJ-vr-wMe" id="Qgr-Yk-pdt"/>
                     </connections>
                 </viewController>
@@ -163,7 +167,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="FingerTwisterBlank-2" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rps-6V-Cen">
+                            <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="FingerTwisterBackground" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rps-6V-Cen">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration">
@@ -368,6 +372,30 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.1647058824" green="0.17254901959999999" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ciy-bY-z1E">
+                                <rect key="frame" x="203" y="848" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.88235294117647056" green="0.38823529411764707" blue="0.46666666666666667" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X0C-E8-T3c">
+                                <rect key="frame" x="407" y="848" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.47843137254901957" green="0.48627450980392156" blue="0.50588235294117645" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This Week" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ds-TZ-Jgz">
+                                <rect key="frame" x="271" y="862" width="100" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Last Week" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jjm-de-GGd">
+                                <rect key="frame" x="465" y="860" width="100" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.1647058824" green="0.17254901959999999" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
@@ -378,7 +406,7 @@
                     </view>
                     <toolbarItems>
                         <barButtonItem style="plain" id="k1W-9A-Mks">
-                            <pageControl key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" currentPage="1" id="opo-uq-Q91">
+                            <pageControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" currentPage="1" id="opo-uq-Q91">
                                 <rect key="frame" x="20" y="6.5" width="728" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="pageIndicatorTintColor" red="0.63921568630000003" green="0.72549019609999998" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -389,6 +417,8 @@
                     <navigationItem key="navigationItem" title="Progress" largeTitleDisplayMode="always" id="HB9-XU-U8y"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="legendSet1" destination="X0C-E8-T3c" id="VIa-RD-Zc3"/>
+                        <outlet property="legendSet2" destination="Ciy-bY-z1E" id="6QF-4B-pI7"/>
                         <outlet property="radarChart" destination="PVL-11-kqm" id="tKW-qM-D8x"/>
                         <outlet property="userProgLabel" destination="Qkg-pa-YoV" id="Y8j-yr-A7w"/>
                         <outlet property="userProgress" destination="F7b-2J-BZ4" id="pvm-0y-ayu"/>
@@ -482,13 +512,14 @@
         </scene>
     </scenes>
     <resources>
-        <image name="FingerTwisterBlank-2" width="1024" height="1366"/>
+        <image name="FingerTwisterBackground" width="1024" height="1366"/>
         <image name="HamIcon" width="128" height="128"/>
         <image name="stock1" width="101" height="115"/>
         <image name="stock2" width="111" height="111"/>
         <image name="stock3" width="61" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="hdN-cT-nja"/>
         <segue reference="mYh-3T-3O1"/>
         <segue reference="8MS-yg-EMZ"/>
     </inferredMetricsTieBreakers>
