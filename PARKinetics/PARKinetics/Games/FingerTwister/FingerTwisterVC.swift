@@ -60,7 +60,9 @@ class FingerTwisterVC: UIViewController {
     public var checkOn: [Int] = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
     public var checkTouched: [Int] = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
     public var correctTap = 0
-    public var noteCount = 0
+    public var noteCount:Double = 0
+    public var succefulNote:Double = 0
+    var score:Double=0.0
     var j = 0
     var i = 0
     var k = 0
@@ -139,7 +141,9 @@ class FingerTwisterVC: UIViewController {
         }
         if correctTap==1{
             print("success")
-            Reset()
+            succefulNote+=1
+            //(noteCount/totalnote )
+            //Reset()
         }
         else {
             print("failure")
@@ -173,9 +177,11 @@ class FingerTwisterVC: UIViewController {
     {
         noteCount+=1
         
-        
-        if noteCount >= 20 {
+        if noteCount >= 8 {
+            
             audioPlayer.stop() //@Negar: Stop the Song
+            score=(succefulNote/noteCount)*100
+            print("score" )
             //GAMEOVER SCREEN
             //SWITCH TO THE PROFILE SCREEN 
         }
@@ -188,8 +194,8 @@ class FingerTwisterVC: UIViewController {
             print("GREY")
             i+=1
         }
-        delay(bySeconds: 2) {
-            self.gameTime = 5
+        delay(bySeconds: 1) {
+            self.gameTime = 4
             self.gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self,selector:#selector(FingerTwisterVC.timerFunc), userInfo: nil, repeats: true)  //waiting initialize Func
             self.initialize()
             print("DELAY")
@@ -209,7 +215,7 @@ class FingerTwisterVC: UIViewController {
         }
         do{
             audioPlayer = try AVAudioPlayer(contentsOf: newUrl)
-            audioPlayer.numberOfLoops = -1 //Number of loop until we stop it
+            audioPlayer.numberOfLoops = 1 //Number of loop until we stop it
             audioPlayer.prepareToPlay()
             audioPlayer.play()
             
