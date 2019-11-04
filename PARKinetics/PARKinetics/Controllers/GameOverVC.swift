@@ -10,7 +10,9 @@ import Foundation
 import UIKit
 
 class GameOverVC: UIViewController {
-    var score:Double = -1;
+    var score:Double = -1
+    
+    @IBOutlet weak var gameScoreLabel: UILabel!
     
     @IBAction func goToHome(_ sender: Any) {
         performSegue(withIdentifier: "unwindToHome", sender: self)
@@ -18,7 +20,7 @@ class GameOverVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        gameScoreLabel.text = "\(score)"
         print(score)
     }
 }

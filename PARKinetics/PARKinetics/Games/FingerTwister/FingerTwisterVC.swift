@@ -34,18 +34,25 @@ import Foundation
 class FingerTwisterVC: UIViewController {
     
     // MARK: Vars
+    //Song player
     var audioPlayer = AVAudioPlayer()
+    //Correct tiles to press
     var checkOn: [Int] = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+    //tiles currently pressed
     var checkTouched: [Int] = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+    //whether tap is correct or not
     var correctTap = 0
+    //How many tiles have been displayed to touch
     var noteCount:Double = 0
+    //How many tiles were successfully pressed
     var succefulNote:Double = 0
+    //Final game score as ratio of successfulNote to noteCount
     var score:Double=0.0
-    var j = 0
-    var i = 0
-    var k = 0
+    //Timer seperating game rounds
     var gameTimer = Timer()
+    //How many rounds the game will go for
     var gameTime = 5
+    //bool to check whether menu button was pressed
     var gamePaused = false
     
     // MARK: Outlets
@@ -89,7 +96,7 @@ class FingerTwisterVC: UIViewController {
             if buttons[i].isHighlighted{
                 checkTouched[i] = 1
                 print("this",checkTouched[i])
-                j = 0
+                var j = 0
                 while (j < 16){
                     print("touchedDown",checkTouched[j])
                     j+=1
@@ -119,9 +126,9 @@ class FingerTwisterVC: UIViewController {
     }
     
     func successfulNote() {
-        k = 0
-        i = 0
-        j = 0
+        var k = 0
+        var i = 0
+        var j = 0
         while (k < 16){
             if checkTouched[k]==1{
             }
@@ -218,6 +225,15 @@ class FingerTwisterVC: UIViewController {
         }
         catch let error as NSError{
             print(error.description)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.destination is GameOverVC
+        {
+            let vc = segue.destination as? GameOverVC
+            vc?.score = self.score
         }
     }
     
