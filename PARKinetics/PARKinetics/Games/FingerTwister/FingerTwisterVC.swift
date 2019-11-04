@@ -28,15 +28,20 @@
 
 import UIKit
 import SpriteKit
-//import SwiftUI
+import AVFoundation
 import Foundation
 
 class FingerTwisterVC: UIViewController {
     
+    
+    
+    var audioPlayer = AVAudioPlayer()
+    
     override func viewDidLoad() {
 
         super.viewDidLoad()
-        //buttons.randomElement()
+        
+        music(fileNamed:"Queen.mp3")
         self.view.isMultipleTouchEnabled = true
         buttons.forEach {
             $0.layer.borderWidth = 1.0
@@ -48,22 +53,10 @@ class FingerTwisterVC: UIViewController {
         backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
         Reset()
+        
     }
     
-   
-    
-   /* override func viewWillAppear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        self.navigationController?.setToolbarHidden(true, animated: animated)
-    }*/
-    
-    /*override func viewWillDisappear (_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        self.navigationController?.setToolbarHidden(false, animated: animated)
-    }*/
-    
-    
-   
+
     public var checkOn: [Int] = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
     public var checkTouched: [Int] = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
     public var correctTap = 0
@@ -87,7 +80,7 @@ class FingerTwisterVC: UIViewController {
             gameTimer.invalidate()
             print("TIME IS zero")
              Reset()
-            //RESET FUNCTION HAS TO GO INSIDE
+            
         }
     }
     
@@ -179,8 +172,10 @@ class FingerTwisterVC: UIViewController {
     public func Reset()
     {
         noteCount+=1
+        
+        
         if noteCount >= 20 {
-            
+            audioPlayer.stop() //@Negar: Stop the Song
             //GAMEOVER SCREEN
             //SWITCH TO THE PROFILE SCREEN 
         }
@@ -203,14 +198,34 @@ class FingerTwisterVC: UIViewController {
         
     }
     
+    func music(fileNamed: String)
+    {
+        let sound = Bundle.main.url(forResource: fileNamed, withExtension: nil)
+        guard let newUrl = sound
+            else{
+                print(" Could not find the file Called \(fileNamed)")
+                return
+                
+        }
+        do{
+            audioPlayer = try AVAudioPlayer(contentsOf: newUrl)
+            audioPlayer.numberOfLoops = -1 //Number of loop until we stop it
+            audioPlayer.prepareToPlay()
+            audioPlayer.play()
+            
+        }
+        catch let error as NSError{
+            
+            print(error.description)
+        }
+    }
     override var prefersStatusBarHidden: Bool {
         return true
     }
+    
 
-    
-    
-    
 }
+
 //TK -Function To help generate delay. Only works for calling thread. does not delay other threads
 public func delay(bySeconds seconds: Double, dispatchLevel: DispatchLevel = .main, closure: @escaping () -> Void) {
     let dispatchTime = DispatchTime.now() + seconds
