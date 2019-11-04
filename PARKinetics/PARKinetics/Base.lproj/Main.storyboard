@@ -314,7 +314,7 @@
                                 <state key="normal" image="HamIcon"/>
                                 <connections>
                                     <action selector="menuButtonPressed:" destination="sJy-ZL-YgR" eventType="touchUpInside" id="y3Z-ho-d6B"/>
-                                    <segue destination="xEw-2r-IXw" kind="presentation" id="hdN-cT-nja"/>
+                                    <segue destination="xEw-2r-IXw" kind="presentation" id="2rc-hK-3il"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -486,7 +486,6 @@
                                 </state>
                                 <connections>
                                     <action selector="closeModal:" destination="xEw-2r-IXw" eventType="touchUpInside" id="oQw-h2-zjp"/>
-                                    <segue destination="sJy-ZL-YgR" kind="show" id="QYD-Lx-l2O"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PAUSED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ssF-OO-X1j">
@@ -510,6 +509,46 @@
             </objects>
             <point key="canvasLocation" x="2648" y="-583"/>
         </scene>
+        <!--Game OverVC-->
+        <scene sceneID="7dE-IK-2EJ">
+            <objects>
+                <viewController modalPresentationStyle="overFullScreen" id="DOh-s2-rPH" customClass="GameOverVC" customModule="PARKinetics" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="Zoy-6J-lz7">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GAME OVER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xxX-cC-wCK">
+                                <rect key="frame" x="250" y="112" width="269" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="46"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rL0-bj-AOe">
+                                <rect key="frame" x="20" y="461" width="728" height="102"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.63921568630000003" green="0.72549019609999998" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <state key="normal" title="Main Menu">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="evb-Fk-YXA"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1647058824" green="0.17254901959999999" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="XVy-BL-sOa"/>
+                    </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="768" height="1024"/>
+                    <connections>
+                        <outlet property="mainMenu" destination="rL0-bj-AOe" id="byY-3i-8ZF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VAF-6Q-uBj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2648" y="-1276"/>
+        </scene>
     </scenes>
     <resources>
         <image name="FingerTwisterBackground" width="1024" height="1366"/>
@@ -519,8 +558,6 @@
         <image name="stock3" width="61" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hdN-cT-nja"/>
-        <segue reference="mYh-3T-3O1"/>
-        <segue reference="8MS-yg-EMZ"/>
+        <segue reference="evb-Fk-YXA"/>
     </inferredMetricsTieBreakers>
 </document>
