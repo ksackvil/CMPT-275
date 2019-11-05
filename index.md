@@ -180,7 +180,7 @@ Interests:
 
 - [Assignment 1 - Project Plan](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/Group-06-ProjectPlan.pdf)
 - [Assignment 2 - Version 1](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/Group-06-A2.zip)
-- Assignment 3 - Version 2
+- [Assignment 3 - Version 2](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/2019-3-CMPT275-Group-06_doc.zip)
 - Assignment 4 - Version 3
 - Assignment 5 - Final
 
