@@ -5,64 +5,93 @@
 //  Created by TANKER on 2019-10-04.
 //  Copyright © 2019 TANKER. All rights reserved.
 //
+//  Description:
+//      This file is the view controller for the Home screen. This is the root
+//      controller for the PARKinetics project.
+
 //  Contributors:
 //      Kai Sackville-Hii
 //          - File creation
-//          - viewWillAppear() view setup and animations
+//          - view setup and animations
 //          - unwindToViewController() segue
 //          - UIColor extension
 //
 
 import UIKit
 
-//  This file is the view controller for the Home screen. This is the root
-//  controller for the PARKinetics project.
 class ViewController: UIViewController {
+    // MARK: Vars
+    let corrnerRad: CGFloat = 10
     
     // MARK: Outlets
-    @IBOutlet weak var fingerTwister: UIButton!
-    @IBOutlet weak var fingerTwisterLabel: UILabel!
-    @IBOutlet weak var adventureStory: UIButton!
-    @IBOutlet weak var adventureStoryLabel: UILabel!
-    @IBOutlet weak var shadowDdr: UIButton!
-    @IBOutlet weak var shadowDdrLabel: UILabel!
-    @IBOutlet weak var toolBar: UIBarButtonItem!
-    @IBOutlet weak var mainTitle: UILabel!
-    @IBOutlet weak var adventureStoryView: UIView!
-    @IBOutlet weak var fingerTwisterView: UIView!
-    @IBOutlet weak var shadowDdrView: UIView!
+    @IBOutlet weak var fingerTwister: UIButton! // finger twister button
+    @IBOutlet weak var fingerTwisterLabel: UILabel! // finger twister button text
+    @IBOutlet weak var adventureStory: UIButton! // adventure story button
+    @IBOutlet weak var adventureStoryLabel: UILabel! // adventure story button text
+    @IBOutlet weak var shadowDdr: UIButton! // shadow ddr button
+    @IBOutlet weak var shadowDdrLabel: UILabel! // shadow ddr button text
+    @IBOutlet weak var toolBar: UIBarButtonItem! // tool bar indicators
+    @IBOutlet weak var mainTitle: UILabel! // Title "PARKinetics
+    @IBOutlet weak var adventureStoryView: UIView! // view for adventure story
+    @IBOutlet weak var fingerTwisterView: UIView! // view for finger twister
+    @IBOutlet weak var shadowDdrView: UIView! // view for shadow ddr
 
     // MARK: Overides
+    // DES: called before view will appear
+    // PRE: animated is defined, navigation controller exists
+    // POST: the top navigation bar will be hidden, and toolbar will be visable
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
         self.navigationController?.setToolbarHidden(false, animated: animated)
     }
-
+    
+    // DES: renders when the view loads
+    // PRE: view has loaded , UI elements exist in main storyboard and are connected
+    //      to this class
+    // POST: Initial view will look like splash screen, then animation occurs
+    //       to render buttons and title into view
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Round button corners
-        fingerTwister.layer.cornerRadius = 10
-        fingerTwister.clipsToBounds = true
-        fingerTwister.tag = 1
-        adventureStory.layer.cornerRadius = 10
+        // Round button corners for each of the game buttons
+        fingerTwister.layer.cornerRadius = corrnerRad   // set a radius for corners
+        fingerTwister.clipsToBounds = true              // set button corners to be cliped
+        fingerTwister.tag = 1                           // assign unique tag for button
+        
+        // Repeat above process for the other buttons
+        adventureStory.layer.cornerRadius = corrnerRad
         adventureStory.clipsToBounds = true
         adventureStory.tag = 2
-        shadowDdr.layer.cornerRadius = 10
+        shadowDdr.layer.cornerRadius = corrnerRad
         shadowDdr.clipsToBounds = true
         shadowDdr.tag = 3
         
+        // Set initial state of buttons to hidden
         adventureStoryView.isHidden = true
         fingerTwisterView.isHidden = true
         shadowDdrView.isHidden = true
         
+        // main animation handler
+        animateHandler()
+    }
+    
+    // DES: Handlers initial animations
+    // PRE: view has loaded , UI elements exist in main storyboard and are connected
+    //      to this class
+    // POST: mainTitle animates up to top position from splash, buttons cross desolve into view
+    func animateHandler() {
+        // handle multiple animations at once
         UIView.animateKeyframes(withDuration: 1.0, delay: 0.3, options: [], animations: {
+            // enlarge main title text to match splash screen size
             self.mainTitle.transform = CGAffineTransform(scaleX: 1.6, y: 1.6)
+            
+            // Move main title up, will automatically shrink to size
             UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.6, animations: {
                 self.mainTitle.transform = CGAffineTransform(translationX: 0, y: -230)
             })
         }, completion: {_ in
+            // cross desolve into view the three buttons
             UIView.transition(with: self.adventureStoryView, duration: 0.5, options: .transitionCrossDissolve, animations: {
                 self.adventureStoryView.isHidden = false
             }, completion: nil)
@@ -75,13 +104,19 @@ class ViewController: UIViewController {
         })
     }
     
+    // DES: Handles unwind to this view
+    // PRE: Called from child view controller
+    // POST: current view object will be pushed into view
     @IBAction func unwindToViewController(segue: UIStoryboardSegue) {
-        // custom unwind handler
+        // custom unwind handler empty for now
     }
     
 }
 
 // MARK: Helpers
+// DES: conveience helper for UIColor
+// PRE: Pass through rgb or hex value of a color
+// POST: returns swift UIColor object
 extension UIColor {
     convenience init(red: Int, green: Int, blue: Int) {
         assert(red >= 0 && red <= 255, "Invalid red component")

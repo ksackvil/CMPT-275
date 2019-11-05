@@ -1,8 +1,17 @@
 //
 //  ProgressViewController.swift
-//  
 //
-//  Created by Kai Sackville-Hii on 2019-10-28.
+//  Created by TANKER on 2019-10-04.
+//  Copyright © 2019 TANKER. All rights reserved.
+//
+//  Description:
+//      View controller for Progress view page
+//
+//  Contributors:
+//      Kai Sackville-Hii
+//          - File creation
+//          - radar chart
+//          - user progress view
 //
 
 import Foundation
@@ -10,33 +19,35 @@ import UIKit
 import Charts
 
 class ProgressViewController: UIViewController {
+    // MARK: Outlets
+    @IBOutlet weak var userProgress: UIView! // Progress bar for user
+    @IBOutlet weak var userProgLabel: UILabel! // text for progress bar
+    @IBOutlet weak var legendSet2: UIView! // legend for set 2
+    @IBOutlet weak var legendSet1: UIView! // legend for set 1
+    @IBOutlet weak var radarChart: RadarChartView! // radial chart view
     
-//    @IBOutlet weak var userProgress: UIView!
-//    @IBOutlet weak var userProgLabel: UILabel!
-    @IBOutlet weak var userProgress: UIView!
-    @IBOutlet weak var userProgLabel: UILabel!
-    @IBOutlet weak var legendSet2: UIView!
-    @IBOutlet weak var legendSet1: UIView!
+    // MARK: Vars
+    let userProgressCornerRadius: CGFloat = 100 // radius of view
+    let userProgressLayer: CAShapeLayer = CAShapeLayer() // outter layer
+    let userProgressInnerLayer: CAShapeLayer = CAShapeLayer() // inner layer
+    let baseColor = UIColor(red: 112, green: 128, blue: 144) // base color
+    var userProgressBorderLayer: CAShapeLayer = CAShapeLayer() // border of progress view
+    let labels = ["Posture", "Balance", "Speech", "Dexterity", "Facial"] // 5 used skills
     
-    @IBOutlet weak var radarChart: RadarChartView!
-    
-    let userProgressCornerRadius: CGFloat = 100
-    let userProgressLayer: CAShapeLayer = CAShapeLayer()
-    let userProgressInnerLayer: CAShapeLayer = CAShapeLayer()
-    
-    let baseColor = UIColor(red: 112, green: 128, blue: 144)
-    
-    var userProgressBorderLayer: CAShapeLayer = CAShapeLayer()
-
-    let labels = ["Posture", "Balance", "Speech", "Dexterity", "Facial"]
-    
+    // MARK: Overrides
+    // DES: renders when the view loads
+    // PRE: view has loaded , UI elements exist in main storyboard and are connected
+    //      to this class
+    // POST: UI objects for radial chart and user progress in view
     override func viewDidLoad() {
         super.viewDidLoad()
                 
+        //draw the progress layer and update the bar
         drawUserProgressLayer()
         updateUserProgress(inc: 200.0)
         userProgLabel.layer.zPosition = 1
         
+        // setup radial chart
         radarChart.chartDescription?.enabled = false
         radarChart.webLineWidth = 2
         radarChart.innerWebLineWidth = 2
@@ -45,6 +56,7 @@ class ProgressViewController: UIViewController {
         radarChart.webAlpha = 1
         radarChart.legend.enabled = false
         
+        // radial chart xaxis properties
         let xAxis = radarChart.xAxis
         xAxis.labelFont = .systemFont(ofSize: 22, weight: .regular)
         xAxis.xOffset = 0
@@ -53,6 +65,7 @@ class ProgressViewController: UIViewController {
         xAxis.valueFormatter = RadarChartXValueFormatter(withLabels: labels)
         xAxis.labelTextColor = .white
         
+        // radial chart yaxis properties
         let yAxis = radarChart.yAxis
         yAxis.labelFont = .systemFont(ofSize: 22, weight: .regular)
         yAxis.labelCount = 3
@@ -60,48 +73,50 @@ class ProgressViewController: UIViewController {
         yAxis.axisMaximum = 80
         yAxis.drawLabelsEnabled = false
         
+        // legends for each set setuo
         legendSet1.layer.cornerRadius = 10
         legendSet1.clipsToBounds = true
         legendSet1.tag = 1
         legendSet2.layer.cornerRadius = 10
         legendSet2.clipsToBounds = true
         legendSet2.tag = 1
-        
-//        let l = radarChart.legend
-//        l.horizontalAlignment = .center
-//        l.verticalAlignment = .top
-//        l.orientation = .horizontal
-//        l.drawInside = false
-//        l.font = .systemFont(ofSize: 22, weight: .regular)
-//        l.xEntrySpace = 10
-//        l.yEntrySpace = 10
-//        l.textColor = baseColor
-        
+
+        // render chart and animate
         radarChartUpdate()
         radarChart.animate(xAxisDuration: 1.4, yAxisDuration: 1.4, easingOption: .easeOutBack)
     }
     
+    // DES: renders the user progress bar
+    // PRE: views exist and are connected
+    // POST: progress bar is in view and updated with current progress
     private func drawUserProgressLayer() {
+        // create a path for outer layer
         let bezierPath = UIBezierPath(roundedRect: userProgress.bounds, cornerRadius: userProgressCornerRadius)
-        
         bezierPath.close()
+        
+        // update outer layer with path and color
         userProgressBorderLayer.path = bezierPath.cgPath
         userProgressBorderLayer.fillColor = UIColor.white.cgColor
         userProgressBorderLayer.strokeEnd = 0
         
+        // create a path for inner layer
         let innerBezierPath = UIBezierPath(roundedRect: CGRect( x: 2, y: 2, width: userProgress.bounds.width-4, height: userProgress.bounds.height-4), cornerRadius: userProgressCornerRadius)
-        
         innerBezierPath.close()
+        
+        // update inner layer
         userProgressInnerLayer.path = innerBezierPath.cgPath
         userProgressInnerLayer.fillColor = UIColor(red: 42, green: 44, blue: 46).cgColor
         userProgressInnerLayer.strokeEnd = 0
         
+        // add layers to view
         userProgress.layer.addSublayer(userProgressBorderLayer)
         userProgress.layer.addSublayer(userProgressInnerLayer)
     }
     
+    // DES: renders the user progress bar
+    // PRE: views exist and are connected
+    // POST: progress bar is in view and updated with current progress
     public func updateUserProgress(inc: CGFloat) {
-        
         if (inc <= userProgress.bounds.width - 10) {
             userProgressLayer.removeFromSuperlayer()
             
@@ -114,10 +129,14 @@ class ProgressViewController: UIViewController {
         }
     }
     
+    // DES: convience call to update chart
     private func radarChartUpdate() {
         self.setChartData()
     }
     
+    // DES: convience call to update chart
+    // PRE: UI elements exists
+    // POST: Two sets of data will be added to chart
     func setChartData() {
         let mult: UInt32 = 80
         let min: UInt32 = 10
@@ -127,6 +146,8 @@ class ProgressViewController: UIViewController {
         let entries1 = (0..<cnt).map(block)
         let entries2 = (0..<cnt).map(block)
         
+        
+        // setup sets
         let set1 = RadarChartDataSet(entries: entries1, label: "Last Week")
         set1.setColor(UIColor(red: 122, green: 124, blue: 129))
         set1.fillColor = UIColor(red: 122, green: 124, blue: 129)
@@ -145,22 +166,25 @@ class ProgressViewController: UIViewController {
         set2.drawHighlightCircleEnabled = true
         set2.setDrawHighlightIndicators(false)
         
+        // add sets data
         let data = RadarChartData(dataSets: [set1, set2])
         data.setValueFont(.systemFont(ofSize: 8, weight: .light))
         data.setDrawValues(false)
         data.setValueTextColor(.white)
-        
         radarChart.data = data
     }
     
+    // DES: handle swipe left
+    // PRE: Swipe controller exists
+    // POST: will segue back to home view with animation
     @IBAction func swipeHandler(_ sender: Any) {
         _ = navigationController?.popViewController(animated: true)
     }
     
 }
 
+// Helper class for setting chart data
 class RadarChartXValueFormatter: NSObject, IAxisValueFormatter {
-    
     init(withLabels labels: String...) {
         self.labels = labels
         super.init()
