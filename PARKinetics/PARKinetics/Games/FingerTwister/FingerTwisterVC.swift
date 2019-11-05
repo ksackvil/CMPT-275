@@ -1,30 +1,34 @@
-/// Copyright (c) 2018 Razeware LLC
-///
-/// Permission is hereby granted, free of charge, to any person obtaining a copy
-/// of this software and associated documentation files (the "Software"), to deal
-/// in the Software without restriction, including without limitation the rights
-/// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-/// copies of the Software, and to permit persons to whom the Software is
-/// furnished to do so, subject to the following conditions:
-///
-/// The above copyright notice and this permission notice shall be included in
-/// all copies or substantial portions of the Software.
-///
-/// Notwithstanding the foregoing, you may not use, copy, modify, merge, publish,
-/// distribute, sublicense, create a derivative work, and/or sell copies of the
-/// Software in any work that is designed, intended, or marketed for pedagogical or
-/// instructional purposes related to programming, coding, application development,
-/// or information technology.  Permission for such use, copying, modification,
-/// merger, publication, distribution, sublicensing, creation of derivative works,
-/// or sale is expressly withheld.
-///
-/// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-/// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-/// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-/// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-/// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-/// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-/// THE SOFTWARE.
+//
+//  FingerTwisterVC.swift
+//  PARKinetics
+//
+//  Created by TANKER on 2019-10-04.
+//  Copyright © 2019 TANKER. All rights reserved.
+//
+//  Contributors:
+//      Kai Sackville-Hii
+//          - File creation
+//          - View segues
+//          - Game over view
+//          - Button linking and creation
+//      Armaan Bandali
+//          - Main game view and background
+//          - Game logic including successful note check, button logic, and
+//            reset
+//          - General linking of functions
+//      Negar Hariri
+//          - Audio implementation
+//          - View timing functions
+//          - General game logic functions
+//      Takunda Mwinjilo
+//          - Delay and button initialization between notes
+//          - Code formatting and documentation
+//          - Audio debugging
+//      Rachel Djauhari
+//          - Audio base code and audio file management
+//
+//
+
 
 import UIKit
 import SpriteKit
@@ -35,30 +39,24 @@ class FingerTwisterVC: UIViewController {
     
     // MARK: Vars
     //Song player
-    var audioPlayer = AVAudioPlayer()
-    //Correct tiles to press
-    var checkOn: [Int] = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
-    //tiles currently pressed
-    var checkTouched: [Int] = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
-    //whether tap is correct or not
-    var correctTap = 0
-    //How many tiles have been displayed to touch
-    var noteCount:Double = 0
-    //How many tiles were successfully pressed
-    var succefulNote:Double = 0
-    //Final game score as ratio of successfulNote to noteCount
-    var score:Double=0.0
-    //Timer seperating game rounds
-    var gameTimer = Timer()
-    //How many rounds the game will go for
-    var gameTime = 5
-    //bool to check whether menu button was pressed
+    var audioPlayer = AVAudioPlayer() //Correct tiles to press
+    var checkOn: [Int] = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] //tiles currently pressed
+    var checkTouched: [Int] = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] //whether tap is correct or not
+    var correctTap = 0 //How many tiles have been displayed to touch
+    var noteCount:Double = 0 //How many tiles were successfully pressed
+    var succefulNote:Double = 0 //Final game score as ratio of successfulNote to noteCount
+    var score:Double=0.0 //Timer seperating game rounds
+    var gameTimer = Timer() //How many rounds the game will go for
+    var gameTime = 5 //bool to check whether menu button was pressed
     var gamePaused = false
     
     // MARK: Outlets
     @IBOutlet var buttons: [UIButton]!
     
     // MARK: Overides
+    // DES: Main view rendering with background
+    // PRE: View loaded from main menu segue
+    // POST: Background loaded, multiple touches enabled, call to button initialization
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -83,12 +81,18 @@ class FingerTwisterVC: UIViewController {
         return true
     }
     
+    // DES: Hides toolbar
+    // PRE: View loaded from main menu segue
+    // POST: Toolbar hidden
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setToolbarHidden(true, animated: animated)
     }
     
     // MARK: Actions
+    // DES: Game logic implementation when any button is touched down
+    // PRE: Buttons enabled and initialized with a note to be hit
+    // POST: checkTouched array updated with the buttons that are touched
     @IBAction func touchedDown(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
         //let index = buttons.firstIndex(of: sender)!
