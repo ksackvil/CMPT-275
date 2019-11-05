@@ -110,17 +110,24 @@ class FingerTwisterVC: UIViewController {
         successfulNote()
     }
     
+    //DES:  Pauses game when menu button is pressed
+    //PRE:  Timers running and audio playing
+    //POST: Timers and audio paused
     @IBAction func menuButtonPressed(_ sender: Any) {
         gameTimer.invalidate()
         audioPlayer.pause()
     }
     
     // MARK: Functions
+    //DES:  unpauses game when menu is exited
+    //PRE:  Timers and audio paused
+    //POST: Audio plays again and round is reset
     @objc func modalDismissHandler() {
         audioPlayer.play()
         Reset()
     }
     
+    //DES:  Counts down time until next round and resets board
     @objc func timerFunc() {
         gameTime -= 1
         if gameTime == 0 {
@@ -129,6 +136,7 @@ class FingerTwisterVC: UIViewController {
         }
     }
     
+    //DES:  Checks whether all notes were successfully pressed
     func successfulNote() {
         var k = 0
         var i = 0
@@ -165,7 +173,7 @@ class FingerTwisterVC: UIViewController {
         }
     }
     
-    //TK -Display the buttons to be pressed
+    //DES: highlight buttons to be pressed
     @objc func initialize() {
         var i = 0
         correctTap = 0
@@ -184,6 +192,7 @@ class FingerTwisterVC: UIViewController {
         }
     }
     
+    //DES: Reset round variables
     func Reset()
     {
         noteCount+=1
@@ -213,6 +222,7 @@ class FingerTwisterVC: UIViewController {
         }
     }
     
+    //DES: obtain music for game and begin playing it
     func music(fileNamed: String) {
         let sound = Bundle.main.url(forResource: fileNamed, withExtension: nil)
         guard let newUrl = sound else {
@@ -232,6 +242,7 @@ class FingerTwisterVC: UIViewController {
         }
     }
     
+    //DES: Transfer score for game to game over screen
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
         if segue.destination is GameOverVC
@@ -247,7 +258,7 @@ class FingerTwisterVC: UIViewController {
 }
 
 // MARK: Class helpers
-//TK -Function To help generate delay. Only works for calling thread. does not delay other threads
+//DES: Function To help generate delay. Code in braces is executed after delay period
 func delay(bySeconds seconds: Double, dispatchLevel: DispatchLevel = .main, closure: @escaping () -> Void) {
     let dispatchTime = DispatchTime.now() + seconds
     dispatchLevel.dispatchQueue.asyncAfter(deadline: dispatchTime, execute: closure)
