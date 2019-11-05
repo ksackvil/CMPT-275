@@ -10,13 +10,18 @@
   
 ### Quickstart Guide
 
-Our subversion repository is located at [this Github repo](https://github.com/ksackvil/CMPT-275).
+1. Get a version of our code using one of the following methods.
+* Our subversion repository is located at [this Github repo](https://github.com/ksackvil/CMPT-275).
 
-To get access to our source code you can download the zip file [here](https://github.com/ksackvil/CMPT-275), or you can use git via the following command:
+* To get access to our source code you can download the zip file [here](https://github.com/ksackvil/CMPT-275), or you can use git via the following command:
 
 ```
 git clone https://github.com/ksackvil/CMPT-275.git
 ```
+
+2. Open the file called PARKinetics.xcworkspace in xcode (NOT the file called PARKinetics.xcodeproj). This file has the dependancies pre installed.
+
+3. To run the project in XCode, use the keyboard shortcut [cmd][R] or in the toolbar click Product->Run. If the build succeeded, then the iOS simulator should appear with the build project. If the build failed check the console for the errors.
 
 ### Team Members
 
