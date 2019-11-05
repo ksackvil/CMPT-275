@@ -17,8 +17,6 @@
 		F7103C33236521480008AD74 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F7103C32236521480008AD74 /* GoogleService-Info.plist */; };
 		F73934A3236E52A200BE4463 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73934A2236E52A200BE4463 /* ProgressViewController.swift */; };
 		F748B50F2356E0C9009A10B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F748B5082356E0C9009A10B0 /* Assets.xcassets */; };
-		F748B5102356E0C9009A10B0 /* FingerTwisterGOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748B5092356E0C9009A10B0 /* FingerTwisterGOS.swift */; };
-		F748B5112356E0C9009A10B0 /* FingerTwisterGS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748B50A2356E0C9009A10B0 /* FingerTwisterGS.swift */; };
 		F748B5122356E0C9009A10B0 /* FingerTwisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748B50B2356E0C9009A10B0 /* FingerTwisterVC.swift */; };
 		F7A90FFC23700CB600C81ADA /* GameOverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A90FFB23700CB600C81ADA /* GameOverVC.swift */; };
 		F7EABAD02348710F00D94B1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EABACF2348710F00D94B1C /* AppDelegate.swift */; };
@@ -70,8 +68,6 @@
 		F7103C32236521480008AD74 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F73934A2236E52A200BE4463 /* ProgressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
 		F748B5082356E0C9009A10B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F748B5092356E0C9009A10B0 /* FingerTwisterGOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FingerTwisterGOS.swift; sourceTree = "<group>"; };
-		F748B50A2356E0C9009A10B0 /* FingerTwisterGS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FingerTwisterGS.swift; sourceTree = "<group>"; };
 		F748B50B2356E0C9009A10B0 /* FingerTwisterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FingerTwisterVC.swift; sourceTree = "<group>"; };
 		F7A90FFB23700CB600C81ADA /* GameOverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverVC.swift; sourceTree = "<group>"; };
 		F7EABACC2348710F00D94B1C /* PARKinetics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PARKinetics.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -180,8 +176,6 @@
 			children = (
 				F748B5082356E0C9009A10B0 /* Assets.xcassets */,
 				F748B50C2356E0C9009A10B0 /* Sounds */,
-				F748B5092356E0C9009A10B0 /* FingerTwisterGOS.swift */,
-				F748B50A2356E0C9009A10B0 /* FingerTwisterGS.swift */,
 				F748B50B2356E0C9009A10B0 /* FingerTwisterVC.swift */,
 			);
 			path = FingerTwister;
@@ -519,9 +513,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F748B5122356E0C9009A10B0 /* FingerTwisterVC.swift in Sources */,
-				F748B5102356E0C9009A10B0 /* FingerTwisterGOS.swift in Sources */,
 				F7A90FFC23700CB600C81ADA /* GameOverVC.swift in Sources */,
-				F748B5112356E0C9009A10B0 /* FingerTwisterGS.swift in Sources */,
 				F73934A3236E52A200BE4463 /* ProgressViewController.swift in Sources */,
 				F7042185236D47AD00F3BC3B /* GameMenuVC.swift in Sources */,
 				F7042181236D017800F3BC3B /* DbHelper.swift in Sources */,
@@ -706,13 +698,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VLZJ3V8Q6R;
+				DEVELOPMENT_TEAM = CSD3D45F76;
 				INFOPLIST_FILE = PARKinetics/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Takunda;
+				PRODUCT_BUNDLE_IDENTIFIER = Armaan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -725,13 +717,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VLZJ3V8Q6R;
+				DEVELOPMENT_TEAM = CSD3D45F76;
 				INFOPLIST_FILE = PARKinetics/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Takunda;
+				PRODUCT_BUNDLE_IDENTIFIER = Armaan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
