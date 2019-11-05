@@ -21,7 +21,7 @@ git clone https://github.com/ksackvil/CMPT-275.git
 
 2. Open the file called PARKinetics.xcworkspace in xcode (NOT the file called PARKinetics.xcodeproj). This file has the dependancies pre installed.
 
-3. To run the project in XCode, use the keyboard shortcut [cmd][R] or in the toolbar click Product->Run. If the build succeeded, then the iOS simulator should appear with the build project. If the build failed check the console for the errors.
+3. To run the project in XCode, use the keyboard shortcut [cmd][R] or in the toolbar click Product->Run. If the build succeeded, then the iOS simulator should appear with the build project. If the build failed check the console for the errors. Our app is developed for iPad, please ensure to run simulator on iPad Pro(9.7 inch). 
 
 ### Team Members
 
