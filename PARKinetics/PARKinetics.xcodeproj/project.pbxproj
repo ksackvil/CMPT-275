@@ -17,8 +17,6 @@
 		F7103C33236521480008AD74 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F7103C32236521480008AD74 /* GoogleService-Info.plist */; };
 		F73934A3236E52A200BE4463 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73934A2236E52A200BE4463 /* ProgressViewController.swift */; };
 		F748B50F2356E0C9009A10B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F748B5082356E0C9009A10B0 /* Assets.xcassets */; };
-		F748B5102356E0C9009A10B0 /* FingerTwisterGOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748B5092356E0C9009A10B0 /* FingerTwisterGOS.swift */; };
-		F748B5112356E0C9009A10B0 /* FingerTwisterGS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748B50A2356E0C9009A10B0 /* FingerTwisterGS.swift */; };
 		F748B5122356E0C9009A10B0 /* FingerTwisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748B50B2356E0C9009A10B0 /* FingerTwisterVC.swift */; };
 		F7A90FFC23700CB600C81ADA /* GameOverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A90FFB23700CB600C81ADA /* GameOverVC.swift */; };
 		F7EABAD02348710F00D94B1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EABACF2348710F00D94B1C /* AppDelegate.swift */; };
@@ -28,12 +26,6 @@
 		F7EABADA2348710F00D94B1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7EABAD82348710F00D94B1C /* LaunchScreen.storyboard */; };
 		F7EABAE52348710F00D94B1C /* PARKineticsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EABAE42348710F00D94B1C /* PARKineticsTests.swift */; };
 		F7EABAF02348710F00D94B1C /* PARKineticsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EABAEF2348710F00D94B1C /* PARKineticsUITests.swift */; };
-		F7EABB0B2348712600D94B1C /* TestGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EABAFF2348712600D94B1C /* TestGameViewController.swift */; };
-		F7EABB0C2348712600D94B1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7EABB002348712600D94B1C /* Assets.xcassets */; };
-		F7EABB0D2348712600D94B1C /* TestGameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EABB012348712600D94B1C /* TestGameOverScene.swift */; };
-		F7EABB0F2348712600D94B1C /* background-music-aac.caf in Resources */ = {isa = PBXBuildFile; fileRef = F7EABB052348712600D94B1C /* background-music-aac.caf */; };
-		F7EABB102348712600D94B1C /* pew-pew-lei.caf in Resources */ = {isa = PBXBuildFile; fileRef = F7EABB062348712600D94B1C /* pew-pew-lei.caf */; };
-		F7EABB122348712600D94B1C /* TestGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EABB082348712600D94B1C /* TestGameScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,8 +62,6 @@
 		F7103C32236521480008AD74 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F73934A2236E52A200BE4463 /* ProgressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
 		F748B5082356E0C9009A10B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F748B5092356E0C9009A10B0 /* FingerTwisterGOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FingerTwisterGOS.swift; sourceTree = "<group>"; };
-		F748B50A2356E0C9009A10B0 /* FingerTwisterGS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FingerTwisterGS.swift; sourceTree = "<group>"; };
 		F748B50B2356E0C9009A10B0 /* FingerTwisterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FingerTwisterVC.swift; sourceTree = "<group>"; };
 		F7A90FFB23700CB600C81ADA /* GameOverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverVC.swift; sourceTree = "<group>"; };
 		F7EABACC2348710F00D94B1C /* PARKinetics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PARKinetics.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,12 +77,6 @@
 		F7EABAEB2348710F00D94B1C /* PARKineticsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PARKineticsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7EABAEF2348710F00D94B1C /* PARKineticsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PARKineticsUITests.swift; sourceTree = "<group>"; };
 		F7EABAF12348710F00D94B1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F7EABAFF2348712600D94B1C /* TestGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestGameViewController.swift; sourceTree = "<group>"; };
-		F7EABB002348712600D94B1C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F7EABB012348712600D94B1C /* TestGameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestGameOverScene.swift; sourceTree = "<group>"; };
-		F7EABB052348712600D94B1C /* background-music-aac.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "background-music-aac.caf"; sourceTree = "<group>"; };
-		F7EABB062348712600D94B1C /* pew-pew-lei.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pew-pew-lei.caf"; sourceTree = "<group>"; };
-		F7EABB082348712600D94B1C /* TestGameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestGameScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,7 +154,6 @@
 			isa = PBXGroup;
 			children = (
 				F748B5072356E09F009A10B0 /* FingerTwister */,
-				F7EABAFD2348712600D94B1C /* TestGame */,
 			);
 			path = Games;
 			sourceTree = "<group>";
@@ -180,8 +163,6 @@
 			children = (
 				F748B5082356E0C9009A10B0 /* Assets.xcassets */,
 				F748B50C2356E0C9009A10B0 /* Sounds */,
-				F748B5092356E0C9009A10B0 /* FingerTwisterGOS.swift */,
-				F748B50A2356E0C9009A10B0 /* FingerTwisterGS.swift */,
 				F748B50B2356E0C9009A10B0 /* FingerTwisterVC.swift */,
 			);
 			path = FingerTwister;
@@ -250,27 +231,6 @@
 				F7EABAF12348710F00D94B1C /* Info.plist */,
 			);
 			path = PARKineticsUITests;
-			sourceTree = "<group>";
-		};
-		F7EABAFD2348712600D94B1C /* TestGame */ = {
-			isa = PBXGroup;
-			children = (
-				F7EABAFF2348712600D94B1C /* TestGameViewController.swift */,
-				F7EABB002348712600D94B1C /* Assets.xcassets */,
-				F7EABB012348712600D94B1C /* TestGameOverScene.swift */,
-				F7EABB042348712600D94B1C /* Sounds */,
-				F7EABB082348712600D94B1C /* TestGameScene.swift */,
-			);
-			path = TestGame;
-			sourceTree = "<group>";
-		};
-		F7EABB042348712600D94B1C /* Sounds */ = {
-			isa = PBXGroup;
-			children = (
-				F7EABB052348712600D94B1C /* background-music-aac.caf */,
-				F7EABB062348712600D94B1C /* pew-pew-lei.caf */,
-			);
-			path = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -383,12 +343,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7EABADA2348710F00D94B1C /* LaunchScreen.storyboard in Resources */,
-				F7EABB0F2348712600D94B1C /* background-music-aac.caf in Resources */,
-				F7EABB102348712600D94B1C /* pew-pew-lei.caf in Resources */,
 				0807DBEA236FBAD2000D0F5A /* Queen.mp3 in Resources */,
 				F7EABAD72348710F00D94B1C /* Assets.xcassets in Resources */,
 				F7EABAD52348710F00D94B1C /* Main.storyboard in Resources */,
-				F7EABB0C2348712600D94B1C /* Assets.xcassets in Resources */,
 				F7103C33236521480008AD74 /* GoogleService-Info.plist in Resources */,
 				F748B50F2356E0C9009A10B0 /* Assets.xcassets in Resources */,
 			);
@@ -519,16 +476,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F748B5122356E0C9009A10B0 /* FingerTwisterVC.swift in Sources */,
-				F748B5102356E0C9009A10B0 /* FingerTwisterGOS.swift in Sources */,
 				F7A90FFC23700CB600C81ADA /* GameOverVC.swift in Sources */,
-				F748B5112356E0C9009A10B0 /* FingerTwisterGS.swift in Sources */,
 				F73934A3236E52A200BE4463 /* ProgressViewController.swift in Sources */,
 				F7042185236D47AD00F3BC3B /* GameMenuVC.swift in Sources */,
 				F7042181236D017800F3BC3B /* DbHelper.swift in Sources */,
-				F7EABB122348712600D94B1C /* TestGameScene.swift in Sources */,
 				F7EABAD22348710F00D94B1C /* ViewController.swift in Sources */,
-				F7EABB0B2348712600D94B1C /* TestGameViewController.swift in Sources */,
-				F7EABB0D2348712600D94B1C /* TestGameOverScene.swift in Sources */,
 				F7EABAD02348710F00D94B1C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -712,7 +664,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.PARKinetics;
+				PRODUCT_BUNDLE_IDENTIFIER = Armaan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -731,7 +683,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.PARKinetics;
+				PRODUCT_BUNDLE_IDENTIFIER = Armaan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

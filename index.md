@@ -10,13 +10,18 @@
   
 ### Quickstart Guide
 
-Our subversion repository is located at [this Github repo](https://github.com/ksackvil/CMPT-275).
+1. Get a version of our code using one of the following methods.
+* Our subversion repository is located at [this Github repo](https://github.com/ksackvil/CMPT-275).
 
-To get access to our source code you can download the zip file [here](https://github.com/ksackvil/CMPT-275), or you can use git via the following command:
+* To get access to our source code you can download the zip file [here](https://github.com/ksackvil/CMPT-275), or you can use git via the following command:
 
 ```
 git clone https://github.com/ksackvil/CMPT-275.git
 ```
+
+2. Open the file called PARKinetics.xcworkspace in xcode (NOT the file called PARKinetics.xcodeproj). This file has the dependancies pre installed.
+
+3. To run the project in XCode, use the keyboard shortcut [cmd][R] or in the toolbar click Product->Run. If the build succeeded, then the iOS simulator should appear with the build project. If the build failed check the console for the errors. Our app is developed for iPad, please ensure to run simulator on iPad Pro(9.7 inch). 
 
 ### Team Members
 
@@ -175,7 +180,7 @@ Interests:
 
 - [Assignment 1 - Project Plan](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/Group-06-ProjectPlan.pdf)
 - [Assignment 2 - Version 1](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/Group-06-A2.zip)
-- Assignment 3 - Version 2
+- [Assignment 3 - Version 2](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/2019-3-CMPT275-Group-06_doc.zip)
 - Assignment 4 - Version 3
 - Assignment 5 - Final
 
@@ -194,6 +199,11 @@ Below you can find all documents pertaining to our meetings sorted by date. Our 
 - [Meeting 7: Oct 8, 2019](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/Meeting 7.pdf)
 - [Meeting 8: Oct 10, 2019](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/Meeting 8.pdf)
 - [Meeting 9: Oct 15, 2019](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/Meeting 9.pdf)
+- [Meeting 10: Oct 22, 2019](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/Meeting 10.pdf)
+- [Meeting 11: Oct 24, 2019](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/Meeting 11.pdf)
+- [Meeting 12: Oct 29, 2019](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/Meeting 12.pdf)
+- [Meeting 13: Nov 1, 2019](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/Meeting 13.pdf)
+- [Meeting 14: Nov 3, 2019](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/Meeting 14.pdf)
 
 #### Agendas
 
@@ -201,6 +211,11 @@ Below you can find all documents pertaining to our meetings sorted by date. Our 
 - [Meeting 4: Sept 25, 2019](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/Agenda for Meeting 4.pdf)
 - [Meeting 5: Oct 1, 2019](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/Agenda for Meeting 5.pdf)
 - [Meeting 6: Oct 3, 2019](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/Agenda for Meeting 6.pdf)
-- [Meeting 7: Oct 8, 2019](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/Agenda for Meeting 4.pdf)
-- [Meeting 8: Oct 10, 2019](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/Agenda for Meeting 5.pdf)
-- [Meeting 9: Oct 15, 2019](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/Agenda for Meeting 6.pdf)
+- [Meeting 7: Oct 8, 2019](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/Agenda for Meeting 7.pdf)
+- [Meeting 8: Oct 10, 2019](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/Agenda for Meeting 8.pdf)
+- [Meeting 9: Oct 15, 2019](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/Agenda for Meeting 9.pdf)
+- [Meeting 10: Oct 22, 2019](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/Agenda for Meeting 10.pdf)
+- [Meeting 11: Oct 24, 2019](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/Agenda for Meeting 11.pdf)
+- [Meeting 12: Oct 29, 2019](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/Agenda for Meeting 12.pdf)
+- [Meeting 13: Nov 1, 2019](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/Agenda for Meeting 13.pdf)
+- [Meeting 14: Nov 3, 2019](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/Agenda for Meeting 14.pdf)

@@ -2,8 +2,13 @@
 //  DbHelper.swift
 //  PARKinetics
 //
-//  Created by Evan Huang on 2019-10-26.
-//  Copyright © 2019 Kai Sackville-Hii. All rights reserved.
+//  Created by TANKER on 2019-10-04.
+//  Copyright © 2019 TANKER. All rights reserved.
+//
+//  Contributors:
+//      Evan huang
+//          - File creation
+//          - connections to database
 //
 import Foundation
 import Firebase
