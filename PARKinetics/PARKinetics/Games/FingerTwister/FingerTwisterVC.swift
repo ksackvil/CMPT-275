@@ -253,6 +253,13 @@ class FingerTwisterVC: UIViewController {
     }
     
     func gameOverHandler(result:Double) {
+        //Upload game result to Firebase realtime databse
+        let defaults = UserDefaults.standard
+        let userKey = defaults.string(forKey: "uid")
+        if(userKey != nil){
+            DbHelper.uploadGame(uid: userKey!, type: "FT", balance: "0", facial: "0", speech: "0", dexterity: String(Int(score)), posture: "0")
+            print("Uploaded game data");
+        }
         performSegue(withIdentifier: "FingerTwisterGO", sender: self)
     }
 }
