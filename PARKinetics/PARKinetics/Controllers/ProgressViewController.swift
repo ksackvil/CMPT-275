@@ -131,21 +131,78 @@ class ProgressViewController: UIViewController {
     
     // DES: convience call to update chart
     private func radarChartUpdate() {
-        self.setChartData()
+        //Retrieve data from database
+        let defaults = UserDefaults.standard
+        let userKey = defaults.string(forKey: "uid")
+        let calendar = Calendar.current
+        let weekOfYear = calendar.component(.weekOfYear, from: Date.init(timeIntervalSinceNow: 0))
+        var currentWeekGames : [[String : Any]] = []
+        var lastWeekGames : [[String : Any]] = []
+        var currentWeekAvg : [String : Int] = ["balance":0,"facial":0,"speech":0,"dexterity":0,"posture":0]
+        var lastWeekAvg : [String : Int] = ["balance":0,"facial":0,"speech":0,"dexterity":0,"posture":0]
+        if(userKey != nil){
+            DbHelper.retrieveAllGames(uid: userKey!, closure: {
+                (games) in
+                for game in games {
+                    if(game["time"] as! Int == weekOfYear){
+                        currentWeekGames.append(game)
+                    }else if(game["time"] as! Int == weekOfYear - 1){
+                        lastWeekGames.append(game)
+                    }
+                }
+                for game in currentWeekGames{
+                    currentWeekAvg["balance"]! += (game["balance"] as! NSString).integerValue
+                    currentWeekAvg["facial"]! += (game["facial"] as! NSString).integerValue
+                    currentWeekAvg["speech"]! += (game["speech"] as! NSString).integerValue
+                    currentWeekAvg["dexterity"]! += (game["dexterity"] as! NSString).integerValue
+                    currentWeekAvg["posture"]! += (game["posture"] as! NSString).integerValue
+                }
+                //Get average game vaule of current week
+                if(currentWeekGames.count > 0){
+                    currentWeekAvg["balance"]! /= currentWeekGames.count
+                    currentWeekAvg["facial"]! /= currentWeekGames.count
+                    currentWeekAvg["speech"]! /= currentWeekGames.count
+                    currentWeekAvg["dexterity"]! /= currentWeekGames.count
+                    currentWeekAvg["posture"]! /= currentWeekGames.count
+                }
+                
+                for game in lastWeekGames{
+                    lastWeekAvg["balance"]! += (game["balance"] as! NSString).integerValue
+                    lastWeekAvg["facial"]! += (game["facial"] as! NSString).integerValue
+                    lastWeekAvg["speech"]! += (game["speech"] as! NSString).integerValue
+                    lastWeekAvg["dexterity"]! += (game["dexterity"] as! NSString).integerValue
+                    lastWeekAvg["posture"]! += (game["posture"] as! NSString).integerValue
+                }
+                //Get average game vaule of last week
+                if(lastWeekGames.count > 0){
+                    lastWeekAvg["balance"]! /= lastWeekGames.count
+                    lastWeekAvg["facial"]! /= lastWeekGames.count
+                    lastWeekAvg["speech"]! /= lastWeekGames.count
+                    lastWeekAvg["dexterity"]! /= lastWeekGames.count
+                    lastWeekAvg["posture"]! /= lastWeekGames.count
+                }
+                self.setChartData(currentWeekAvg: currentWeekAvg, lastWeekAvg: lastWeekAvg)
+            })
+        }
     }
     
     // DES: convience call to update chart
     // PRE: UI elements exists
     // POST: Two sets of data will be added to chart
-    func setChartData() {
-        let mult: UInt32 = 80
-        let min: UInt32 = 10
-        let cnt = 5
+    func setChartData(currentWeekAvg: [String:Int], lastWeekAvg: [String:Int]) {
+//        let mult: UInt32 = 80
+//        let min: UInt32 = 10
+//        let cnt = 5
+//
+//        let block: (Int) -> RadarChartDataEntry = { _ in return RadarChartDataEntry(value: Double(arc4random_uniform(mult) + min))}
+//        let entries1 = (0..<cnt).map(block)
+//        let entries2 = (0..<cnt).map(block)
         
-        let block: (Int) -> RadarChartDataEntry = { _ in return RadarChartDataEntry(value: Double(arc4random_uniform(mult) + min))}
-        let entries1 = (0..<cnt).map(block)
-        let entries2 = (0..<cnt).map(block)
-        
+        //Set data for entries
+        let entries1 : [RadarChartDataEntry] = [RadarChartDataEntry(value: Double(lastWeekAvg["posture"]!)), RadarChartDataEntry(value: Double(lastWeekAvg["balance"]!)), RadarChartDataEntry(value: Double(lastWeekAvg["speech"]!)), RadarChartDataEntry(value: Double(lastWeekAvg["dexterity"]!)), RadarChartDataEntry(value: Double(lastWeekAvg["facial"]!))]
+        let entries2 : [RadarChartDataEntry] = [RadarChartDataEntry(value: Double(currentWeekAvg["posture"]!)), RadarChartDataEntry(value: Double(currentWeekAvg["balance"]!)), RadarChartDataEntry(value: Double(currentWeekAvg["speech"]!)), RadarChartDataEntry(value: Double(currentWeekAvg["dexterity"]!)), RadarChartDataEntry(value: Double(currentWeekAvg["facial"]!))]
+//        let entries1 : [RadarChartDataEntry] = [RadarChartDataEntry(value: lastWeekAvg["posture"]! as! Double), RadarChartDataEntry(value: lastWeekAvg["balance"]! as! Double), RadarChartDataEntry(value: lastWeekAvg["speech"]! as! Double), RadarChartDataEntry(value: lastWeekAvg["dexterity"]! as! Double), RadarChartDataEntry(value: lastWeekAvg["facial"]! as! Double)]
+//        let entries2 : [RadarChartDataEntry] = [RadarChartDataEntry(value: currentWeekAvg["posture"]! as! Double), RadarChartDataEntry(value: currentWeekAvg["balance"]! as! Double), RadarChartDataEntry(value: currentWeekAvg["speech"]! as! Double), RadarChartDataEntry(value: currentWeekAvg["dexterity"]! as! Double), RadarChartDataEntry(value: currentWeekAvg["facial"]! as! Double)]
         
         // setup sets
         let set1 = RadarChartDataSet(entries: entries1, label: "Last Week")

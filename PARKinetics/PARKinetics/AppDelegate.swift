@@ -40,6 +40,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      didFinishLaunchingWithOptions launchOptions:
         [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
+        //Check local storage if user key exsits, if not generate one and store it
+        let defaults = UserDefaults.standard
+        var userKey = defaults.string(forKey: "uid")
+        if(!(userKey != nil)){
+            userKey = DbHelper.createUser(username: "defaultUserName", email: "defaultEmail")
+            defaults.set(userKey, forKey: "uid")
+            print("Generated and stored uid")
+        }
         // Delay 1 second
         RunLoop.current.run(until: Date(timeIntervalSinceNow: 1.0))
         return true

@@ -29,10 +29,10 @@ class DbHelper{
     static func uploadGame(uid: String, type: String, balance: String, facial: String, speech: String, dexterity: String, posture: String){
         
         guard let gkey = ref.child("users/\(uid)/games").childByAutoId().key else { return }
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let calendar = Calendar.current
+        let weekOfYear = calendar.component(.weekOfYear, from: Date.init(timeIntervalSinceNow: 0))
         let game = ["type": type,
-                    "time": formatter.string(from: Date()),
+                    "time": weekOfYear,
                     "balance": balance,
                     "facial": facial,
                     "speech": speech,
@@ -47,6 +47,10 @@ class DbHelper{
         var games: [[String : Any]] = []; ref.child("users").child(uid).child("games").observeSingleEvent(of: .value, with: { (snapshot) in
             // Get user value
             let value = snapshot.value as? NSDictionary
+            if(value == nil){
+                closure(games)
+                return;
+            }
             for(gkey, data) in value!{
                 var game = data as? NSDictionary
                 var temp : [String : Any] = [:]
