@@ -42,6 +42,36 @@ PODS:
     - FirebaseCore (~> 6.0)
     - GoogleUtilities/Environment (~> 6.0)
     - GoogleUtilities/UserDefaults (~> 6.0)
+  - Fritz (5.0.0):
+    - Fritz/Vision (= 5.0.0)
+  - Fritz/Vision (5.0.0):
+    - FritzBase/Vision (= 5.0.0)
+  - Fritz/VisionPoseModel (5.0.0):
+    - Fritz/VisionPoseModel/Human (= 5.0.0)
+  - Fritz/VisionPoseModel/Human (5.0.0):
+    - Fritz/VisionPoseModel/Human/Accurate (= 5.0.0)
+    - Fritz/VisionPoseModel/Human/Fast (= 5.0.0)
+    - Fritz/VisionPoseModel/Human/Small (= 5.0.0)
+  - Fritz/VisionPoseModel/Human/Accurate (5.0.0):
+    - FritzVisionHumanPoseModelAccurate (= 5.0.0)
+  - Fritz/VisionPoseModel/Human/Fast (5.0.0):
+    - FritzVisionHumanPoseModelFast (= 5.0.0)
+  - Fritz/VisionPoseModel/Human/Small (5.0.0):
+    - FritzVisionHumanPoseModelSmall (= 5.0.0)
+  - FritzBase/Core (5.0.0)
+  - FritzBase/CoreMLHelpers (5.0.0)
+  - FritzBase/ManagedModel (5.0.0):
+    - FritzBase/Core (= 5.0.0)
+  - FritzBase/Vision (5.0.0):
+    - FritzBase/Core (= 5.0.0)
+    - FritzBase/CoreMLHelpers (= 5.0.0)
+    - FritzBase/ManagedModel (= 5.0.0)
+  - FritzVisionHumanPoseModelAccurate (5.0.0):
+    - FritzBase/Vision (= 5.0.0)
+  - FritzVisionHumanPoseModelFast (5.0.0):
+    - FritzBase/Vision (= 5.0.0)
+  - FritzVisionHumanPoseModelSmall (5.0.0):
+    - FritzBase/Vision (= 5.0.0)
   - GoogleAppMeasurement (6.1.3):
     - GoogleUtilities/AppDelegateSwizzler (~> 6.0)
     - GoogleUtilities/MethodSwizzler (~> 6.0)
@@ -81,6 +111,8 @@ DEPENDENCIES:
   - Charts
   - Firebase/Analytics
   - Firebase/Database
+  - Fritz
+  - Fritz/VisionPoseModel
 
 SPEC REPOS:
   trunk:
@@ -93,6 +125,11 @@ SPEC REPOS:
     - FirebaseCoreDiagnosticsInterop
     - FirebaseDatabase
     - FirebaseInstanceID
+    - Fritz
+    - FritzBase
+    - FritzVisionHumanPoseModelAccurate
+    - FritzVisionHumanPoseModelFast
+    - FritzVisionHumanPoseModelSmall
     - GoogleAppMeasurement
     - GoogleDataTransport
     - GoogleDataTransportCCTSupport
@@ -110,6 +147,11 @@ SPEC CHECKSUMS:
   FirebaseCoreDiagnosticsInterop: 6829da2b8d1fc795ff1bd99df751d3788035d2cb
   FirebaseDatabase: 524802f7694268c79d34aeac3d67997593e1a0c9
   FirebaseInstanceID: d0eafcd8bdbd3447cd694594734078c3e3e77d8b
+  Fritz: c06106240a488236e951993dc0a31472fb058121
+  FritzBase: d9593a523b46b0badce04a49614aca30820a4879
+  FritzVisionHumanPoseModelAccurate: 2835b9d18199221f11da57f0f7b8258479c4d02b
+  FritzVisionHumanPoseModelFast: 1b6740f179520f5bff726e711070aa568587213f
+  FritzVisionHumanPoseModelSmall: 0d12282ca2b66f34797e7d0ee450dcc469066f69
   GoogleAppMeasurement: 434cc7be25e71dc04b8d0e3079125127b330e84a
   GoogleDataTransport: 166f9b9f82cbf60a204e8fe2daa9db3e3ec1fb15
   GoogleDataTransportCCTSupport: f6ab1962e9dc05ab1fb938b795e5b310209edeec
@@ -117,6 +159,6 @@ SPEC CHECKSUMS:
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
 
-PODFILE CHECKSUM: d418af480fb5f821a7b1b1d03beae75827764adb
+PODFILE CHECKSUM: 9fd3fab83974ec33a9e092cd622081fbdde9a478
 
 COCOAPODS: 1.8.4

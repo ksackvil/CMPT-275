@@ -6,6 +6,7 @@ target 'PARKinetics' do
   use_frameworks!
 
   # Pods for PARKinetics
+  pod 'Fritz'
 
   target 'PARKineticsTests' do
     inherit! :search_paths
@@ -25,3 +26,6 @@ pod 'Firebase/Database'
 # https://firebase.google.com/docs/ios/setup#available-pods
 
 pod 'Charts'
+pod 'Fritz'
+pod 'Fritz/VisionPoseModel'
+
