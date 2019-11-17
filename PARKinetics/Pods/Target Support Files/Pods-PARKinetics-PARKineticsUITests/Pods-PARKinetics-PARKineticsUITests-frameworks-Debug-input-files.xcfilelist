@@ -1,5 +1,13 @@
 ${PODS_ROOT}/Target Support Files/Pods-PARKinetics-PARKineticsUITests/Pods-PARKinetics-PARKineticsUITests-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Charts/Charts.framework
+${PODS_ROOT}/FritzBase/Frameworks/FritzCore.framework
+${PODS_ROOT}/FritzBase/Frameworks/Fritz.framework
+${PODS_ROOT}/FritzBase/Frameworks/CoreMLHelpers.framework
+${PODS_ROOT}/FritzBase/Frameworks/FritzManagedModel.framework
+${PODS_ROOT}/FritzBase/Frameworks/FritzVision.framework
+${PODS_ROOT}/FritzVisionHumanPoseModelAccurate/Frameworks/FritzVisionHumanPoseModelAccurate.framework
+${PODS_ROOT}/FritzVisionHumanPoseModelFast/Frameworks/FritzVisionHumanPoseModelFast.framework
+${PODS_ROOT}/FritzVisionHumanPoseModelSmall/Frameworks/FritzVisionHumanPoseModelSmall.framework
 ${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework
 ${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework
 ${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework
