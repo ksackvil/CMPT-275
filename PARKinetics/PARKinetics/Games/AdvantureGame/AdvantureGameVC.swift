@@ -47,6 +47,9 @@ class AdvantureGameVC: UIViewController {
             case .notDetermined:
                 isButtonEnabled = false
                 print("Speech recognition not yet authorized")
+            @unknown default:
+                isButtonEnabled = false
+                print("Unknown error")
             }
             
             OperationQueue.main.addOperation() {
@@ -101,6 +104,7 @@ class AdvantureGameVC: UIViewController {
                 
                 self.textView.text = result?.bestTranscription.formattedString
                 isFinal = (result?.isFinal)!
+                self.testMatch(phrase: self.textView.text)
             }
             
             if error != nil || isFinal {
@@ -129,6 +133,16 @@ class AdvantureGameVC: UIViewController {
         
         textView.text = "Say something, I'm listening!"
         
+    }
+    
+    func testMatch (phrase: String){
+        let correctPhrase = "Hello"
+        if (correctPhrase == phrase){
+            print("successful 1")
+        }
+        else{
+            print("failure 1")
+        }
     }
     
     func speechRecognizer(_ speechRecognizer: SFSpeechRecognizer, availabilityDidChange available: Bool) {
