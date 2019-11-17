@@ -103,16 +103,17 @@ class ShadowDDRVC: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegat
         view.addSubview(previewView)
 
         // !*!* comment out this line when using videofeed
-        testWithImage()
+        //testWithImage()
         
         // !*!* uncomment below to enable video feed
-        /*
+        
         let videoOutput = AVCaptureVideoDataOutput()
         videoOutput.videoSettings = [kCVPixelBufferPixelFormatTypeKey as String: kCVPixelFormatType_32BGRA as UInt32]
         videoOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "MyQueue"))
         self.captureSession.addOutput(videoOutput)
         self.captureSession.startRunning()
-        */
+ 
+        
     }
     
     // DES: Sets up our view with subviews
