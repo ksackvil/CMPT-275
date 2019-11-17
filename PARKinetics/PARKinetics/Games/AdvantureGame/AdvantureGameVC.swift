@@ -131,6 +131,19 @@ class AdvantureGameVC: UIViewController {
             print("audioEngine couldn't start because of an error.")
         }
         
+        //Added timeout to stop the speech recognition in 4 seconds if the user don't stop it manually
+        Timer.scheduledTimer(withTimeInterval: 4.0, repeats: false, block: { timer in
+            
+            //TODO: Add game logic when timeout expires, e.g. check if the recognition result is matching the answer; display the success or failure information; try again or proceed to next substory
+            
+            if self.audioEngine.isRunning {
+                self.audioEngine.stop()
+                recognitionRequest.endAudio()
+                self.microphoneButton.isEnabled = false
+                self.microphoneButton.setTitle("Start Recording", for: .normal)
+            }
+        })
+
         textView.text = "Say something, I'm listening!"
         
     }
