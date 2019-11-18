@@ -11,7 +11,11 @@ import Speech
 
 class AdvantureGameVC: UIViewController {
     
-    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var storyBox: UILabel!
+
+    @IBOutlet weak var leftTextBox: UILabel!
+    
+    @IBOutlet weak var rightTextBox: UILabel!
     
     @IBOutlet weak var microphoneButton: UIButton!
     
@@ -102,9 +106,9 @@ class AdvantureGameVC: UIViewController {
             
             if result != nil {
                 
-                self.textView.text = result?.bestTranscription.formattedString
+                self.storyBox.text = result?.bestTranscription.formattedString
                 isFinal = (result?.isFinal)!
-                self.testMatch(phrase: self.textView.text)
+                self.testMatch(phrase: self.storyBox.text!)
             }
             
             if error != nil || isFinal {
@@ -144,7 +148,7 @@ class AdvantureGameVC: UIViewController {
             }
         })
 
-        textView.text = "Say something, I'm listening!"
+        storyBox.text = "Say something, I'm listening!"
         
     }
     
