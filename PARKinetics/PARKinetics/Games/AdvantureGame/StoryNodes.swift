@@ -1,10 +1,13 @@
 //
-//  StoryStoryNodes.swift
+//  StoryNodes.swift
 //  PARKinetics
 //
-//  Created by Armaan Bandali on 2019-11-16.
-//  Copyright © 2019 Kai Sackville-Hii. All rights reserved.
+//  Created by TANKER on 2019-11-16.
+//  Copyright © 2019 TANKER. All rights reserved.
 //
+//Description: This file contains the entire story to be used for the Adventure Story game. The story consists of nodes stored in a binary search tree using a linked list
+//Contributors:
+//      Armaan Bandali: All
 
 import Foundation
 
@@ -40,18 +43,22 @@ public class StoryList{
       return head
     }
     
+    //Description: Adds a story node to the tree
+    //Pre: Parameters exist
+    //Post: Story node is added to the tree
     public func addNode(storyPlot: String, rightStory: String, leftStory: String, key: Int){
         var newStory = StoryNode(storyPlot: storyPlot, rightStory: rightStory, leftStory: leftStory, key: key)
         if isEmpty{
             head = newStory
             currentNode = head
+           // print("here")
         }
         else{
             currentNode = head
             while (true){
-                if (currentNode!.key > newStory.key){
+                if (currentNode!.key < newStory.key){
                     if (currentNode!.rightChild==nil){
-                        currentNode!.rightChild! = newStory
+                        currentNode!.rightChild = newStory
                         break
                     }
                     else{
@@ -61,7 +68,7 @@ public class StoryList{
                 }
                 else {
                     if (currentNode!.leftChild==nil){
-                        currentNode!.leftChild! = newStory
+                        currentNode!.leftChild = newStory
                         break
                     }
                     else{
@@ -73,6 +80,9 @@ public class StoryList{
         }
     }
     
+    //Description: Indicates the story node given by the key
+    //Pre: Key integer is given
+    //Post: Returns currentStory node
     public func StoryIsHere(key: Int) -> StoryNode? {
         currentNode = head
         while (currentNode!.key != key){
@@ -90,8 +100,12 @@ public class StoryList{
 }
 
 let AdventureStory1 = StoryList()
+
+//Description: Creation of entire story tree
+//Pre: StoryList() is defined
+//Post: All story nodes added to tree
 func createStory(){
-    AdventureStory1.addNode(storyPlot: "Your eyes slowly open to a lush forest scene. You are hungry and appear to be lost", rightStory: "Get to high ground", leftStory: "Search for food", key: 1000)
+    AdventureStory1.addNode(storyPlot: "Your eyes slowly open to a lush forest scene. You are hungry and appear to be lost", rightStory: "Get to a high view", leftStory: "Search for food", key: 1000)
     AdventureStory1.addNode(storyPlot: "You hear the chirps and cries of wild animals throughout the forest. There also seems to be lots of edible plant life", rightStory: "Go hunting", leftStory: "Eat some wild berries", key: 500)
     AdventureStory1.addNode(storyPlot: "After a short walk through the brush you arrive at the bottom of a steep hill with a rocky face", rightStory: "Climb the rocks", leftStory: "Go around the long way", key: 2000)
     AdventureStory1.addNode(storyPlot: "The berries were not very filling, but satisfy your immediate hunger. After wandering around aimlessly for a time, you hear a shout in the distance. Someone is screaming for help!", rightStory: "Race toward the sound", leftStory: "Run the other way", key: 400)
