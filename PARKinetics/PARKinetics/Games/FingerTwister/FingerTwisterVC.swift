@@ -160,7 +160,7 @@ class FingerTwisterVC: UIViewController {
     //DES: Reset round variables
     func Reset()
     {
-        noteCount+=1
+        //noteCount+=1
         correctNoteCount += Double(correctTap)
         if noteCount >= 4 {
             audioPlayer.stop() //@Negar: Stop the Song
@@ -173,6 +173,7 @@ class FingerTwisterVC: UIViewController {
             delay(bySeconds: 1) {
                 self.gameTime = 4
                 self.gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self,selector:#selector(FingerTwisterVC.timerFunc), userInfo: nil, repeats: true)  //waiting initialize Func
+                self.noteCount+=1
                 self.initialize()
             }
         }
