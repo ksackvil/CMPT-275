@@ -42,11 +42,11 @@ class AdvantureGameVC: UIViewController {
     private var recognitionTask: SFSpeechRecognitionTask?
     private let audioEngine = AVAudioEngine()
     
-    var timer = Timer()
+    //var timer = Timer()
     var currentAnalysis: String = ""
-    var previousAnalysis: String = ""
+    //var previousAnalysis: String = ""
     var incorrectMatch: Bool = false
-    var timerActive: Bool = false
+    //var timerActive: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,11 +95,11 @@ class AdvantureGameVC: UIViewController {
     
     @IBAction func microphoneTapped(_ sender: Any) {
         if audioEngine.isRunning {
-            audioEngine.stop()
-            recognitionRequest?.endAudio()
-            microphoneButton.isEnabled = false
-            //microphoneButton.setTitle("Start Recording", for: .normal)
-            microphoneButton.tintColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
+//            audioEngine.stop()
+//            recognitionRequest?.endAudio()
+//            microphoneButton.isEnabled = false
+//            //microphoneButton.setTitle("Start Recording", for: .normal)
+//            microphoneButton.tintColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
         } else {
             startRecording()
             //microphoneButton.setTitle("Stop Recording", for: .normal)
@@ -145,36 +145,8 @@ class AdvantureGameVC: UIViewController {
             if result != nil {
                 
                 self.currentAnalysis = (result?.bestTranscription.formattedString)!
-                if (self.incorrectMatch){
-                    self.storyBox.text = "Try again"
-                }
-                else{
-                    self.storyBox.text = self.currentAnalysis
-                }
+                self.storyBox.text = self.currentAnalysis
                 isFinal = (result?.isFinal)!
-                            
-                //Added timeout to stop the speech recognition in 4 seconds if the user don't stop it manually
-                if (self.previousAnalysis == self.currentAnalysis){
-                    if (!self.timerActive){
-                        self.timer = Timer.scheduledTimer(withTimeInterval:
-                            2.0, repeats: false, block: { timer in
-                            self.incorrectMatch = false
-                            if self.audioEngine.isRunning {
-                                self.audioEngine.stop()
-                                recognitionRequest.endAudio()
-                                self.microphoneButton.isEnabled = false
-                                //self.microphoneButton.setTitle("Start Recording", for: .normal)
-                                self.microphoneButton.tintColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
-                            }
-                            self.testMatch(phrase: self.currentAnalysis)
-                        })
-                        self.timerActive = true
-                    }
-                }
-                else{
-                    self.timer.invalidate()
-                }
-                self.previousAnalysis = self.currentAnalysis
             }
             
             if error != nil || isFinal {
@@ -195,6 +167,19 @@ class AdvantureGameVC: UIViewController {
         
         audioEngine.prepare()
         
+        Timer.scheduledTimer(withTimeInterval:
+            2.0, repeats: false, block: { timer in
+                self.incorrectMatch = false
+                if self.audioEngine.isRunning {
+                    self.audioEngine.stop()
+                    recognitionRequest.endAudio()
+                    self.microphoneButton.isEnabled = false
+                    //self.microphoneButton.setTitle("Start Recording", for: .normal)
+                    self.microphoneButton.tintColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
+                }
+                self.testMatch(phrase: self.currentAnalysis)
+        })
+        
         do {
             try audioEngine.start()
         } catch {
@@ -209,7 +194,7 @@ class AdvantureGameVC: UIViewController {
     //Pre: Speech has been recognized and user has not spoken for 2 seconds
     //Post: Speech matches story strings and calls transition or returns false if speech did not match
     func testMatch (phrase: String)->Bool{
-        self.timerActive = false
+        //self.timerActive = false
         let correctPhrase1 = AdventureStory1.currentStory?.leftStory
         let correctPhrase2 = AdventureStory1.currentStory?.rightStory
         if ((correctPhrase1 == phrase)||(correctPhrase2 == phrase)){
@@ -241,7 +226,7 @@ class AdvantureGameVC: UIViewController {
         else{
             self.storyBox.text = "Try again"
             self.incorrectMatch = true
-            self.previousAnalysis = " "
+            //self.previousAnalysis = " "
             return false
         }
     }
