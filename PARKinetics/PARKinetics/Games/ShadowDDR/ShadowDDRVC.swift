@@ -12,6 +12,7 @@ import Fritz
 
 class ShadowDDRVC: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
     var previewView: UIImageView!
+    var overlay: PoseOverlay!
     
     // below are all the keypoints of the HumanSkeleton Object whitch we would like to
     // extract from the image. To make it easier on ourselves we divide the body into sections
@@ -72,20 +73,21 @@ class ShadowDDRVC: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegat
       let session = AVCaptureSession()
 
       guard
-        let backCamera = AVCaptureDevice.default(
+        let frontCamera = AVCaptureDevice.default(
             .builtInWideAngleCamera,
           for: .video,
-          position: .back),
-        let input = try? AVCaptureDeviceInput(device: backCamera)
+          position: .front),
+        let input = try? AVCaptureDeviceInput(device: frontCamera)
         else { return session }
       session.addInput(input)
 
       session.sessionPreset = .photo
+    
       return session
     }()
 
     var minPoseThreshold: Double { return 0.4 }
-
+    
     // DES: Hides toolbar
     // PRE: View loaded from main menu segue
     // POST: Toolbar hidden
@@ -100,10 +102,9 @@ class ShadowDDRVC: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegat
         // Add preview View as a subview
         previewView = UIImageView(frame: view.bounds)
         previewView.contentMode = .scaleAspectFill
-        view.addSubview(previewView)
-
+    
         // !*!* comment out this line when using videofeed
-        //testWithImage()
+//        testWithImage()
         
         // !*!* uncomment below to enable video feed
         
@@ -133,16 +134,23 @@ class ShadowDDRVC: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegat
     // PRE: FritzVisionImage is given
     // POST: Image is rendered into view
     func displayInputImage(_ image: FritzVisionImage) {
-      guard let rotated = image.rotate() else { return }
-
-      let image = UIImage(pixelBuffer: rotated)
-      DispatchQueue.main.async {
-        self.previewView.image = image
-      }
+        guard let rotated = image.rotate() else { return }
+        
+        let image = UIImage(pixelBuffer: rotated)
+    
+        DispatchQueue.main.async {
+            self.previewView.image = image
+        }
     }
     
     // DES: takes the keypoints and formats into our body section vectors
     func formatKeypoints(poseResult: FritzVisionPoseResult<HumanSkeleton>) {
+        var tempLeftArm: [Keypoint] = [] as! [Keypoint<HumanSkeleton>]
+        var tempRightArm: [Keypoint] = [] as! [Keypoint<HumanSkeleton>]
+        var tempLeftLeg: [Keypoint] = [] as! [Keypoint<HumanSkeleton>]
+        var tempRightLeg: [Keypoint] = [] as! [Keypoint<HumanSkeleton>]
+        var tempFace: [Keypoint] = [] as! [Keypoint<HumanSkeleton>]
+        
         // attempt to decode results
         guard let poseEstimate = poseResult.pose() else {
             print("error could not extract pose from image")
@@ -151,31 +159,67 @@ class ShadowDDRVC: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegat
         
         for keypoint in poseEstimate.keypoints {
             if leftArmParts.contains(keypoint.part) {
-              foundLeftArm.append(keypoint)
+                tempLeftArm.append(keypoint)
             }
             else if rightArmParts.contains(keypoint.part) {
-              foundRightArm.append(keypoint)
+                tempRightArm.append(keypoint)
             }
             else if leftLegParts.contains(keypoint.part) {
-                foundLeftLeg.append(keypoint)
+                tempLeftLeg.append(keypoint)
             }
             else if rightLegParts.contains(keypoint.part) {
-                foundRightLeg.append(keypoint)
+                tempRightLeg.append(keypoint)
             }
             else if faceParts.contains(keypoint.part) {
-                foundFace.append(keypoint)
+                tempFace.append(keypoint)
             }
         }
-        print("face")
-        print(foundFace)
-        print("leftArm")
-        print(foundLeftArm)
-        print("rightArm")
-        print(foundRightArm)
-        print("leftLeg")
-        print(foundLeftLeg)
-        print("rightLeg")
-        print(foundRightLeg)
+        
+        foundLeftArm = tempLeftArm
+        foundRightArm = tempRightArm
+        foundLeftLeg = tempLeftLeg
+        foundRightLeg = tempRightLeg
+        foundFace = tempFace
+        
+//        print("face")
+//        print(foundFace)
+//        print("leftArm")
+//        print(foundLeftArm)
+//        print("rightArm")
+//        print(foundRightArm)
+//        print("leftLeg")
+//        print(foundLeftLeg)
+//        print("rightLeg")
+//        print(foundRightLeg)
+    }
+    
+    func displayPoseEst(_ image: FritzVisionImage,_ poseResult: Pose<HumanSkeleton>) {
+        guard let newImg = image.draw(pose: poseResult) else {
+            displayInputImage(image)
+            return
+        }
+             
+        DispatchQueue.main.async {
+            self.previewView.image = newImg
+        }
+
+    }
+    
+    func drawLineOnImage(size: CGSize, image: UIImage, from: CGPoint, to: CGPoint) -> UIImage {
+        UIGraphicsBeginImageContext(size)
+        image.draw(at: CGPoint.zero)
+        guard let context = UIGraphicsGetCurrentContext() else { return UIImage() }
+        context.setLineWidth(1.0)
+        context.setStrokeColor(UIColor.blue.cgColor)
+        let startPoint = CGPoint(x: from.x, y: from.y)
+        let endPoint = CGPoint(x: to.x, y: to.y)
+        context.move(to: startPoint)
+        context.addLine(to: endPoint)
+        context.strokePath()
+
+        guard let resultImage = UIGraphicsGetImageFromCurrentImageContext() else { return UIImage() }
+        UIGraphicsEndImageContext()
+        return resultImage
     }
     
     // DES: This is the main function which handles the pose estimation of a video input,
@@ -184,6 +228,10 @@ class ShadowDDRVC: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegat
     // POST: Image is rendered into view
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         let image = FritzVisionImage(sampleBuffer: sampleBuffer, connection: connection)
+        
+        image.metadata = FritzVisionImageMetadata()
+        image.metadata?.orientation = .leftMirrored
+        
         let options = FritzVisionPoseModelOptions()
         options.minPoseThreshold = minPoseThreshold
 
@@ -201,17 +249,14 @@ class ShadowDDRVC: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegat
         // Uncomment to use pose smoothing to smoothe output of model.
         // Will increase lag of pose a bit.
         // pose = poseSmoother.smoothe(pose)
-
-        guard let poseResult = image.draw(pose: pose) else {
-            displayInputImage(image)
-            return
-        }
+//
+//        guard let poseResult = image.draw(pose: pose) else {
+//            displayInputImage(image)
+//            return
+//        }
 
         formatKeypoints(poseResult: result)
-        
-        DispatchQueue.main.async {
-        self.previewView.image = poseResult
-        }
+        displayPoseEst(image, pose)
     }
     
     // DES: For testing with simulator, no video feed nessary, takes one image
