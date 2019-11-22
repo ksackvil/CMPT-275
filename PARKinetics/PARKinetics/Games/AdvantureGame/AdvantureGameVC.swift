@@ -46,6 +46,11 @@ class AdvantureGameVC: UIViewController {
     var incorrectMatch: Bool = false
     var audioDone : Bool = false
     
+    //Scoring variables, get the final score by totalScore/fullScore
+    var fullScore : Int = 0
+    var totalScore : Int = 0
+    var roundScore : Int = 10
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -194,6 +199,8 @@ class AdvantureGameVC: UIViewController {
         let correctPhrase1 = AdventureStory1.currentStory?.leftStory
         let correctPhrase2 = AdventureStory1.currentStory?.rightStory
         if ((correctPhrase1 == phrase)||(correctPhrase2 == phrase)){
+            //Successful match, increase the totalScore
+            totalScore += roundScore
             if (correctPhrase1 == phrase){
                 if AdventureStory1.currentStory?.leftChild == nil{
                     chapterEnd()
@@ -220,10 +227,18 @@ class AdvantureGameVC: UIViewController {
             }
         }
         else{
+            //Incorrect match, decrease the roundScore
+            if(roundScore > 5){
+                roundScore -= 1
+            }
             self.incorrectMatch = true
             self.storyBox.text = "Please say again ."
             return false
         }
+        //Print the scores for debugging
+        print("fullScore: %d", fullScore)
+        print("totalScore: %d", totalScore)
+        print("roundScore: %d", roundScore)
     }
     
     //Description: Hides all text in the current view
@@ -253,6 +268,10 @@ class AdvantureGameVC: UIViewController {
         self.rightTextBox.text = AdventureStory1.currentStory?.rightStory
         self.storyBox.text = ""
         self.storyText.text = AdventureStory1.currentStory?.storyPlot
+        
+        //Increase fullScore, set roundScore back to 10
+        fullScore += 10
+        roundScore = 10
         
         UIView.animate(withDuration: 2.0, delay: 1.0, options: .curveEaseOut, animations: {
         self.leftTextBox.alpha = 1.0
