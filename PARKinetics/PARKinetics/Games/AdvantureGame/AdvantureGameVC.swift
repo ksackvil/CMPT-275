@@ -28,6 +28,8 @@ class AdvantureGameVC: UIViewController {
     
     @IBOutlet weak var storyBox: UILabel! //speech recognition text
 
+   // @IBOutlet weak var score: UILabel! //scoring
+    
     @IBOutlet weak var leftTextBox: UILabel!
     
     @IBOutlet weak var storyText: UILabel!
@@ -36,6 +38,10 @@ class AdvantureGameVC: UIViewController {
     
     @IBOutlet weak var microphoneButton: UIButton!
     
+    @IBAction func AdventureMenu(_ sender: Any) {
+        print("button pressed")
+    self.shouldPerformSegue(withIdentifier: "AdventureMenueSegue", sender: self)
+    }
     private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "en-US"))
     
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
@@ -47,15 +53,21 @@ class AdvantureGameVC: UIViewController {
     var audioDone : Bool = false
     
     //Scoring variables, get the final score by totalScore/fullScore
-    var fullScore : Int = 0
-    var totalScore : Int = 0
-    var roundScore : Int = 10
+    var fullScore : Double = 0.0
+    var totalScore : Double = 0.0
+    var roundScore : Double = 10.0
+    var score: Double=0.0 
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        microphoneButton.isEnabled = false
+ 
+        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+        backgroundImage.image = UIImage(named: "Adventure.png")
+        backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
+        self.view.insertSubview(backgroundImage, at: 0)
         
+        microphoneButton.isEnabled = false
         speechRecognizer!.delegate = self as? SFSpeechRecognizerDelegate
         
         SFSpeechRecognizer.requestAuthorization { (authStatus) in
@@ -88,7 +100,7 @@ class AdvantureGameVC: UIViewController {
         }
         createStory()
         AdventureStory1.currentStory = AdventureStory1.first
-        transitionStoryOut()
+        //transitionStoryOut()
         self.leftTextBox.text = AdventureStory1.currentStory?.leftStory
         self.rightTextBox.text = AdventureStory1.currentStory?.rightStory
         self.storyBox.text = " "
@@ -199,29 +211,44 @@ class AdvantureGameVC: UIViewController {
         let correctPhrase1 = AdventureStory1.currentStory?.leftStory
         let correctPhrase2 = AdventureStory1.currentStory?.rightStory
         if ((correctPhrase1 == phrase)||(correctPhrase2 == phrase)){
-            //Successful match, increase the totalScore
+            //Successful match, increase fullScore, totalScore and reset roundScore
             totalScore += roundScore
+            fullScore += 10
+            roundScore = 10
+            score = (totalScore/fullScore) * 100
             if (correctPhrase1 == phrase){
                 if AdventureStory1.currentStory?.leftChild == nil{
                     chapterEnd()
+                    print("FullSore: %d", fullScore)
+                    print("TotalScore: %d", totalScore)
+                    print("RoundScore: %d", roundScore)
                     return true
                 }
                 else{
                     AdventureStory1.currentStory = AdventureStory1.currentStory?.leftChild
                     transitionStoryOut()
                     self.incorrectMatch = false
+                    print("FullSore: %d", fullScore)
+                    print("TotalScore: %d", totalScore)
+                    print("RoundScore: %d", roundScore)
                     return true
                 }
             }
             else{
                 if AdventureStory1.currentStory?.rightChild == nil{
                     chapterEnd()
+                    print("FullSore: %d", fullScore)
+                    print("TotalScore: %d", totalScore)
+                    print("RoundScore: %d", roundScore)
                     return true
                 }
                 else{
                     AdventureStory1.currentStory = AdventureStory1.currentStory?.rightChild
                     transitionStoryOut()
                     self.incorrectMatch = false
+                    print("FullSore: %d", fullScore)
+                    print("TotalScore: %d", totalScore)
+                    print("RoundScore: %d", roundScore)
                     return true
                 }
             }
@@ -233,12 +260,11 @@ class AdvantureGameVC: UIViewController {
             }
             self.incorrectMatch = true
             self.storyBox.text = "Please say again ."
+            print("FullSore: %d", fullScore)
+            print("TotalScore: %d", totalScore)
+            print("RoundScore: %d", roundScore)
             return false
         }
-        //Print the scores for debugging
-        print("fullScore: %d", fullScore)
-        print("totalScore: %d", totalScore)
-        print("roundScore: %d", roundScore)
     }
     
     //Description: Hides all text in the current view
@@ -268,10 +294,6 @@ class AdvantureGameVC: UIViewController {
         self.rightTextBox.text = AdventureStory1.currentStory?.rightStory
         self.storyBox.text = ""
         self.storyText.text = AdventureStory1.currentStory?.storyPlot
-        
-        //Increase fullScore, set roundScore back to 10
-        fullScore += 10
-        roundScore = 10
         
         UIView.animate(withDuration: 2.0, delay: 1.0, options: .curveEaseOut, animations: {
         self.leftTextBox.alpha = 1.0
@@ -303,5 +325,16 @@ class AdvantureGameVC: UIViewController {
             microphoneButton.isEnabled = false
         }
     }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.destination is MenuVC
+        {
+            let vc = segue.destination as? MenuVC
+            vc?.score = self.score
+        }
+    }
+    
 
 }
