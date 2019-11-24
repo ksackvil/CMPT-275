@@ -213,9 +213,10 @@ class AdvantureGameVC: UIViewController {
         if ((correctPhrase1 == phrase)||(correctPhrase2 == phrase)){
             //Successful match, increase fullScore, totalScore and reset roundScore
             totalScore += roundScore
+            //Increase fullScore, set roundScore back to 10
             fullScore += 10
             roundScore = 10
-            score = (totalScore/fullScore) * 100
+	    score = (totalScore/fullScore) * 100
             if (correctPhrase1 == phrase){
                 if AdventureStory1.currentStory?.leftChild == nil{
                     chapterEnd()
@@ -294,6 +295,7 @@ class AdvantureGameVC: UIViewController {
         self.rightTextBox.text = AdventureStory1.currentStory?.rightStory
         self.storyBox.text = ""
         self.storyText.text = AdventureStory1.currentStory?.storyPlot
+
         
         UIView.animate(withDuration: 2.0, delay: 1.0, options: .curveEaseOut, animations: {
         self.leftTextBox.alpha = 1.0
