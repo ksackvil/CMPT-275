@@ -114,7 +114,6 @@ class ShadowDDRVC: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegat
             let input = try? AVCaptureDeviceInput(device: frontCamera)
             else { return session }
           session.addInput(input)
-
           session.sessionPreset = .photo
         
           return session
