@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		0807DBE8236FAC13000D0F5A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0807DBE7236FAC13000D0F5A /* AVFoundation.framework */; };
 		0807DBEA236FBAD2000D0F5A /* Queen.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0807DBE9236FBAD2000D0F5A /* Queen.mp3 */; };
-		08C3C270238A2D4E00697714 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C3C26F238A2D4E00697714 /* MenuVC.swift */; };
+		083DD1C1238C81F8006414DC /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083DD1C0238C81F8006414DC /* MenuVC.swift */; };
 		16E6B93E237E2DD7000900F3 /* AdvantureGameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E6B93D237E2DD7000900F3 /* AdvantureGameVC.swift */; };
 		2089F291238088E300B8C06A /* StoryNodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2089F290238088E300B8C06A /* StoryNodes.swift */; };
 		30807DC4AB5560A952E7BC98 /* Pods_PARKineticsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05BEC29F49BA65EC09808E92 /* Pods_PARKineticsTests.framework */; };
@@ -53,7 +53,7 @@
 		05BEC29F49BA65EC09808E92 /* Pods_PARKineticsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PARKineticsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0807DBE7236FAC13000D0F5A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		0807DBE9236FBAD2000D0F5A /* Queen.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Queen.mp3; sourceTree = "<group>"; };
-		08C3C26F238A2D4E00697714 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MenuVC.swift; path = "/Users/negarhariri/Desktop/CMPT-275/PARKinetics/PARKinetics/MenuVC.swift"; sourceTree = "<absolute>"; };
+		083DD1C0238C81F8006414DC /* MenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuVC.swift; path = ../../../../MenuVC.swift; sourceTree = "<group>"; };
 		16E6B93D237E2DD7000900F3 /* AdvantureGameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvantureGameVC.swift; sourceTree = "<group>"; };
 		2089F290238088E300B8C06A /* StoryNodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryNodes.swift; sourceTree = "<group>"; };
 		5382359DEB9B3FA07E8CE971 /* Pods-PARKinetics-PARKineticsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PARKinetics-PARKineticsUITests.debug.xcconfig"; path = "Target Support Files/Pods-PARKinetics-PARKineticsUITests/Pods-PARKinetics-PARKineticsUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -153,6 +153,7 @@
 				F7A90FFB23700CB600C81ADA /* GameOverVC.swift */,
 				F73934A2236E52A200BE4463 /* ProgressViewController.swift */,
 				F7042184236D47AD00F3BC3B /* GameMenuVC.swift */,
+				083DD1C0238C81F8006414DC /* MenuVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -222,7 +223,6 @@
 				F7042183236D479100F3BC3B /* Services */,
 				F7EABACF2348710F00D94B1C /* AppDelegate.swift */,
 				F7EABAD12348710F00D94B1C /* ViewController.swift */,
-				08C3C26F238A2D4E00697714 /* MenuVC.swift */,
 				F7EABAD32348710F00D94B1C /* Main.storyboard */,
 				F7EABAD62348710F00D94B1C /* Assets.xcassets */,
 				F7EABAD82348710F00D94B1C /* LaunchScreen.storyboard */,
@@ -501,7 +501,7 @@
 				F7042181236D017800F3BC3B /* DbHelper.swift in Sources */,
 				F7EABAD22348710F00D94B1C /* ViewController.swift in Sources */,
 				F7EABAD02348710F00D94B1C /* AppDelegate.swift in Sources */,
-				08C3C270238A2D4E00697714 /* MenuVC.swift in Sources */,
+				083DD1C1238C81F8006414DC /* MenuVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
