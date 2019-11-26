@@ -36,10 +36,16 @@ class MenuVC: UIViewController {
     
     @IBAction func Quit(_ sender: Any) {
         print("Quite pressed")
-        
+        //Upload game data to Firebase realtime database
+        let defaults = UserDefaults.standard
+        let userKey = defaults.string(forKey: "uid")
+        if(userKey != nil && score != 0){
+            DbHelper.uploadGame(uid: userKey!, type: "AG", balance: "50", facial: String(score), speech: String(score), dexterity: "50", posture: "50")
+            print("Uploaded game data");
+        }
         self.shouldPerformSegue(withIdentifier: "quitTheAdventureGame", sender: self)
-        
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         gameScore.text = "\(score)"
