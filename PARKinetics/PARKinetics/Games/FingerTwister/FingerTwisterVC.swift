@@ -257,7 +257,7 @@ class FingerTwisterVC: UIViewController {
         let defaults = UserDefaults.standard
         let userKey = defaults.string(forKey: "uid")
         if(userKey != nil){
-            DbHelper.uploadGame(uid: userKey!, type: "FT", balance: "0", facial: "0", speech: "0", dexterity: String(Int(score)), posture: "0")
+            DbHelper.uploadGame(uid: userKey!, type: "FT", balance: "50", facial: "50", speech: "50", dexterity: String(Int(score)), posture: "50")
             print("Uploaded game data");
         }
         performSegue(withIdentifier: "FingerTwisterGO", sender: self)
