@@ -21,9 +21,10 @@
 		F7042185236D47AD00F3BC3B /* GameMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7042184236D47AD00F3BC3B /* GameMenuVC.swift */; };
 		F7103C33236521480008AD74 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F7103C32236521480008AD74 /* GoogleService-Info.plist */; };
 		F73934A3236E52A200BE4463 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73934A2236E52A200BE4463 /* ProgressViewController.swift */; };
+		F739502C238CDD12003A8689 /* PoseEstimate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F739502B238CDD12003A8689 /* PoseEstimate.swift */; };
 		F748B50F2356E0C9009A10B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F748B5082356E0C9009A10B0 /* Assets.xcassets */; };
 		F748B5122356E0C9009A10B0 /* FingerTwisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748B50B2356E0C9009A10B0 /* FingerTwisterVC.swift */; };
-		F77793452385019A004BE8A3 /* PoseOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77793442385019A004BE8A3 /* PoseOverlay.swift */; };
+		F7992F5F238CFDD30005BE08 /* PoseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7992F5E238CFDD30005BE08 /* PoseData.swift */; };
 		F7A90FFC23700CB600C81ADA /* GameOverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A90FFB23700CB600C81ADA /* GameOverVC.swift */; };
 		F7E9A5FF237FB9600035B036 /* ShadowDDRVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E9A5FE237FB9600035B036 /* ShadowDDRVC.swift */; };
 		F7EABAD02348710F00D94B1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EABACF2348710F00D94B1C /* AppDelegate.swift */; };
@@ -71,9 +72,10 @@
 		F7042184236D47AD00F3BC3B /* GameMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMenuVC.swift; sourceTree = "<group>"; };
 		F7103C32236521480008AD74 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F73934A2236E52A200BE4463 /* ProgressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
+		F739502B238CDD12003A8689 /* PoseEstimate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseEstimate.swift; sourceTree = "<group>"; };
 		F748B5082356E0C9009A10B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F748B50B2356E0C9009A10B0 /* FingerTwisterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FingerTwisterVC.swift; sourceTree = "<group>"; };
-		F77793442385019A004BE8A3 /* PoseOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseOverlay.swift; sourceTree = "<group>"; };
+		F7992F5E238CFDD30005BE08 /* PoseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseData.swift; sourceTree = "<group>"; };
 		F7A90FFB23700CB600C81ADA /* GameOverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverVC.swift; sourceTree = "<group>"; };
 		F7E9A5FE237FB9600035B036 /* ShadowDDRVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowDDRVC.swift; sourceTree = "<group>"; };
 		F7EABACC2348710F00D94B1C /* PARKinetics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PARKinetics.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -203,7 +205,8 @@
 			isa = PBXGroup;
 			children = (
 				F7E9A5FE237FB9600035B036 /* ShadowDDRVC.swift */,
-				F77793442385019A004BE8A3 /* PoseOverlay.swift */,
+				F739502B238CDD12003A8689 /* PoseEstimate.swift */,
+				F7992F5E238CFDD30005BE08 /* PoseData.swift */,
 			);
 			path = ShadowDDR;
 			sourceTree = "<group>";
@@ -519,8 +522,9 @@
 				F73934A3236E52A200BE4463 /* ProgressViewController.swift in Sources */,
 				F7042185236D47AD00F3BC3B /* GameMenuVC.swift in Sources */,
 				F7042181236D017800F3BC3B /* DbHelper.swift in Sources */,
+				F739502C238CDD12003A8689 /* PoseEstimate.swift in Sources */,
+				F7992F5F238CFDD30005BE08 /* PoseData.swift in Sources */,
 				F7EABAD22348710F00D94B1C /* ViewController.swift in Sources */,
-				F77793452385019A004BE8A3 /* PoseOverlay.swift in Sources */,
 				F7EABAD02348710F00D94B1C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
