@@ -56,7 +56,7 @@ class AdvantureGameVC: UIViewController {
     var fullScore : Double = 0.0
     var totalScore : Double = 0.0
     var roundScore : Double = 10.0
-    var score: Double=0.0 
+    var score: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -216,22 +216,26 @@ class AdvantureGameVC: UIViewController {
             //Increase fullScore, set roundScore back to 10
             fullScore += 10
             roundScore = 10
-	    score = (totalScore/fullScore) * 100
+            score = Int((totalScore/fullScore) * 100)
+            
             if (correctPhrase1 == phrase){
                 if AdventureStory1.currentStory?.leftChild == nil{
                     chapterEnd()
                     print("FullSore: %d", fullScore)
                     print("TotalScore: %d", totalScore)
                     print("RoundScore: %d", roundScore)
+                    print ("Score:" ,score)
                     return true
                 }
                 else{
                     AdventureStory1.currentStory = AdventureStory1.currentStory?.leftChild
                     transitionStoryOut()
                     self.incorrectMatch = false
+                    
                     print("FullSore: %d", fullScore)
                     print("TotalScore: %d", totalScore)
                     print("RoundScore: %d", roundScore)
+                    print ("Score:" ,score)
                     return true
                 }
             }
@@ -241,6 +245,7 @@ class AdvantureGameVC: UIViewController {
                     print("FullSore: %d", fullScore)
                     print("TotalScore: %d", totalScore)
                     print("RoundScore: %d", roundScore)
+                    print ("Score:" ,score)
                     return true
                 }
                 else{
@@ -250,6 +255,7 @@ class AdvantureGameVC: UIViewController {
                     print("FullSore: %d", fullScore)
                     print("TotalScore: %d", totalScore)
                     print("RoundScore: %d", roundScore)
+                    print ("Score:" ,score)
                     return true
                 }
             }
@@ -258,12 +264,14 @@ class AdvantureGameVC: UIViewController {
             //Incorrect match, decrease the roundScore
             if(roundScore > 5){
                 roundScore -= 1
+                score = Int((totalScore + roundScore)/(fullScore + 10) * 100)
             }
             self.incorrectMatch = true
             self.storyBox.text = "Please say again ."
             print("FullSore: %d", fullScore)
             print("TotalScore: %d", totalScore)
             print("RoundScore: %d", roundScore)
+            print ("Score:" ,score)
             return false
         }
     }
@@ -328,7 +336,8 @@ class AdvantureGameVC: UIViewController {
         }
     }
     
-    
+    //DES: Transfer score for game to game over screen
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
         if segue.destination is MenuVC

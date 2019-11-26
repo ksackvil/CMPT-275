@@ -17,15 +17,21 @@ import UIKit
 
 class MenuVC: UIViewController {
 
-     var score:Double = -1
+     var score:Int = -1
     @IBOutlet weak var gameScore: UILabel!
     
-    
+//    @IBAction func closeModal(_ sender: Any) {
+//        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "modalDissmised"), object: nil)
+//        dismiss(animated: true, completion: nil)
+//    }
+//
     
     @IBAction func ResumeToAdventure(_ sender: Any) {
         
+       NotificationCenter.default.post(name: NSNotification.Name(rawValue: "modalDissmised"), object: nil)
+        dismiss(animated: true, completion: nil)
         print("Resume To adventure")
-        self.shouldPerformSegue(withIdentifier: "ResumeToAdventureSegue", sender: self)
+        //self.shouldPerformSegue(withIdentifier: "ResumeToAdventureSegue", sender: self)
     }
     
     @IBAction func Quit(_ sender: Any) {

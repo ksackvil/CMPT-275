@@ -470,7 +470,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Left Text Box" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QwV-5F-oxJ">
                                 <rect key="frame" x="28" y="732" width="300" height="232"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="42"/>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="41"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -493,7 +493,7 @@
                                 <state key="normal" title="Button" image="HamIcon"/>
                                 <connections>
                                     <action selector="AdventureMenu:" destination="zKt-CC-GJf" eventType="touchUpInside" id="blp-k4-Yyb"/>
-                                    <segue destination="3Ui-DI-X8I" kind="showDetail" identifier="AdventureMenueSegue" id="b0a-Vj-1V1"/>
+                                    <segue destination="3Ui-DI-X8I" kind="presentation" identifier="" id="b0a-Vj-1V1"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -714,7 +714,6 @@
                                 </state>
                                 <connections>
                                     <action selector="ResumeToAdventure:" destination="3Ui-DI-X8I" eventType="touchUpInside" id="MaH-v4-qYR"/>
-                                    <segue destination="zKt-CC-GJf" kind="showDetail" identifier="ResumeToAdventureSegue" id="fzM-zs-PDg"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L2g-Bv-xB2">
@@ -827,7 +826,7 @@
         <image name="stock3" width="61" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fzM-zs-PDg"/>
+        <segue reference="b0a-Vj-1V1"/>
         <segue reference="LJf-V0-i4u"/>
     </inferredMetricsTieBreakers>
 </document>
