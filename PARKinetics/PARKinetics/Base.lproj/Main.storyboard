@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vys-jY-V8s">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vys-jY-V8s">
     <device id="ipad9_7" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -94,7 +94,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.0" green="0.85882352941176465" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <segue destination="sJy-ZL-YgR" kind="showDetail" id="mYh-3T-3O1"/>
+                                            <segue destination="ER4-6b-9gi" kind="showDetail" id="yR6-BY-ZT2"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Practice your dexterity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hbo-of-Wwk">
@@ -168,11 +168,75 @@
             </objects>
             <point key="canvasLocation" x="902.34375" y="133.0078125"/>
         </scene>
+        <!--Difficulty LevelVC-->
+        <scene sceneID="KW9-Eg-Dyl">
+            <objects>
+                <viewController modalPresentationStyle="overFullScreen" id="ER4-6b-9gi" customClass="DifficultyLevelVC" customModule="PARKinetics" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TE6-D7-d8Q">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick the level you want to play" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HPm-Wi-Miq">
+                                <rect key="frame" x="0.0" y="160" width="768" height="48"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZX1-E1-xVt">
+                                <rect key="frame" x="0.0" y="433" width="768" height="102"/>
+                                <color key="backgroundColor" red="0.63921568630000003" green="0.72549019609999998" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="102" id="1hM-LM-Xic"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <state key="normal" title="Level  One">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="Level:" destination="ER4-6b-9gi" eventType="touchUpInside" id="4VA-4Y-47U"/>
+                                    <segue destination="sJy-ZL-YgR" kind="showDetail" identifier="LevelOne" id="FUW-Xu-W3I"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2js-A4-vKV">
+                                <rect key="frame" x="0.0" y="543" width="768" height="106"/>
+                                <color key="backgroundColor" red="1" green="0.38823529410000002" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="106" id="LEj-nG-NCr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <state key="normal" title="Level Two ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="LevelTwo:" destination="ER4-6b-9gi" eventType="touchUpInside" id="9iv-EG-lGm"/>
+                                    <segue destination="sJy-ZL-YgR" kind="showDetail" identifier="LevelTwo" id="jW8-8m-czZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1647058824" green="0.17254901959999999" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="HPm-Wi-Miq" firstAttribute="leading" secondItem="HVw-Nk-RL7" secondAttribute="leading" id="0mN-tO-ru6"/>
+                            <constraint firstItem="ZX1-E1-xVt" firstAttribute="top" secondItem="HPm-Wi-Miq" secondAttribute="bottom" constant="225" id="8ru-cW-2GK"/>
+                            <constraint firstItem="HVw-Nk-RL7" firstAttribute="trailing" secondItem="ZX1-E1-xVt" secondAttribute="trailing" id="Ath-eW-TRZ"/>
+                            <constraint firstItem="2js-A4-vKV" firstAttribute="leading" secondItem="HVw-Nk-RL7" secondAttribute="leading" id="AxL-zO-q2w"/>
+                            <constraint firstItem="HVw-Nk-RL7" firstAttribute="trailing" secondItem="HPm-Wi-Miq" secondAttribute="trailing" id="EdV-DH-x2N"/>
+                            <constraint firstItem="2js-A4-vKV" firstAttribute="top" secondItem="ZX1-E1-xVt" secondAttribute="bottom" constant="8" id="IWu-KW-Bxb"/>
+                            <constraint firstItem="HVw-Nk-RL7" firstAttribute="trailing" secondItem="2js-A4-vKV" secondAttribute="trailing" id="Iif-rd-u5K"/>
+                            <constraint firstItem="HPm-Wi-Miq" firstAttribute="top" secondItem="HVw-Nk-RL7" secondAttribute="top" constant="160" id="dSP-qU-KLD"/>
+                            <constraint firstItem="ZX1-E1-xVt" firstAttribute="leading" secondItem="HVw-Nk-RL7" secondAttribute="leading" id="smx-IG-SAF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="HVw-Nk-RL7"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mzT-o7-smj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1440.625" y="-680.2734375"/>
+        </scene>
         <!--Finger TwisterVC-->
         <scene sceneID="JVC-5x-qYN">
             <objects>
                 <viewController modalPresentationStyle="overFullScreen" id="sJy-ZL-YgR" customClass="FingerTwisterVC" customModule="PARKinetics" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="dbc-9w-8NF">
+                    <view key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="dbc-9w-8NF">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -613,7 +677,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="of notes hit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vmZ-YZ-jmW">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Points" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vmZ-YZ-jmW">
                                 <rect key="frame" x="307" y="352" width="154" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
@@ -639,17 +703,10 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sT7-Xu-fhb">
-                                <rect key="frame" x="413" y="251" width="134" height="140"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5.5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N5g-YS-VBK">
+                                <rect key="frame" x="20" y="227" width="728" height="140"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="86"/>
-                                <color key="textColor" red="0.96862745100000003" green="0.78039215689999997" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5.5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N5g-YS-VBK">
-                                <rect key="frame" x="283" y="251" width="200" height="140"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="86"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="102"/>
                                 <color key="textColor" red="0.96862745100000003" green="0.78039215689999997" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -826,7 +883,7 @@
         <image name="stock3" width="61" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="b0a-Vj-1V1"/>
+        <segue reference="jW8-8m-czZ"/>
         <segue reference="LJf-V0-i4u"/>
     </inferredMetricsTieBreakers>
 </document>

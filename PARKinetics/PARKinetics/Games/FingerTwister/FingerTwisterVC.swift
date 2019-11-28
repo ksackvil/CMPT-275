@@ -39,7 +39,7 @@ class FingerTwisterVC: UIViewController {
     
     // MARK: Vars
     //Song player
-    var audioPlayer = AVAudioPlayer() //Correct tiles to press
+    var audioPlayer : AVAudioPlayer!
     var checkOn: [Int] = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] //tiles currently pressed
     var checkTouched: [Int] = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] //whether tap is correct or not
     var correctTap = 0 //How many tiles have been displayed to touch
@@ -49,17 +49,23 @@ class FingerTwisterVC: UIViewController {
     var gameTimer = Timer() //How many rounds the game will go for
     var gameTime = 5 //bool to check whether menu button was pressed
     var gamePaused = false
-    
+    var playing = false
+    var success = false
+    var level: Int = 0
+
     // MARK: Outlets
     @IBOutlet var buttons: [UIButton]!
     
     // MARK: Overides
     // DES: Main view rendering with background
     // PRE: View loaded from main menu segue
-    // POST: Background loaded, multiple touches enabled, call to button initialization
+    // POST: Background loaded, multiple touches enabled, call to button initialization=
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let screenSize: CGRect = UIScreen.main.bounds
+        let scaleX = screenSize.width / 700//768 is ipadPro screen width
+        let scaleY = screenSize.height / 950 //1024 is ipadPro screen height
+        self.view.transform = CGAffineTransform.identity.scaledBy(x: scaleX, y: scaleY)
         music(fileNamed:"Queen.mp3")
         self.view.isMultipleTouchEnabled = true
         buttons.forEach {
@@ -86,6 +92,7 @@ class FingerTwisterVC: UIViewController {
     // POST: Toolbar hidden
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
         self.navigationController?.setToolbarHidden(true, animated: animated)
     }
     
@@ -96,18 +103,25 @@ class FingerTwisterVC: UIViewController {
     @IBAction func touchedDown(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
         //let index = buttons.firstIndex(of: sender)!
-        for i in buttons.indices {
-            if buttons[i].isHighlighted{
-                checkTouched[i] = 1
-                print("this",checkTouched[i])
-                var j = 0
-                while (j < 16){
-                    print("touchedDown",checkTouched[j])
-                    j+=1
-                }
-            }
+        var i=0
+        checkTouched[sender.tag] = 1
+        while (i < 16){
+            print("updated",checkTouched[i],i)
+            i+=1
         }
-        successfulNote()
+        print("here0")
+        justChecking()
+        delay(bySeconds:0.5){
+            self.successfulNote()
+        }
+    }
+    
+    func justChecking(){
+        var i=0
+        while (i < 16){
+            print("touchedDown2",checkTouched[i],checkOn[i],i)
+            i+=1
+        }
     }
     
     //DES:  Pauses game when menu button is pressed
@@ -129,6 +143,7 @@ class FingerTwisterVC: UIViewController {
     
     //DES:  Counts down time until next round and resets board
     @objc func timerFunc() {
+        print("gameTime",gameTime)
         gameTime -= 1
         if gameTime == 0 {
             gameTimer.invalidate()
@@ -138,17 +153,12 @@ class FingerTwisterVC: UIViewController {
     
     //DES:  Checks whether all notes were successfully pressed
     func successfulNote() {
-        var k = 0
         var i = 0
         var j = 0
-        while (k < 16){
-            if checkTouched[k]==1{
-            }
-            else{
-            }
-            k+=1
-        }
+        print("here1")
+        justChecking()
         while (i < 16) {
+            print("touched",checkTouched[i],i)
             if checkOn[i]==1{
                
                 if checkOn[i] != checkTouched[i]{
@@ -166,7 +176,10 @@ class FingerTwisterVC: UIViewController {
         }
         if correctTap==1{
             print("success")
-            succefulNote+=1
+            if (!success){
+                succefulNote+=1
+            }
+            success=true
         }
         else {
             print("failure")
@@ -176,12 +189,22 @@ class FingerTwisterVC: UIViewController {
     //DES: highlight buttons to be pressed
     @objc func initialize() {
         var i = 0
+        var maxTaps = 0
+        var maxRandom = 0
         correctTap = 0
-        while i<4 {//4 can be changed to however many tiles we want pressed
-            let n = (i * 4) + Int.random(in: 0 ... 3)
+        if (level==1){
+            maxTaps = 2
+            maxRandom = 7
+        }
+        else if (level == 2){
+            maxTaps = 3
+            maxRandom = 3
+        }
+        while i < maxTaps {//4 can be changed to however many tiles we want pressed
+            let n = (i * 4) + Int.random(in: 0 ... maxRandom)
             if checkOn[n] == 0 {
                 checkOn[n] = 1
-                for j in 1...15 {
+                for j in 0...15 {
                     if buttons[j].tag == n {
                         buttons[j].backgroundColor = .yellow
                         i += 1
@@ -197,7 +220,7 @@ class FingerTwisterVC: UIViewController {
     {
         noteCount+=1
         
-        if noteCount >= 4 {
+        if noteCount >= 6 {
             
             audioPlayer.stop() //@Negar: Stop the Song
             gameTimer.invalidate()
@@ -206,6 +229,7 @@ class FingerTwisterVC: UIViewController {
             gameOverHandler(result: score)
         }
         else {
+            success = false
             checkOn = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
             checkTouched = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
             var i = 0
@@ -215,7 +239,7 @@ class FingerTwisterVC: UIViewController {
                 i+=1
             }
             delay(bySeconds: 1) {
-                self.gameTime = 4
+                self.gameTime = 2
                 self.gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self,selector:#selector(FingerTwisterVC.timerFunc), userInfo: nil, repeats: true)  //waiting initialize Func
                 self.initialize()
             }
@@ -224,6 +248,7 @@ class FingerTwisterVC: UIViewController {
     
     //DES: obtain music for game and begin playing it
     func music(fileNamed: String) {
+        print("here")
         let sound = Bundle.main.url(forResource: fileNamed, withExtension: nil)
         guard let newUrl = sound else {
             print(" Could not find the file Called \(fileNamed)")
@@ -235,11 +260,11 @@ class FingerTwisterVC: UIViewController {
             audioPlayer.numberOfLoops = 1 //Number of loop until we stop it
             audioPlayer.prepareToPlay()
             audioPlayer.play()
-            
         }
         catch let error as NSError{
             print(error.description)
         }
+        playing = true
     }
     
     //DES: Transfer score for game to game over screen
