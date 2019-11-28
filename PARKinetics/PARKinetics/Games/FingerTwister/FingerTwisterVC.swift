@@ -51,7 +51,7 @@ class FingerTwisterVC: UIViewController {
     var gamePaused = false
     var playing = false
     var success = false
-    var level: Int = 0
+    var song = ""
 
     // MARK: Outlets
     @IBOutlet var buttons: [UIButton]!
@@ -63,10 +63,17 @@ class FingerTwisterVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let screenSize: CGRect = UIScreen.main.bounds
-        let scaleX = screenSize.width / 700//768 is ipadPro screen width
-        let scaleY = screenSize.height / 950 //1024 is ipadPro screen height
+        print(UIScreen.main.bounds,screenSize.width, screenSize.height)
+        let scaleX = screenSize.width / 768//768 is ipadPro screen width
+        let scaleY = screenSize.height / 1024 //1024 is ipadPro screen height
         self.view.transform = CGAffineTransform.identity.scaledBy(x: scaleX, y: scaleY)
-        music(fileNamed:"Queen.mp3")
+        if (level==1){
+            song = "Queen.mp3"
+        }
+        else{
+            song = "ABBA.mp3"
+        }
+        music(fileNamed: song)
         self.view.isMultipleTouchEnabled = true
         buttons.forEach {
             $0.layer.borderWidth = 1.0
@@ -111,7 +118,7 @@ class FingerTwisterVC: UIViewController {
         }
         print("here0")
         justChecking()
-        delay(bySeconds:0.5){
+        delay(bySeconds: 0.75){
             self.successfulNote()
         }
     }
@@ -188,6 +195,7 @@ class FingerTwisterVC: UIViewController {
     
     //DES: highlight buttons to be pressed
     @objc func initialize() {
+        
         var i = 0
         var maxTaps = 0
         var maxRandom = 0
@@ -220,7 +228,7 @@ class FingerTwisterVC: UIViewController {
     {
         noteCount+=1
         
-        if noteCount >= 6 {
+        if noteCount >= 10 {
             
             audioPlayer.stop() //@Negar: Stop the Song
             gameTimer.invalidate()
@@ -239,7 +247,7 @@ class FingerTwisterVC: UIViewController {
                 i+=1
             }
             delay(bySeconds: 1) {
-                self.gameTime = 2
+                self.gameTime = 4
                 self.gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self,selector:#selector(FingerTwisterVC.timerFunc), userInfo: nil, repeats: true)  //waiting initialize Func
                 self.initialize()
             }
