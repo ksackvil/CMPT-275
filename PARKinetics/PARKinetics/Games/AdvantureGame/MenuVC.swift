@@ -53,6 +53,11 @@ class MenuVC: UIViewController {
       
         // Do any additional setup after loading the view.
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
+        self.navigationController?.setToolbarHidden(true, animated: animated)
+    }
     
 
     
