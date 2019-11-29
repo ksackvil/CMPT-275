@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>apiKey</key>
+	<string>3421c11a918b4eb6aa7eac7f049b42df</string>
+	<key>apiUrl</key>
+	<string>https://api.fritz.ai/sdk/v1</string>
+	<key>namespace</key>
+	<string>production</string>
+</dict>
+</plist>

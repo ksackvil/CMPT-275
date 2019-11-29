@@ -31,6 +31,7 @@ struct AppUtility {
     
 }
 
+import Fritz
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -40,6 +41,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      didFinishLaunchingWithOptions launchOptions:
         [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
+    // Automatically added by fritz app setup.
+    FritzCore.configure()
         //Check local storage if user key exsits, if not generate one and store it
         let defaults = UserDefaults.standard
         var userKey = defaults.string(forKey: "uid")
