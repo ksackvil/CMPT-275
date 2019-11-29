@@ -96,7 +96,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.0" green="0.85882352941176465" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <segue destination="sJy-ZL-YgR" kind="showDetail" id="mYh-3T-3O1"/>
+                                            <segue destination="xEw-2r-IXw" kind="showDetail" id="7vG-NJ-r0i"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Practice your dexterity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hbo-of-Wwk">
@@ -161,7 +161,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="902.34375" y="133.0078125"/>
+            <point key="canvasLocation" x="203" y="132"/>
         </scene>
         <!--Finger TwisterVC-->
         <scene sceneID="JVC-5x-qYN">
@@ -318,6 +318,7 @@
                                 <state key="normal" image="HamIcon"/>
                                 <connections>
                                     <action selector="menuButtonPressed:" destination="sJy-ZL-YgR" eventType="touchUpInside" id="y3Z-ho-d6B"/>
+                                    <segue destination="pcB-WU-Cgh" kind="presentation" id="nJB-aZ-33I"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -435,14 +436,14 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="901.5625" y="847.8515625"/>
+            <point key="canvasLocation" x="202" y="904"/>
         </scene>
         <!--Advanture GameVC-->
         <scene sceneID="0Dk-nB-YGT">
             <objects>
                 <viewController id="zKt-CC-GJf" customClass="AdvantureGameVC" customModule="PARKinetics" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Ux-Vv-0Ap">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="712" height="984"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Story Box" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S6u-Yv-ACX">
                                 <rect key="frame" x="60" y="465" width="644" height="115"/>
@@ -472,9 +473,6 @@
                                 <rect key="frame" x="633" y="20" width="107" height="98"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="HamIcon"/>
-                                <connections>
-                                    <segue destination="xEw-2r-IXw" kind="presentation" id="QOg-mW-kcZ"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f8y-Rc-h3x">
                                 <rect key="frame" x="52" y="80" width="644" height="275"/>
@@ -533,7 +531,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="51C-0m-fA1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.71875" y="133.0078125"/>
+            <point key="canvasLocation" x="-634" y="132"/>
         </scene>
         <!--MenuVC-->
         <scene sceneID="hy8-Xa-Fem">
@@ -548,12 +546,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.38823529410000002" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
-                                <state key="normal" title="Resume">
+                                <state key="normal" title="Level 2">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <connections>
-                                    <action selector="closeModal:" destination="xEw-2r-IXw" eventType="touchUpInside" id="oQw-h2-zjp"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PAUSED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ssF-OO-X1j">
                                 <rect key="frame" x="293" y="112" width="183" height="55"/>
@@ -574,12 +569,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.63921568630000003" green="0.72549019609999998" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
-                                <state key="normal" title="Main Menu">
+                                <state key="normal" title="Level 1">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <connections>
-                                    <action selector="goToHome:" destination="xEw-2r-IXw" eventType="touchUpInside" id="9Kk-pL-DNA"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.1647058824" green="0.17254901959999999" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -587,15 +579,13 @@
                     </view>
                     <value key="contentSizeForViewInPopover" type="size" width="768" height="1024"/>
                     <connections>
-                        <outlet property="mainMenu" destination="jkt-Oh-md5" id="DiD-b6-tbo"/>
-                        <outlet property="resume" destination="22R-iF-fps" id="IUa-4e-Zsf"/>
-                        <segue destination="j4K-dc-n43" kind="unwind" identifier="unwindToHomeFromGameMenu" unwindAction="unwindToViewControllerWithSegue:" id="ulM-Gn-dyQ"/>
+                        <segue destination="j4K-dc-n43" kind="unwind" identifier="unwindToHomeFromGameMenu2" unwindAction="unwindToViewControllerWithSegue:" id="ulM-Gn-dyQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hfn-60-cNZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="j4K-dc-n43" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2727" y="865"/>
+            <point key="canvasLocation" x="952" y="132"/>
         </scene>
         <!--Game OverVC-->
         <scene sceneID="7dE-IK-2EJ">
@@ -769,6 +759,74 @@
             </objects>
             <point key="canvasLocation" x="2658" y="-573"/>
         </scene>
+        <!--MenuVC-->
+        <scene sceneID="gBu-5q-IFo">
+            <objects>
+                <viewController modalPresentationStyle="overFullScreen" id="Tyf-m2-IEd" customClass="MenuVC" customModule="PARKinetics" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="4ow-9C-9wQ">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kpB-mo-m3f">
+                                <rect key="frame" x="20" y="783" width="728" height="102"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.38823529410000002" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <state key="normal" title="Resume">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="ResumeToAdventure:" destination="Tyf-m2-IEd" eventType="touchUpInside" id="Wd6-JT-K70"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PAUSED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fIx-Wg-6S5">
+                                <rect key="frame" x="293" y="112" width="183" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="46"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Keep up the great work!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LLx-wk-hf6">
+                                <rect key="frame" x="221" y="175" width="326" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kKh-Gt-YPn">
+                                <rect key="frame" x="20" y="644" width="728" height="102"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.63921568630000003" green="0.72549019609999998" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <state key="normal" title="Main Menu">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="Quit:" destination="Tyf-m2-IEd" eventType="touchUpInside" id="Zp3-dN-jNd"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tEc-EX-gRs">
+                                <rect key="frame" x="58" y="343" width="652" height="157"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="86"/>
+                                <color key="textColor" red="0.96507650609999995" green="0.78826111560000001" blue="0.18009087439999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1647058824" green="0.17254901959999999" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="ZdG-ZH-9XS"/>
+                    </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="768" height="1024"/>
+                    <connections>
+                        <outlet property="gameScore" destination="tEc-EX-gRs" id="wrt-JX-Jjg"/>
+                        <segue destination="hhc-LA-9NY" kind="unwind" identifier="unwindToHomeFromGameMenu2" unwindAction="unwindToViewControllerWithSegue:" id="dpp-gD-cNc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qtj-9Y-idy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="hhc-LA-9NY" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2736.5625" y="874.84375"/>
+        </scene>
     </scenes>
     <resources>
         <image name="FingerTwisterBackground" width="1024" height="1366"/>
@@ -779,6 +837,6 @@
         <image name="stock3" width="61" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Zds-VP-eBj"/>
+        <segue reference="jkj-Xt-two"/>
     </inferredMetricsTieBreakers>
 </document>

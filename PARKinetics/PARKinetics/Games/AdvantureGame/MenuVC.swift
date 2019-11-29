@@ -43,7 +43,7 @@ class MenuVC: UIViewController {
             DbHelper.uploadGame(uid: userKey!, type: "AG", balance: "50", facial: String(score), speech: String(score), dexterity: "50", posture: "50")
             print("Uploaded game data");
         }
-        self.shouldPerformSegue(withIdentifier: "quitTheAdventureGame", sender: self)
+        self.performSegue(withIdentifier: "unwindToHomeFromGameMenu2", sender: self)
     }
     
     override func viewDidLoad() {
