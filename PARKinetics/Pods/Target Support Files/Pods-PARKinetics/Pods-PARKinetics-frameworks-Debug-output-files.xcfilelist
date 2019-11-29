@@ -1,4 +1,12 @@
 ${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework
+${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FritzCore.framework
+${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Fritz.framework
+${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CoreMLHelpers.framework
+${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FritzManagedModel.framework
+${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FritzVision.framework
+${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FritzVisionHumanPoseModelAccurate.framework
+${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FritzVisionHumanPoseModelFast.framework
+${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FritzVisionHumanPoseModelSmall.framework
 ${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework
 ${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework
 ${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework
