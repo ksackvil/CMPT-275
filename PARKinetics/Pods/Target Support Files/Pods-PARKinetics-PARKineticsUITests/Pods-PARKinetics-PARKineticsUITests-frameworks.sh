@@ -162,12 +162,28 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Charts/Charts.framework"
+  install_framework "${PODS_ROOT}/FritzBase/Frameworks/FritzCore.framework"
+  install_framework "${PODS_ROOT}/FritzBase/Frameworks/Fritz.framework"
+  install_framework "${PODS_ROOT}/FritzBase/Frameworks/CoreMLHelpers.framework"
+  install_framework "${PODS_ROOT}/FritzBase/Frameworks/FritzManagedModel.framework"
+  install_framework "${PODS_ROOT}/FritzBase/Frameworks/FritzVision.framework"
+  install_framework "${PODS_ROOT}/FritzVisionHumanPoseModelAccurate/Frameworks/FritzVisionHumanPoseModelAccurate.framework"
+  install_framework "${PODS_ROOT}/FritzVisionHumanPoseModelFast/Frameworks/FritzVisionHumanPoseModelFast.framework"
+  install_framework "${PODS_ROOT}/FritzVisionHumanPoseModelSmall/Frameworks/FritzVisionHumanPoseModelSmall.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Charts/Charts.framework"
+  install_framework "${PODS_ROOT}/FritzBase/Frameworks/FritzCore.framework"
+  install_framework "${PODS_ROOT}/FritzBase/Frameworks/Fritz.framework"
+  install_framework "${PODS_ROOT}/FritzBase/Frameworks/CoreMLHelpers.framework"
+  install_framework "${PODS_ROOT}/FritzBase/Frameworks/FritzManagedModel.framework"
+  install_framework "${PODS_ROOT}/FritzBase/Frameworks/FritzVision.framework"
+  install_framework "${PODS_ROOT}/FritzVisionHumanPoseModelAccurate/Frameworks/FritzVisionHumanPoseModelAccurate.framework"
+  install_framework "${PODS_ROOT}/FritzVisionHumanPoseModelFast/Frameworks/FritzVisionHumanPoseModelFast.framework"
+  install_framework "${PODS_ROOT}/FritzVisionHumanPoseModelSmall/Frameworks/FritzVisionHumanPoseModelSmall.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework"

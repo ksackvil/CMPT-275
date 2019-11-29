@@ -199,7 +199,6 @@ class AdvantureGameVC: UIViewController {
         } catch {
             print("audioEngine couldn't start because of an error.")
         }
-        
         storyBox.text = "Say something, I'm listening!"
         
     }
