@@ -78,6 +78,7 @@ class FingerTwisterVC: UIViewController {
     var song = ""
     var colour: UIColor?
     var glowing = false
+    var numNotes = 0
     
     
 
@@ -98,9 +99,11 @@ class FingerTwisterVC: UIViewController {
         print(level)
         if (level==1){
             song = "Queen.mp3"
+            numNotes = 9
         }
         else{
             song = "ABBA.mp3"
+            numNotes = 20
         }
         music(fileNamed: song)
         self.view.isMultipleTouchEnabled = true
@@ -275,7 +278,7 @@ class FingerTwisterVC: UIViewController {
     {
         noteCount+=1
         
-        if noteCount >= 10 {
+        if Int(noteCount) >= numNotes {
             
             audioPlayer.stop() //@Negar: Stop the Song
             gameTimer.invalidate()
@@ -289,7 +292,7 @@ class FingerTwisterVC: UIViewController {
             checkTouched = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
             var i = 0
             i = 0
-            while (i<16){
+            while (i < 16){
                 self.buttons[i].backgroundColor = .gray
                 i+=1
             }
@@ -312,7 +315,7 @@ class FingerTwisterVC: UIViewController {
         }
         do{
             audioPlayer = try AVAudioPlayer(contentsOf: newUrl)
-            audioPlayer.numberOfLoops = 1 //Number of loop until we stop it
+            audioPlayer.numberOfLoops = 0 //Number of loop until we stop it
             audioPlayer.prepareToPlay()
             audioPlayer.play()
         }

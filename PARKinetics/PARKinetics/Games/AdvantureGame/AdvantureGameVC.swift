@@ -266,7 +266,7 @@ class AdvantureGameVC: UIViewController {
                 score = Int((totalScore + roundScore)/(fullScore + 10) * 100)
             }
             self.incorrectMatch = true
-            self.storyBox.text = "Please say again ."
+            self.storyBox.text = "Please try again"
             print("FullSore: %d", fullScore)
             print("TotalScore: %d", totalScore)
             print("RoundScore: %d", roundScore)

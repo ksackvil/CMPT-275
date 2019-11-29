@@ -47,7 +47,9 @@ public class StoryList{
     //Pre: Parameters exist
     //Post: Story node is added to the tree
     public func addNode(storyPlot: String, rightStory: String, leftStory: String, key: Int){
-        var newStory = StoryNode(storyPlot: storyPlot, rightStory: rightStory, leftStory: leftStory, key: key)
+        let newStory = StoryNode(storyPlot: storyPlot, rightStory: rightStory, leftStory: leftStory, key: key)
+        newStory.leftChild = nil
+        newStory.rightChild = nil
         if isEmpty{
             head = newStory
             currentNode = head
