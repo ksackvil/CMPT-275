@@ -70,8 +70,8 @@ class ShadowDDRVC: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegat
         view.bringSubviewToFront(feedback) // ensures view is loaded in front of others
 
         // setup camera input
-//        self.setupOutput()
-        testWithImage();
+        self.setupOutput()
+//        testWithImage();
         
         // start game at inital pose
         self.isActive = true
