@@ -28,6 +28,8 @@ class AdvantureGameVC: UIViewController {
     
     @IBOutlet weak var storyBox: UILabel! //speech recognition text
 
+   // @IBOutlet weak var score: UILabel! //scoring
+    
     @IBOutlet weak var leftTextBox: UILabel!
     
     @IBOutlet weak var storyText: UILabel!
@@ -36,23 +38,36 @@ class AdvantureGameVC: UIViewController {
     
     @IBOutlet weak var microphoneButton: UIButton!
     
+    @IBAction func AdventureMenu(_ sender: Any) {
+        print("button pressed")
+    self.shouldPerformSegue(withIdentifier: "AdventureMenueSegue", sender: self)
+    }
     private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "en-US"))
     
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     private var recognitionTask: SFSpeechRecognitionTask?
     private let audioEngine = AVAudioEngine()
     
-    var timer = Timer()
     var currentAnalysis: String = ""
-    var previousAnalysis: String = ""
     var incorrectMatch: Bool = false
-    var timerActive: Bool = false
+    var audioDone : Bool = false
+    
+    //Scoring variables, get the final score by totalScore/fullScore
+    var fullScore : Double = 0.0
+    var totalScore : Double = 0.0
+    var roundScore : Double = 10.0
+    var score: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        microphoneButton.isEnabled = false
+ 
+        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+        backgroundImage.image = UIImage(named: "Adventure.png")
+        backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
+        self.view.insertSubview(backgroundImage, at: 0)
         
+        microphoneButton.isEnabled = false
         speechRecognizer!.delegate = self as? SFSpeechRecognizerDelegate
         
         SFSpeechRecognizer.requestAuthorization { (authStatus) in
@@ -85,7 +100,7 @@ class AdvantureGameVC: UIViewController {
         }
         createStory()
         AdventureStory1.currentStory = AdventureStory1.first
-        transitionStoryOut()
+        //transitionStoryOut()
         self.leftTextBox.text = AdventureStory1.currentStory?.leftStory
         self.rightTextBox.text = AdventureStory1.currentStory?.rightStory
         self.storyBox.text = " "
@@ -94,13 +109,7 @@ class AdvantureGameVC: UIViewController {
     }
     
     @IBAction func microphoneTapped(_ sender: Any) {
-        if audioEngine.isRunning {
-            audioEngine.stop()
-            recognitionRequest?.endAudio()
-            microphoneButton.isEnabled = false
-            //microphoneButton.setTitle("Start Recording", for: .normal)
-            microphoneButton.tintColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
-        } else {
+        if !audioEngine.isRunning {
             startRecording()
             //microphoneButton.setTitle("Stop Recording", for: .normal)
             microphoneButton.tintColor = #colorLiteral(red: 1, green: 0.1713354463, blue: 0.1736028223, alpha: 1)
@@ -112,6 +121,8 @@ class AdvantureGameVC: UIViewController {
     //Pre: No current audio session. Microphone and speech recognition permissions are granted
     //Post: Performs speech analysis on user input speech and returns a best guess string
     func startRecording() {
+        
+        audioDone = false
         
         if recognitionTask != nil {
             recognitionTask?.cancel()
@@ -145,36 +156,10 @@ class AdvantureGameVC: UIViewController {
             if result != nil {
                 
                 self.currentAnalysis = (result?.bestTranscription.formattedString)!
-                if (self.incorrectMatch){
-                    self.storyBox.text = "Try again"
-                }
-                else{
+                if(!self.audioDone){
                     self.storyBox.text = self.currentAnalysis
                 }
                 isFinal = (result?.isFinal)!
-                            
-                //Added timeout to stop the speech recognition in 4 seconds if the user don't stop it manually
-                if (self.previousAnalysis == self.currentAnalysis){
-                    if (!self.timerActive){
-                        self.timer = Timer.scheduledTimer(withTimeInterval:
-                            2.0, repeats: false, block: { timer in
-                            self.incorrectMatch = false
-                            if self.audioEngine.isRunning {
-                                self.audioEngine.stop()
-                                recognitionRequest.endAudio()
-                                self.microphoneButton.isEnabled = false
-                                //self.microphoneButton.setTitle("Start Recording", for: .normal)
-                                self.microphoneButton.tintColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
-                            }
-                            self.testMatch(phrase: self.currentAnalysis)
-                        })
-                        self.timerActive = true
-                    }
-                }
-                else{
-                    self.timer.invalidate()
-                }
-                self.previousAnalysis = self.currentAnalysis
             }
             
             if error != nil || isFinal {
@@ -195,6 +180,20 @@ class AdvantureGameVC: UIViewController {
         
         audioEngine.prepare()
         
+        Timer.scheduledTimer(withTimeInterval:
+            4.0, repeats: false, block: { timer in
+                self.audioDone = true
+                self.incorrectMatch = false
+                if self.audioEngine.isRunning {
+                    self.audioEngine.stop()
+                    recognitionRequest.endAudio()
+                    self.microphoneButton.isEnabled = false
+                    //self.microphoneButton.setTitle("Start Recording", for: .normal)
+                    self.microphoneButton.tintColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
+                }
+                self.testMatch(phrase: self.currentAnalysis)
+        })
+        
         do {
             try audioEngine.start()
         } catch {
@@ -208,39 +207,70 @@ class AdvantureGameVC: UIViewController {
     //Pre: Speech has been recognized and user has not spoken for 2 seconds
     //Post: Speech matches story strings and calls transition or returns false if speech did not match
     func testMatch (phrase: String)->Bool{
-        self.timerActive = false
         let correctPhrase1 = AdventureStory1.currentStory?.leftStory
         let correctPhrase2 = AdventureStory1.currentStory?.rightStory
         if ((correctPhrase1 == phrase)||(correctPhrase2 == phrase)){
+            //Successful match, increase fullScore, totalScore and reset roundScore
+            totalScore += roundScore
+            //Increase fullScore, set roundScore back to 10
+            fullScore += 10
+            roundScore = 10
+            score = Int((totalScore/fullScore) * 100)
+            
             if (correctPhrase1 == phrase){
                 if AdventureStory1.currentStory?.leftChild == nil{
                     chapterEnd()
+                    print("FullSore: %d", fullScore)
+                    print("TotalScore: %d", totalScore)
+                    print("RoundScore: %d", roundScore)
+                    print ("Score:" ,score)
                     return true
                 }
                 else{
                     AdventureStory1.currentStory = AdventureStory1.currentStory?.leftChild
                     transitionStoryOut()
                     self.incorrectMatch = false
+                    
+                    print("FullSore: %d", fullScore)
+                    print("TotalScore: %d", totalScore)
+                    print("RoundScore: %d", roundScore)
+                    print ("Score:" ,score)
                     return true
                 }
             }
             else{
                 if AdventureStory1.currentStory?.rightChild == nil{
                     chapterEnd()
+                    print("FullSore: %d", fullScore)
+                    print("TotalScore: %d", totalScore)
+                    print("RoundScore: %d", roundScore)
+                    print ("Score:" ,score)
                     return true
                 }
                 else{
                     AdventureStory1.currentStory = AdventureStory1.currentStory?.rightChild
                     transitionStoryOut()
                     self.incorrectMatch = false
+                    print("FullSore: %d", fullScore)
+                    print("TotalScore: %d", totalScore)
+                    print("RoundScore: %d", roundScore)
+                    print ("Score:" ,score)
                     return true
                 }
             }
         }
         else{
-            self.storyBox.text = "Try again"
+            //Incorrect match, decrease the roundScore
+            if(roundScore > 5){
+                roundScore -= 1
+                score = Int((totalScore + roundScore)/(fullScore + 10) * 100)
+            }
             self.incorrectMatch = true
-            self.previousAnalysis = " "
+            self.storyBox.text = "Please say again ."
+            print("FullSore: %d", fullScore)
+            print("TotalScore: %d", totalScore)
+            print("RoundScore: %d", roundScore)
+            print ("Score:" ,score)
             return false
         }
     }
@@ -270,10 +300,11 @@ class AdvantureGameVC: UIViewController {
     func transitionStoryIn(){
         self.leftTextBox.text = AdventureStory1.currentStory?.leftStory
         self.rightTextBox.text = AdventureStory1.currentStory?.rightStory
-        self.storyBox.text = self.currentAnalysis
+        self.storyBox.text = ""
         self.storyText.text = AdventureStory1.currentStory?.storyPlot
+
         
-        UIView.animate(withDuration: 2.0, delay: 3.0, options: .curveEaseOut, animations: {
+        UIView.animate(withDuration: 2.0, delay: 1.0, options: .curveEaseOut, animations: {
         self.leftTextBox.alpha = 1.0
         self.rightTextBox.alpha = 1.0
         self.microphoneButton.alpha = 1.0
@@ -303,5 +334,17 @@ class AdvantureGameVC: UIViewController {
             microphoneButton.isEnabled = false
         }
     }
+    
+    //DES: Transfer score for game to game over screen
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.destination is MenuVC
+        {
+            let vc = segue.destination as? MenuVC
+            vc?.score = self.score
+        }
+    }
+    
 
 }
