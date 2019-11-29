@@ -318,7 +318,6 @@
                                 <state key="normal" image="HamIcon"/>
                                 <connections>
                                     <action selector="menuButtonPressed:" destination="sJy-ZL-YgR" eventType="touchUpInside" id="y3Z-ho-d6B"/>
-                                    <segue destination="xEw-2r-IXw" kind="presentation" id="2rc-hK-3il"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -443,7 +442,7 @@
             <objects>
                 <viewController id="zKt-CC-GJf" customClass="AdvantureGameVC" customModule="PARKinetics" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Ux-Vv-0Ap">
-                        <rect key="frame" x="0.0" y="0.0" width="712" height="984"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Story Box" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S6u-Yv-ACX">
                                 <rect key="frame" x="60" y="465" width="644" height="115"/>
@@ -536,28 +535,16 @@
             </objects>
             <point key="canvasLocation" x="136.71875" y="133.0078125"/>
         </scene>
-        <!--Game MenuVC-->
+        <!--MenuVC-->
         <scene sceneID="hy8-Xa-Fem">
             <objects>
-                <viewController modalPresentationStyle="overFullScreen" id="xEw-2r-IXw" customClass="GameMenuVC" customModule="PARKinetics" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="overFullScreen" id="xEw-2r-IXw" customClass="MenuVC" customModule="PARKinetics" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="UVz-s4-cxk">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jkt-Oh-md5">
-                                <rect key="frame" x="20" y="262" width="728" height="102"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.63921568630000003" green="0.72549019609999998" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
-                                <state key="normal" title="Main Menu">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="goToHome:" destination="xEw-2r-IXw" eventType="touchUpInside" id="9Kk-pL-DNA"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="22R-iF-fps">
-                                <rect key="frame" x="20" y="390" width="728" height="102"/>
+                                <rect key="frame" x="20" y="783" width="728" height="102"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.38823529410000002" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
@@ -575,6 +562,25 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Keep up the great work!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tCP-Nh-7PN">
+                                <rect key="frame" x="221" y="175" width="326" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jkt-Oh-md5">
+                                <rect key="frame" x="20" y="644" width="728" height="102"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.63921568630000003" green="0.72549019609999998" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <state key="normal" title="Main Menu">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="goToHome:" destination="xEw-2r-IXw" eventType="touchUpInside" id="9Kk-pL-DNA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.1647058824" green="0.17254901959999999" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="vxJ-17-Bd0"/>
@@ -589,7 +595,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hfn-60-cNZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="j4K-dc-n43" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2648" y="-583"/>
+            <point key="canvasLocation" x="2727" y="865"/>
         </scene>
         <!--Game OverVC-->
         <scene sceneID="7dE-IK-2EJ">
@@ -708,6 +714,61 @@
             </objects>
             <point key="canvasLocation" x="1715" y="1573"/>
         </scene>
+        <!--Game MenuVC-->
+        <scene sceneID="nVO-ms-kGv">
+            <objects>
+                <viewController modalPresentationStyle="overFullScreen" id="pcB-WU-Cgh" customClass="GameMenuVC" customModule="PARKinetics" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="YBS-RX-Trd">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O7G-aX-mJe">
+                                <rect key="frame" x="20" y="262" width="728" height="102"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.63921568630000003" green="0.72549019609999998" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <state key="normal" title="Main Menu">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="goToHome:" destination="pcB-WU-Cgh" eventType="touchUpInside" id="EMm-SK-WwF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8NJ-jR-UxM">
+                                <rect key="frame" x="20" y="390" width="728" height="102"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.38823529410000002" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <state key="normal" title="Resume">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeModal:" destination="pcB-WU-Cgh" eventType="touchUpInside" id="3i8-b6-e6i"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PAUSED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bzi-5N-xcz">
+                                <rect key="frame" x="293" y="112" width="183" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="46"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1647058824" green="0.17254901959999999" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="pkR-wK-nBJ"/>
+                    </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="768" height="1024"/>
+                    <connections>
+                        <outlet property="mainMenu" destination="O7G-aX-mJe" id="OoF-uR-erA"/>
+                        <outlet property="resume" destination="8NJ-jR-UxM" id="cjh-vK-FxQ"/>
+                        <segue destination="2WM-ec-kdP" kind="unwind" identifier="unwindToHomeFromGameMenu" unwindAction="unwindToViewControllerWithSegue:" id="0gY-EC-oZW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UcJ-Kt-1Ab" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="2WM-ec-kdP" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2658" y="-573"/>
+        </scene>
     </scenes>
     <resources>
         <image name="FingerTwisterBackground" width="1024" height="1366"/>
@@ -719,6 +780,5 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Zds-VP-eBj"/>
-        <segue reference="QOg-mW-kcZ"/>
     </inferredMetricsTieBreakers>
 </document>
