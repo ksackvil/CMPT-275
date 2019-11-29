@@ -29,16 +29,22 @@ class PARKineticsUITests: XCTestCase {
     func testGameLoadingAndProgress() {
         
         let app = XCUIApplication()
-        app.staticTexts["FINGER TWISTER"].tap()
-        app.buttons["HamIcon"].tap()
-        app.buttons["Main Menu"].tap()
-        app.staticTexts["ADVENTURE STORY"].tap()
+        app.staticTexts["Speech based adventure"].tap()
+        app.buttons["Play"].tap()
         app.buttons["Button"].tap()
-        app.buttons["Quit"].tap()
         
-        let element = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element(boundBy: 2).children(matching: .other).element
-        element.children(matching: .other).element(boundBy: 2).children(matching: .button).element.tap()
-        element.children(matching: .other).element(boundBy: 1).children(matching: .button).element.swipeLeft()
+        let mainMenuButton = app.buttons["Main Menu"]
+        mainMenuButton.tap()
+        app.staticTexts["Practice your dexterity"].tap()
+        app.buttons["Level 1"].tap()
+        
+        let hamiconButton = app.buttons["HamIcon"]
+        hamiconButton.tap()
+        app.buttons["Resume"].tap()
+        hamiconButton.tap()
+        mainMenuButton.tap()
+        app.staticTexts["PARKinetics"].swipeLeft()
+        
         
     }
 
