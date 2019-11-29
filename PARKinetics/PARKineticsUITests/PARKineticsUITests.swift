@@ -26,20 +26,9 @@ class PARKineticsUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testGameLoadingAndProgress() {
-        
-        let app = XCUIApplication()
-        app.staticTexts["FINGER TWISTER"].tap()
-        app.buttons["HamIcon"].tap()
-        app.buttons["Main Menu"].tap()
-        app.staticTexts["ADVENTURE STORY"].tap()
-        app.buttons["Button"].tap()
-        app.buttons["Quit"].tap()
-        
-        let element = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element(boundBy: 2).children(matching: .other).element
-        element.children(matching: .other).element(boundBy: 2).children(matching: .button).element.tap()
-        element.children(matching: .other).element(boundBy: 1).children(matching: .button).element.swipeLeft()
-        
+    func testExample() {
+        // Use recording to get started writing UI tests.
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
 
 }
