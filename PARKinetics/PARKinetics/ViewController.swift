@@ -53,6 +53,10 @@ class ViewController: UIViewController {
     //       to render buttons and title into view
     override func viewDidLoad() {
         super.viewDidLoad()
+        let screenSize: CGRect = UIScreen.main.bounds
+        let scaleX = screenSize.width / 768//768 is ipadPro screen width
+        let scaleY = screenSize.height / 1024 //1024 is ipadPro screen height
+        self.view.transform = CGAffineTransform.identity.scaledBy(x: scaleX, y: scaleY)
         
         // Round button corners for each of the game buttons
         fingerTwister.layer.cornerRadius = corrnerRad   // set a radius for corners

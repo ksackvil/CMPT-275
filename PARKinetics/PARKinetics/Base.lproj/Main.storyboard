@@ -444,16 +444,18 @@
                 <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" id="zKt-CC-GJf" customClass="AdvantureGameVC" customModule="PARKinetics" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Ux-Vv-0Ap">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Story Box" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S6u-Yv-ACX">
                                 <rect key="frame" x="60" y="465" width="644" height="115"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.99218708280000001" blue="0.99194580320000003" alpha="0.60027825342465757" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="39"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oez-KZ-wZW">
-                                <rect key="frame" x="282" y="585" width="200" height="193"/>
+                                <rect key="frame" x="282" y="576" width="200" height="193"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="mic.circle.fill" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="170"/>
@@ -463,43 +465,42 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Left Text Box" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QwV-5F-oxJ">
-                                <rect key="frame" x="28" y="732" width="300" height="232"/>
+                                <rect key="frame" x="25" y="744" width="300" height="232"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.9999958873" green="0.99612480400000003" blue="0.99591344589999997" alpha="0.59859267979452058" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="42"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SeB-c1-xD1">
-                                <rect key="frame" x="633" y="20" width="107" height="98"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f8y-Rc-h3x">
+                                <rect key="frame" x="60.943151901860801" y="14" width="644.00000000000023" height="275"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="HamIcon"/>
-                                <connections>
-                                    <segue destination="Tyf-m2-IEd" kind="showDetail" id="mfs-v7-ClC"/>
-
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f8y-Rc-h3x">
-                                <rect key="frame" x="52" y="80" width="644" height="275"/>
+                                <color key="backgroundColor" red="1" green="0.99019607843137258" blue="0.99019607843137258" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="42"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Right Text Box" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xl7-Qz-Z4v">
-                                <rect key="frame" x="440" y="732" width="300" height="232"/>
+                                <rect key="frame" x="440" y="744" width="300" height="232"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.9999958873" green="0.99612480400000003" blue="0.99591344589999997" alpha="0.59746896404109584" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="42"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SeB-c1-xD1">
+                                <rect key="frame" x="328.36360217355559" y="895" width="107" height="98.000000000000227"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="HamIcon"/>
+                                <connections>
+                                    <segue destination="Tyf-m2-IEd" kind="showDetail" id="mfs-v7-ClC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <accessibility key="accessibilityConfiguration">
                             <accessibilityTraits key="traits" adjustable="YES"/>
                         </accessibility>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="f8y-Rc-h3x" secondAttribute="trailing" constant="52" id="KhJ-lQ-jpQ"/>
-                            <constraint firstItem="f8y-Rc-h3x" firstAttribute="leading" secondItem="FsM-56-RpO" secondAttribute="leading" constant="52" id="o5g-MJ-lhj"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="FsM-56-RpO" propertyAccessControl="localizable"/>
                     </view>
                     <navigationItem key="navigationItem" id="M98-l8-IXJ"/>
@@ -1086,7 +1087,7 @@
         <image name="tapToSpeak" width="170.5" height="173"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Zds-VP-eBj"/>
+        <segue reference="jkj-Xt-two"/>
         <segue reference="v7m-0l-KID"/>
     </inferredMetricsTieBreakers>
 </document>
