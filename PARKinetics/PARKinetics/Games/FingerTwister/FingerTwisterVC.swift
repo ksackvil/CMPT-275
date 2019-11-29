@@ -95,6 +95,7 @@ class FingerTwisterVC: UIViewController {
         let scaleX = screenSize.width / 768//768 is ipadPro screen width
         let scaleY = screenSize.height / 1024 //1024 is ipadPro screen height
         self.view.transform = CGAffineTransform.identity.scaledBy(x: scaleX, y: scaleY)
+        print(level)
         if (level==1){
             song = "Queen.mp3"
         }

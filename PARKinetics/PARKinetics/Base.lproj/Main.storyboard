@@ -533,10 +533,10 @@
             </objects>
             <point key="canvasLocation" x="-634" y="132"/>
         </scene>
-        <!--MenuVC-->
+        <!--Difficulty LevelVC-->
         <scene sceneID="hy8-Xa-Fem">
             <objects>
-                <viewController modalPresentationStyle="overFullScreen" id="xEw-2r-IXw" customClass="MenuVC" customModule="PARKinetics" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="overFullScreen" id="xEw-2r-IXw" customClass="DifficultyLevelVC" customModule="PARKinetics" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="UVz-s4-cxk">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -549,21 +549,10 @@
                                 <state key="normal" title="Level 2">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="LevelTwo:" destination="xEw-2r-IXw" eventType="touchUpInside" id="bT9-2i-cbL"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PAUSED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ssF-OO-X1j">
-                                <rect key="frame" x="293" y="112" width="183" height="55"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="46"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Keep up the great work!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tCP-Nh-7PN">
-                                <rect key="frame" x="221" y="175" width="326" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="italicSystem" pointSize="30"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jkt-Oh-md5">
                                 <rect key="frame" x="20" y="644" width="728" height="102"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -572,7 +561,17 @@
                                 <state key="normal" title="Level 1">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="Level:" destination="xEw-2r-IXw" eventType="touchUpInside" id="elE-pk-527"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Finger Twister" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ssF-OO-X1j">
+                                <rect key="frame" x="226" y="68" width="317" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="46"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.1647058824" green="0.17254901959999999" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="vxJ-17-Bd0"/>
@@ -580,12 +579,14 @@
                     <value key="contentSizeForViewInPopover" type="size" width="768" height="1024"/>
                     <connections>
                         <segue destination="j4K-dc-n43" kind="unwind" identifier="unwindToHomeFromGameMenu2" unwindAction="unwindToViewControllerWithSegue:" id="ulM-Gn-dyQ"/>
+                        <segue destination="sJy-ZL-YgR" kind="showDetail" identifier="LevelTwo" id="HFJ-bZ-77k"/>
+                        <segue destination="sJy-ZL-YgR" kind="showDetail" identifier="LevelOne" id="v7m-0l-KID"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hfn-60-cNZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="j4K-dc-n43" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="952" y="132"/>
+            <point key="canvasLocation" x="951.5625" y="131.8359375"/>
         </scene>
         <!--Game OverVC-->
         <scene sceneID="7dE-IK-2EJ">
@@ -838,5 +839,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="jkj-Xt-two"/>
+        <segue reference="v7m-0l-KID"/>
     </inferredMetricsTieBreakers>
 </document>
