@@ -47,7 +47,7 @@ public class StoryList{
     //Pre: Parameters exist
     //Post: Story node is added to the tree
     public func addNode(storyPlot: String, rightStory: String, leftStory: String, key: Int){
-        var newStory = StoryNode(storyPlot: storyPlot, rightStory: rightStory, leftStory: leftStory, key: key)
+        let newStory = StoryNode(storyPlot: storyPlot, rightStory: rightStory, leftStory: leftStory, key: key)
         if isEmpty{
             head = newStory
             currentNode = head
@@ -118,6 +118,6 @@ func createStory(){
     AdventureStory1.addNode(storyPlot: "There are lots of reeds along the stream that can be woven into a net, but the only fallen tree branch in sight is on the other side of the stream", rightStory: "Make the trap as is", leftStory: "Swim across the stream", key: 950)
     AdventureStory1.addNode(storyPlot: "You turn around to walk back but suddenly lose your footing. You tumble down the side of the path until a tree breaks your fall. You're dazed but unharmed", rightStory: "Climb back up", leftStory: "Continue sliding down", key: 1800)
     AdventureStory1.addNode(storyPlot: "After almost giving up you finally arrive at the top of the hill. The hill offers you a view of the entire forest. You see a thick plume of smoke rising from the trees to the north, but a winding river to the south", rightStory: "Follow the smoke", leftStory: "Follow the river", key: 1950)
-    AdventureStory1.addNode(storyPlot: "You make your way carefully down the hill after quite a bit of time", rightStory: "Still follow the smoke", leftStory: "Follow the river instead", key: 2600)
-    AdventureStory1.addNode(storyPlot: "You make your way carefully down the hill after quite a bit of time", rightStory: "Still follow the river", leftStory: "Follow the smoke insteadd", key: 2450)
+    AdventureStory1.addNode(storyPlot: "You make your way carefully down the hill after quite a bit of time, but you begin to have doubts", rightStory: "Still follow the smoke", leftStory: "Follow the river instead", key: 2600)
+    AdventureStory1.addNode(storyPlot: "You make your way carefully down the hill after quite a bit of time, but you begin to have doubts", rightStory: "Still follow the river", leftStory: "Follow the smoke instead", key: 2450)
 }
