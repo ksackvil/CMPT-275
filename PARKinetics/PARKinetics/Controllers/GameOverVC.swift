@@ -40,11 +40,7 @@ class GameOverVC: UIViewController {
     // POST: score is updated into view
     override func viewDidLoad() {
         super.viewDidLoad()
-        let screenSize: CGRect = UIScreen.main.bounds
-        let scaleX = screenSize.width / 700//768 is ipadPro screen width
-        let scaleY = screenSize.height / 950 //1024 is ipadPro screen height
-        self.view.transform = CGAffineTransform.identity.scaledBy(x: scaleX, y: scaleY)
-        gameScoreLabel.text = "\(Int(score * 1000))"
+        gameScoreLabel.text = "\(score)"
         print(score)
     }
 }
