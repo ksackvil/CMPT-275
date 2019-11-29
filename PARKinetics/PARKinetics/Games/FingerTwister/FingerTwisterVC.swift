@@ -51,7 +51,7 @@ extension UIView {
         glowAnimation.fromValue = 0
         glowAnimation.toValue = effect.rawValue
         glowAnimation.beginTime = CACurrentMediaTime()+0.3
-        glowAnimation.duration = CFTimeInterval(1.0)
+        glowAnimation.duration = CFTimeInterval(0.5)
         glowAnimation.fillMode = .removed
         glowAnimation.autoreverses = true
         glowAnimation.isRemovedOnCompletion = true
