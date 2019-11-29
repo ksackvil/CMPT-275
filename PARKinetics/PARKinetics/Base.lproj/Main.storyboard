@@ -1034,13 +1034,25 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="H9H-nN-fbW">
-                                <rect key="frame" x="20" y="450" width="728" height="358"/>
+                                <rect key="frame" x="20" y="530" width="728" height="232"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <string key="text">This game will use full body movement. Make sure you have your iPad portrait upright. Step away from the iPad so that you can see your full body on the screen and stand tall. Watch the poses as they come up on the screen and follow the movements. The more accurate you are to the movements, the more points you will score.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="starPose" translatesAutoresizingMaskIntoConstraints="NO" id="58Y-GE-Auy">
+                                <rect key="frame" x="268" y="220" width="233" height="236"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="leftLungePose" translatesAutoresizingMaskIntoConstraints="NO" id="xaQ-Qb-UHi">
+                                <rect key="frame" x="501" y="220" width="197" height="236"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="standPose" translatesAutoresizingMaskIntoConstraints="NO" id="obr-Fw-avx">
+                                <rect key="frame" x="83" y="198" width="177" height="258"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.1647058824" green="0.17254901959999999" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="OEb-mI-jwi"/>
@@ -1062,11 +1074,14 @@
         <image name="arrow.left" catalog="system" width="64" height="48"/>
         <image name="as" width="699.5" height="174"/>
         <image name="fingerTwisterInst" width="450.5" height="459.5"/>
+        <image name="leftLungePose" width="852.5" height="1187"/>
         <image name="mic.circle.fill" catalog="system" width="64" height="60"/>
         <image name="speakNow" width="170.5" height="174"/>
+        <image name="standPose" width="456" height="1326.5"/>
+        <image name="starPose" width="1134" height="1218"/>
         <image name="stock1" width="101" height="115"/>
         <image name="stock2" width="111" height="111"/>
-        <image name="stock3" width="242" height="198"/>
+        <image name="stock3" width="61" height="60"/>
         <image name="tapToSpeak" width="170.5" height="173"/>
     </resources>
     <inferredMetricsTieBreakers>
