@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		0807DBE8236FAC13000D0F5A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0807DBE7236FAC13000D0F5A /* AVFoundation.framework */; };
 		0807DBEA236FBAD2000D0F5A /* Queen.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0807DBE9236FBAD2000D0F5A /* Queen.mp3 */; };
-		083DD1CA238F0921006414DC /* DifficultyLevelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083DD1C9238F0921006414DC /* DifficultyLevelVC.swift */; };
+		083DD1CA238F0921006414DC /* FingerTwisterInst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083DD1C9238F0921006414DC /* FingerTwisterInst.swift */; };
 		0EEB4943A33E302A874C15D5 /* Fritz-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 09F540E79846A65A11F6E313 /* Fritz-Info.plist */; };
 		16E4AF49238C8B220029A84A /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E4AF48238C8B210029A84A /* MenuVC.swift */; };
 		16E6B93E237E2DD7000900F3 /* AdvantureGameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E6B93D237E2DD7000900F3 /* AdvantureGameVC.swift */; };
@@ -22,6 +22,9 @@
 		F7042181236D017800F3BC3B /* DbHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7042180236D017800F3BC3B /* DbHelper.swift */; };
 		F7042185236D47AD00F3BC3B /* GameMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7042184236D47AD00F3BC3B /* GameMenuVC.swift */; };
 		F7103C33236521480008AD74 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F7103C32236521480008AD74 /* GoogleService-Info.plist */; };
+		F736BC722390F60D001025BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F736BC712390F60C001025BB /* Assets.xcassets */; };
+		F736BC7423910454001025BB /* AdventureGameInst.swift in Sources */ = {isa = PBXBuildFile; fileRef = F736BC7323910454001025BB /* AdventureGameInst.swift */; };
+		F736BC7623910959001025BB /* ShadowDDRInst.swift in Sources */ = {isa = PBXBuildFile; fileRef = F736BC7523910959001025BB /* ShadowDDRInst.swift */; };
 		F73934A3236E52A200BE4463 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73934A2236E52A200BE4463 /* ProgressViewController.swift */; };
 		F739502C238CDD12003A8689 /* PoseEstimate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F739502B238CDD12003A8689 /* PoseEstimate.swift */; };
 		F748B50F2356E0C9009A10B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F748B5082356E0C9009A10B0 /* Assets.xcassets */; };
@@ -33,7 +36,6 @@
 		F7EABAD02348710F00D94B1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EABACF2348710F00D94B1C /* AppDelegate.swift */; };
 		F7EABAD22348710F00D94B1C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EABAD12348710F00D94B1C /* ViewController.swift */; };
 		F7EABAD52348710F00D94B1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7EABAD32348710F00D94B1C /* Main.storyboard */; };
-		F7EABAD72348710F00D94B1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7EABAD62348710F00D94B1C /* Assets.xcassets */; };
 		F7EABADA2348710F00D94B1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7EABAD82348710F00D94B1C /* LaunchScreen.storyboard */; };
 		F7EABAE52348710F00D94B1C /* PARKineticsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EABAE42348710F00D94B1C /* PARKineticsTests.swift */; };
 		F7EABAF02348710F00D94B1C /* PARKineticsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EABAEF2348710F00D94B1C /* PARKineticsUITests.swift */; };
@@ -61,7 +63,7 @@
 		05BEC29F49BA65EC09808E92 /* Pods_PARKineticsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PARKineticsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0807DBE7236FAC13000D0F5A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		0807DBE9236FBAD2000D0F5A /* Queen.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Queen.mp3; sourceTree = "<group>"; };
-		083DD1C9238F0921006414DC /* DifficultyLevelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyLevelVC.swift; sourceTree = "<group>"; };
+		083DD1C9238F0921006414DC /* FingerTwisterInst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FingerTwisterInst.swift; sourceTree = "<group>"; };
 		09F540E79846A65A11F6E313 /* Fritz-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Fritz-Info.plist"; path = "PARKinetics/Fritz-Info.plist"; sourceTree = SOURCE_ROOT; };
 		16E4AF48238C8B210029A84A /* MenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
 		16E6B93D237E2DD7000900F3 /* AdvantureGameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvantureGameVC.swift; sourceTree = "<group>"; };
@@ -76,6 +78,9 @@
 		F7042180236D017800F3BC3B /* DbHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DbHelper.swift; sourceTree = "<group>"; };
 		F7042184236D47AD00F3BC3B /* GameMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMenuVC.swift; sourceTree = "<group>"; };
 		F7103C32236521480008AD74 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F736BC712390F60C001025BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F736BC7323910454001025BB /* AdventureGameInst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureGameInst.swift; sourceTree = "<group>"; };
+		F736BC7523910959001025BB /* ShadowDDRInst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowDDRInst.swift; sourceTree = "<group>"; };
 		F73934A2236E52A200BE4463 /* ProgressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
 		F739502B238CDD12003A8689 /* PoseEstimate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseEstimate.swift; sourceTree = "<group>"; };
 		F748B5082356E0C9009A10B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -88,7 +93,6 @@
 		F7EABACF2348710F00D94B1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7EABAD12348710F00D94B1C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F7EABAD42348710F00D94B1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		F7EABAD62348710F00D94B1C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F7EABAD92348710F00D94B1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F7EABADB2348710F00D94B1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F7EABAE02348710F00D94B1C /* PARKineticsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PARKineticsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,6 +138,7 @@
 				16E4AF48238C8B210029A84A /* MenuVC.swift */,
 				2089F290238088E300B8C06A /* StoryNodes.swift */,
 				16E6B93D237E2DD7000900F3 /* AdvantureGameVC.swift */,
+				F736BC7323910454001025BB /* AdventureGameInst.swift */,
 			);
 			path = AdvantureGame;
 			sourceTree = "<group>";
@@ -196,7 +201,7 @@
 				F748B5082356E0C9009A10B0 /* Assets.xcassets */,
 				F748B50C2356E0C9009A10B0 /* Sounds */,
 				F748B50B2356E0C9009A10B0 /* FingerTwisterVC.swift */,
-				083DD1C9238F0921006414DC /* DifficultyLevelVC.swift */,
+				083DD1C9238F0921006414DC /* FingerTwisterInst.swift */,
 			);
 			path = FingerTwister;
 			sourceTree = "<group>";
@@ -216,6 +221,7 @@
 				F7E9A5FE237FB9600035B036 /* ShadowDDRVC.swift */,
 				F739502B238CDD12003A8689 /* PoseEstimate.swift */,
 				F7992F5E238CFDD30005BE08 /* PoseData.swift */,
+				F736BC7523910959001025BB /* ShadowDDRInst.swift */,
 			);
 			path = ShadowDDR;
 			sourceTree = "<group>";
@@ -249,9 +255,9 @@
 				F7042182236D472D00F3BC3B /* Controllers */,
 				F7042183236D479100F3BC3B /* Services */,
 				F7EABACF2348710F00D94B1C /* AppDelegate.swift */,
+				F736BC712390F60C001025BB /* Assets.xcassets */,
 				F7EABAD12348710F00D94B1C /* ViewController.swift */,
 				F7EABAD32348710F00D94B1C /* Main.storyboard */,
-				F7EABAD62348710F00D94B1C /* Assets.xcassets */,
 				F7EABAD82348710F00D94B1C /* LaunchScreen.storyboard */,
 				F7103C32236521480008AD74 /* GoogleService-Info.plist */,
 				F7EABADB2348710F00D94B1C /* Info.plist */,
@@ -390,10 +396,10 @@
 				F79DADE62390DD06007ED5AB /* ABBA.mp3 in Resources */,
 				F7EABADA2348710F00D94B1C /* LaunchScreen.storyboard in Resources */,
 				0807DBEA236FBAD2000D0F5A /* Queen.mp3 in Resources */,
-				F7EABAD72348710F00D94B1C /* Assets.xcassets in Resources */,
 				F7EABAD52348710F00D94B1C /* Main.storyboard in Resources */,
 				F7103C33236521480008AD74 /* GoogleService-Info.plist in Resources */,
 				F748B50F2356E0C9009A10B0 /* Assets.xcassets in Resources */,
+				F736BC722390F60D001025BB /* Assets.xcassets in Resources */,
 				D9364B48BD61A7487E59496A /* Fritz-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -525,6 +531,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7E9A5FF237FB9600035B036 /* ShadowDDRVC.swift in Sources */,
+				F736BC7423910454001025BB /* AdventureGameInst.swift in Sources */,
 				F748B5122356E0C9009A10B0 /* FingerTwisterVC.swift in Sources */,
 				F7A90FFC23700CB600C81ADA /* GameOverVC.swift in Sources */,
 				2089F291238088E300B8C06A /* StoryNodes.swift in Sources */,
@@ -535,8 +542,9 @@
 				F739502C238CDD12003A8689 /* PoseEstimate.swift in Sources */,
 				F7992F5F238CFDD30005BE08 /* PoseData.swift in Sources */,
 				F7EABAD22348710F00D94B1C /* ViewController.swift in Sources */,
+				F736BC7623910959001025BB /* ShadowDDRInst.swift in Sources */,
 				F7EABAD02348710F00D94B1C /* AppDelegate.swift in Sources */,
-				083DD1CA238F0921006414DC /* DifficultyLevelVC.swift in Sources */,
+				083DD1CA238F0921006414DC /* FingerTwisterInst.swift in Sources */,
 				16E4AF49238C8B220029A84A /* MenuVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

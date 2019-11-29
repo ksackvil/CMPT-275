@@ -9,18 +9,11 @@
 
 
 import Foundation
-//
-//  MenuVC.swift
-//
-//
-//  Created by Negar Hariri on 2019-11-23.
-//
-
 import UIKit
 
 var level: Int = 0
 
-class DifficultyLevelVC: UIViewController {
+class FingerTwisterInst: UIViewController {
 
      
     @IBAction func Level(_ sender: Any) {
@@ -28,11 +21,15 @@ class DifficultyLevelVC: UIViewController {
         performSegue(withIdentifier: "LevelOne", sender: sender)
     }
     
-    
     @IBAction func LevelTwo(_ sender: Any) {
         level = 2
         performSegue(withIdentifier: "LevelTwo", sender: sender)
     }
+    
+    @IBAction func backButton(_ sender: Any) {
+        performSegue(withIdentifier: "unwindToHomeFromFingerTwisterInst", sender: self)
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +40,7 @@ class DifficultyLevelVC: UIViewController {
         let scaleY = screenSize.height / 1024 //1024 is ipadPro screen height
         self.view.transform = CGAffineTransform.identity.scaledBy(x: scaleX, y: scaleY)
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
