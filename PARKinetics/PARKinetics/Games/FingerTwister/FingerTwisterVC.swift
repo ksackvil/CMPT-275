@@ -35,30 +35,6 @@ import SpriteKit
 import AVFoundation
 import Foundation
 
-extension UIView {
-    enum GlowEffect: Float {
-        case small = 0.4, normal = 2, big = 20
-    }
-
-    func doGlowAnimation(withColor color: UIColor, withEffect effect: GlowEffect = .normal) {
-        layer.masksToBounds = false
-        layer.shadowColor = color.cgColor
-        layer.shadowRadius = 0
-        layer.shadowOpacity = 1
-        layer.shadowOffset = .zero
-
-        let glowAnimation = CABasicAnimation(keyPath: "shadowRadius")
-        glowAnimation.fromValue = 0
-        glowAnimation.toValue = effect.rawValue
-        glowAnimation.beginTime = CACurrentMediaTime()+0.3
-        glowAnimation.duration = CFTimeInterval(1.0)
-        glowAnimation.fillMode = .removed
-        glowAnimation.autoreverses = true
-        glowAnimation.isRemovedOnCompletion = true
-        layer.add(glowAnimation, forKey: "shadowGlowingAnimation")
-    }
-}
-
 class FingerTwisterVC: UIViewController {
     
     // MARK: Vars
@@ -76,10 +52,6 @@ class FingerTwisterVC: UIViewController {
     var playing = false
     var success = false
     var song = ""
-    var colour: UIColor?
-    var glowing = false
-    
-    
 
     // MARK: Outlets
     @IBOutlet var buttons: [UIButton]!
@@ -146,7 +118,7 @@ class FingerTwisterVC: UIViewController {
         }
         print("here0")
         justChecking()
-        delay(bySeconds: 1.0){
+        delay(bySeconds: 0.75){
             self.successfulNote()
         }
     }
@@ -178,6 +150,7 @@ class FingerTwisterVC: UIViewController {
     
     //DES:  Counts down time until next round and resets board
     @objc func timerFunc() {
+        print("gameTime",gameTime)
         gameTime -= 1
         if gameTime == 0 {
             gameTimer.invalidate()
@@ -211,30 +184,12 @@ class FingerTwisterVC: UIViewController {
         if correctTap==1{
             print("success")
             if (!success){
-                for j in 0...15{
-                    if (checkOn[j]==1){
-                        for k in 0...15{
-                            if (buttons[k].tag==j){
-                                buttons[k].doGlowAnimation(withColor: UIColor.green, withEffect: .big)
-                            }
-                        }
-                    }
-                }
                 succefulNote+=1
             }
             success=true
         }
         else {
             print("failure")
-            for j in 0...15{
-                if (checkOn[j]==1){
-                    for k in 0...15{
-                        if (buttons[k].tag==j){
-                            buttons[k].doGlowAnimation(withColor: UIColor.red, withEffect: .big)
-                        }
-                    }
-                }
-            }
         }
     }
     
@@ -260,7 +215,6 @@ class FingerTwisterVC: UIViewController {
                 for j in 0...15 {
                     if buttons[j].tag == n {
                         buttons[j].backgroundColor = .yellow
-                        buttons[j].doGlowAnimation(withColor: UIColor.white, withEffect: .big)
                         i += 1
                         break
                     }
