@@ -443,7 +443,7 @@
             <objects>
                 <viewController id="zKt-CC-GJf" customClass="AdvantureGameVC" customModule="PARKinetics" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Ux-Vv-0Ap">
-                        <rect key="frame" x="0.0" y="0.0" width="712" height="984"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Story Box" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S6u-Yv-ACX">
                                 <rect key="frame" x="60" y="465" width="644" height="115"/>
@@ -718,7 +718,7 @@
         <image name="stock3" width="61" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Zds-VP-eBj"/>
-        <segue reference="QOg-mW-kcZ"/>
+        <segue reference="jkj-Xt-two"/>
+        <segue reference="2rc-hK-3il"/>
     </inferredMetricsTieBreakers>
 </document>
