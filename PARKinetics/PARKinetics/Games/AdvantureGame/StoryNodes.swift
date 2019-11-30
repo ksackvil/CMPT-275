@@ -86,7 +86,6 @@ public class StoryList{
     }
     
     public func setChildren(key: Int, targetKey: Int){
-        print(key, targetKey)
         let targetNode = StoryIsHere(key: targetKey)
         let settingNode = StoryIsHere(key: key)
         
@@ -101,7 +100,6 @@ public class StoryList{
     public func StoryIsHere(key: Int) -> StoryNode? {
         currentNode = head
         while (currentNode!.key != key){
-            print(currentNode!.key)
             if (currentNode!.key < key){
                 currentNode = currentNode!.rightChild
             }

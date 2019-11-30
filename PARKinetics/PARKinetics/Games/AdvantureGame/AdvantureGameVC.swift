@@ -51,6 +51,7 @@ class AdvantureGameVC: UIViewController {
     var currentAnalysis: String = ""
     var incorrectMatch: Bool = false
     var audioDone : Bool = false
+    var speechDetected = false
     
     //Scoring variables, get the final score by totalScore/fullScore
     var fullScore : Double = 0.0
@@ -155,7 +156,8 @@ class AdvantureGameVC: UIViewController {
         recognitionRequest.shouldReportPartialResults = true
         recognitionTask = speechRecognizer!.recognitionTask(with:
             recognitionRequest, resultHandler: { (result, error) in
-            var isFinal = false
+            
+            print("In Recognition Task")
             
             if result != nil {
                 
@@ -163,17 +165,6 @@ class AdvantureGameVC: UIViewController {
                 if(!self.audioDone){
                     self.storyBox.text = self.currentAnalysis
                 }
-                isFinal = (result?.isFinal)!
-            }
-            
-            if error != nil || isFinal {
-                self.audioEngine.stop()
-                inputNode.removeTap(onBus: 0)
-                
-                self.recognitionRequest = nil
-                self.recognitionTask = nil
-                
-                self.microphoneButton.isEnabled = true
             }
         })
         
@@ -191,8 +182,12 @@ class AdvantureGameVC: UIViewController {
                 if self.audioEngine.isRunning {
                     self.audioEngine.stop()
                     recognitionRequest.endAudio()
-                    self.microphoneButton.isEnabled = false
-                    //self.microphoneButton.setTitle("Start Recording", for: .normal)
+                    //self.microphoneButton.isEnabled = false
+                    inputNode.removeTap(onBus: 0)
+                    self.recognitionRequest = nil
+                    self.recognitionTask = nil
+                    
+                    self.microphoneButton.isEnabled = true
                     self.microphoneButton.tintColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
                 }
                 self.testMatch(phrase: self.currentAnalysis)
