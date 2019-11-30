@@ -115,6 +115,7 @@ class AdvantureGameVC: UIViewController {
     
     @IBAction func microphoneTapped(_ sender: Any) {
         if !audioEngine.isRunning {
+            print("audio running")
             startRecording()
             //microphoneButton.setTitle("Stop Recording", for: .normal)
             microphoneButton.tintColor = #colorLiteral(red: 1, green: 0.1713354463, blue: 0.1736028223, alpha: 1)
@@ -152,10 +153,8 @@ class AdvantureGameVC: UIViewController {
         }
         
         recognitionRequest.shouldReportPartialResults = true
-        
         recognitionTask = speechRecognizer!.recognitionTask(with:
             recognitionRequest, resultHandler: { (result, error) in
-        
             var isFinal = false
             
             if result != nil {
@@ -223,7 +222,7 @@ class AdvantureGameVC: UIViewController {
             score = Int((totalScore/fullScore) * 100)
             
             if (correctPhrase1 == phrase){
-                if AdventureStory1.currentStory?.leftChild == nil{
+                if AdventureStory1.currentStory!.gameOver{
                     chapterEnd()
                     print("FullSore: %d", fullScore)
                     print("TotalScore: %d", totalScore)
@@ -244,7 +243,7 @@ class AdvantureGameVC: UIViewController {
                 }
             }
             else{
-                if AdventureStory1.currentStory?.rightChild == nil{
+                if AdventureStory1.currentStory!.gameOver{
                     chapterEnd()
                     print("FullSore: %d", fullScore)
                     print("TotalScore: %d", totalScore)
@@ -306,9 +305,14 @@ class AdvantureGameVC: UIViewController {
         self.leftTextBox.text = AdventureStory1.currentStory?.leftStory
         self.rightTextBox.text = AdventureStory1.currentStory?.rightStory
         self.storyBox.text = ""
-        self.storyText.text = AdventureStory1.currentStory?.storyPlot
+        print("key",AdventureStory1.currentStory!.key)
+        if AdventureStory1.currentStory!.gameOver{
+            self.storyText.text = AdventureStory1.currentStory?.gameOverStory
+        }
+        else{
+           self.storyText.text = AdventureStory1.currentStory?.storyPlot
+        }
 
-        
         UIView.animate(withDuration: 2.0, delay: 1.0, options: .curveEaseOut, animations: {
         self.leftTextBox.alpha = 1.0
         self.rightTextBox.alpha = 1.0
@@ -326,7 +330,7 @@ class AdvantureGameVC: UIViewController {
         self.rightTextBox.alpha = 0.0
         self.microphoneButton.alpha = 0.0
         self.storyBox.alpha = 0.0
-        self.storyText.text = "End of Chapter"
+        self.storyText.text = "Game Over"
     }
     
     //Description: Checks for speech recognition capabilities on target device
