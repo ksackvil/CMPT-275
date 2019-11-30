@@ -59,6 +59,8 @@ class AdvantureGameVC: UIViewController {
     var roundScore : Double = 10.0
     var score: Int = 0
     
+    let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
@@ -68,8 +70,8 @@ class AdvantureGameVC: UIViewController {
         self.view.transform = CGAffineTransform.identity.scaledBy(x: scaleX, y: scaleY)
 
  
-        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-        backgroundImage.image = UIImage(named: "Adventure.png")
+        self.view.backgroundColor = UIColor.black
+        backgroundImage.image = UIImage(named: "jungle")
         backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
         
@@ -303,9 +305,14 @@ class AdvantureGameVC: UIViewController {
         print("key",AdventureStory1.currentStory!.key)
         if AdventureStory1.currentStory!.gameOver{
             self.storyText.text = AdventureStory1.currentStory?.gameOverStory
+            self.backgroundImage.removeFromSuperview()
         }
         else{
+           self.backgroundImage.removeFromSuperview()
            self.storyText.text = AdventureStory1.currentStory?.storyPlot
+           backgroundImage.image = UIImage(named: AdventureStory1.currentStory!.pictureFile)
+           backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
+           self.view.insertSubview(backgroundImage, at: 0)
         }
 
         UIView.animate(withDuration: 2.0, delay: 1.0, options: .curveEaseOut, animations: {
