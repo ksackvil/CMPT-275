@@ -66,21 +66,24 @@ class FingerTwisterVC: UIViewController {
     var audioPlayer : AVAudioPlayer!
     var checkOn: [Int] = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] //tiles currently pressed
     var checkTouched: [Int] = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] //whether tap is correct or not
-    var correctTap = 0 //How many tiles have been displayed to touch
-    var noteCount:Double = 0 //How many tiles were successfully pressed
-    var succefulNote:Double = 0 //Final game score as ratio of successfulNote to noteCount
-    var score:Double=0.0 //Timer seperating game rounds
-    var gameTimer = Timer() //How many rounds the game will go for
-    var gameTime = 5 //bool to check whether menu button was pressed
-    var gamePaused = false
+    var correctTap:Double = 0 //How many tiles have been displayed to touch
+    var currentRound:Double = 0 //How many tiles were successfully pressed
+    var succefulNote:Double = 0 //Final game score as ratio of successfulNote to currentRound
+    var score:Double=0.0 //Timer seperating game totalRounds
+    var gameTimer = Timer() //How many totalRounds the game will go for
     var playing = false
     var success = false
     var song = ""
     var colour: UIColor?
     var glowing = false
-    var numNotes = 0
+    var totalRounds:Double = 0
     
-    
+    //TK music bpm
+    var myTempo = Tempo(bpm:100)
+    var period: Double = 0
+    var correctNoteCount:Double = 0
+    var bonus:Double = 1
+    var multiplier:Double = 1.0
 
     // MARK: Outlets
     @IBOutlet var buttons: [UIButton]!
@@ -98,17 +101,26 @@ class FingerTwisterVC: UIViewController {
         print(level)
         if (level==1){
             song = "Queen.mp3"
-            numNotes = 9
+            myTempo = Tempo(bpm: 108)
+            period = 2 * myTempo.seconds(duration: 1) //2 bars to touch correct tiles
+            totalRounds = 9
+            bonus = 1 / totalRounds
         }
         else{
             song = "ABBA.mp3"
-            numNotes = 20
+            myTempo = Tempo(bpm: 118)
+            period = 2 * myTempo.seconds() //2 notes to touch correct tiles
+            totalRounds = 20
+            bonus = 1 / totalRounds
         }
+        
         music(fileNamed: song)
         self.view.isMultipleTouchEnabled = true
         buttons.forEach {
             $0.layer.borderWidth = 1.0
             $0.layer.borderColor = UIColor.black.cgColor
+            $0.addTarget(self, action: #selector(touchedDown), for: .touchDown)
+            $0.addTarget(self, action: #selector(touchedUp), for: .touchUpInside)
         }
         
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
@@ -133,33 +145,23 @@ class FingerTwisterVC: UIViewController {
         AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
         self.navigationController?.setToolbarHidden(true, animated: animated)
     }
-    
-    // MARK: Actions
-    // DES: Game logic implementation when any button is touched down
-    // PRE: Buttons enabled and initialized with a note to be hit
-    // POST: checkTouched array updated with the buttons that are touched
+
     @IBAction func touchedDown(_ sender: UIButton) {
-        sender.isSelected = !sender.isSelected
-        //let index = buttons.firstIndex(of: sender)!
-        var i=0
-        checkTouched[sender.tag] = 1
-        while (i < 16){
-            print("updated",checkTouched[i],i)
-            i+=1
+         print("\(sender.tag) Touched")
+         checkTouched[sender.tag] = 1;
+        if checkOn[sender.tag] == 0 {
+            sender.backgroundColor = .red
         }
-        print("here0")
-        justChecking()
-        delay(bySeconds: 1.0){
-            self.successfulNote()
+         successfulNote() //Check to see if all notes were touched successfully
+     }
+
+    @IBAction func touchedUp(_ sender: UIButton) {
+        print("\(sender.tag) Released")
+        checkTouched[sender.tag] = 0;
+        if sender.backgroundColor == .red {
+            sender.backgroundColor = .gray
         }
-    }
-    
-    func justChecking(){
-        var i=0
-        while (i < 16){
-            print("touchedDown2",checkTouched[i],checkOn[i],i)
-            i+=1
-        }
+        successfulNote() //Check to see if all notes were touched successfully
     }
     
     //DES:  Pauses game when menu button is pressed
@@ -181,128 +183,74 @@ class FingerTwisterVC: UIViewController {
     
     //DES:  Counts down time until next round and resets board
     @objc func timerFunc() {
-        gameTime -= 1
-        if gameTime == 0 {
-            gameTimer.invalidate()
-            Reset()
+        if correctTap == Double(level + 1) {
+            multiplier += bonus
         }
+        Reset()
     }
     
-    //DES:  Checks whether all notes were successfully pressed
     func successfulNote() {
-        var i = 0
-        var j = 0
-        print("here1")
-        justChecking()
-        while (i < 16) {
-            print("touched",checkTouched[i],i)
-            if checkOn[i]==1{
-               
-                if checkOn[i] != checkTouched[i]{
-                    correctTap = 0
-                    while (j < 16){
-                        checkTouched[j] = 0
-                        j+=1
-                    }
-                }
-                else {
-                    correctTap = 1
-                }
+        var correct: Double = 0
+        for i in 0...15 {
+            if checkTouched[i] == 1 && checkOn[i] == checkTouched[i] {
+                correct += 1;
             }
-            i+=1
         }
-        if correctTap==1{
-            print("success")
-            if (!success){
-                for j in 0...15{
-                    if (checkOn[j]==1){
-                        for k in 0...15{
-                            if (buttons[k].tag==j){
-                                buttons[k].doGlowAnimation(withColor: UIColor.green, withEffect: .big)
-                            }
-                        }
-                    }
-                }
-                succefulNote+=1
-            }
-            success=true
-        }
-        else {
-            print("failure")
-            for j in 0...15{
-                if (checkOn[j]==1){
-                    for k in 0...15{
-                        if (buttons[k].tag==j){
-                            buttons[k].doGlowAnimation(withColor: UIColor.red, withEffect: .big)
-                        }
-                    }
-                }
-            }
+        if correct > correctTap {
+            correctTap = correct
+            print("Correct Tap: \(correctTap)")
         }
     }
     
-    //DES: highlight buttons to be pressed
+    //DES: Highlight Buttons to be pressed
     @objc func initialize() {
-        
-        var i = 0
-        var maxTaps = 0
-        var maxRandom = 0
+        checkOn = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+        checkTouched = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
         correctTap = 0
-        if (level==1){
-            maxTaps = 2
-            maxRandom = 7
+        self.buttons.forEach {
+            $0.backgroundColor = .gray
         }
-        else if (level == 2){
-            maxTaps = 3
-            maxRandom = 3
+        //Make sure notes are always from different column.
+        var column = [0, 1, 2, 3]
+        column = column.shuffled()
+        for i in 0...level {
+            let n = (column[i] * 4) + Int.random(in: 0 ... 3)
+            checkOn[n] = 1
         }
-        while i < maxTaps {//4 can be changed to however many tiles we want pressed
-            let n = (i * 4) + Int.random(in: 0 ... maxRandom)
-            if checkOn[n] == 0 {
-                checkOn[n] = 1
-                for j in 0...15 {
-                    if buttons[j].tag == n {
-                        buttons[j].backgroundColor = .yellow
-                        buttons[j].doGlowAnimation(withColor: UIColor.white, withEffect: .big)
-                        i += 1
-                        break
-                    }
+        for j in 0...15 {
+            if checkOn[buttons[j].tag] == 1 {
+                buttons[j].backgroundColor = .yellow
+                delay(bySeconds: (3.5 * myTempo.seconds())) {
+                    self.buttons[j].doGlowAnimation(withColor: UIColor.white, withEffect: .big)
                 }
             }
         }
     }
     
     //DES: Reset round variables
-    func Reset()
+    @objc func Reset()
     {
-        noteCount+=1
-        
-        if Int(noteCount) >= numNotes {
-            
+        //currentRound+=1
+        correctNoteCount += correctTap
+        if currentRound >= totalRounds {
             audioPlayer.stop() //@Negar: Stop the Song
             gameTimer.invalidate()
-            score=(succefulNote/noteCount)*100
-            print("score" )
-            gameOverHandler(result: score)
+            print("Game END*********")
+            print("correctNoteCount = \(correctNoteCount)")
+            print("currentRound = \(currentRound)")
+            print("level + 1 = \(level + 1)")
+            score = correctNoteCount/(currentRound * Double(level + 1))
+            print("score: \(score)" )
+            gameOverHandler(result: (score * 100))
         }
         else {
-            success = false
-            checkOn = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
-            checkTouched = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
-            var i = 0
-            i = 0
-            while (i < 16){
-                self.buttons[i].backgroundColor = .gray
-                i+=1
-            }
-            delay(bySeconds: 1) {
-                self.gameTime = 4
-                self.gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self,selector:#selector(FingerTwisterVC.timerFunc), userInfo: nil, repeats: true)  //waiting initialize Func
-                self.initialize()
-            }
+            gameTimer = Timer.scheduledTimer(timeInterval: period, target: self,selector:#selector(FingerTwisterVC.timerFunc), userInfo: nil, repeats: false)
+            currentRound += 1
+            print("Note Count: \(currentRound)")
+            initialize()
         }
     }
-    
+
     //DES: obtain music for game and begin playing it
     func music(fileNamed: String) {
         print("here")
@@ -330,7 +278,7 @@ class FingerTwisterVC: UIViewController {
         if segue.destination is GameOverVC
         {
             let vc = segue.destination as? GameOverVC
-            vc?.score = self.score
+            vc?.score = self.score * self.multiplier
         }
     }
     
@@ -366,7 +314,12 @@ enum DispatchLevel {
     }
 }
 
-    
+struct Tempo {
+    var bpm: Double
+    func seconds(duration: Double = 0.25) -> Double {
+        return 1.0 / self.bpm * 60.0 * 4.0 * duration
+    }
+}
     
 
     
