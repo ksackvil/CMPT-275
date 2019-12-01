@@ -46,7 +46,7 @@ class GameOverVC: UIViewController {
         let scaleX = screenSize.width / 768//768 is ipadPro screen width
         let scaleY = screenSize.height / 1024 //1024 is ipadPro screen height
         self.view.transform = CGAffineTransform.identity.scaledBy(x: scaleX, y: scaleY)
-        points = score * 1000
+        points = score * 100
         let time = 0.2/points
         var _ = Timer.scheduledTimer(timeInterval: time, target: self,selector:#selector(updateScore), userInfo: nil, repeats: true)
         print(score)
