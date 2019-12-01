@@ -316,6 +316,7 @@ class FingerTwisterVC: UIViewController {
             audioPlayer = try AVAudioPlayer(contentsOf: newUrl)
             audioPlayer.numberOfLoops = 0 //Number of loop until we stop it
             audioPlayer.prepareToPlay()
+            audioPlayer.volume = 0.06
             audioPlayer.play()
         }
         catch let error as NSError{
