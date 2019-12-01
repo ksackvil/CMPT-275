@@ -3,7 +3,7 @@
     <device id="ipad9_7" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -783,7 +783,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VAF-6Q-uBj" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="dd6-XM-IRh" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2647.65625" y="-1276.171875"/>
+            <point key="canvasLocation" x="2736" y="-1236"/>
         </scene>
         <!--ShadowDDRVC-->
         <scene sceneID="J1i-aQ-djb">
@@ -816,6 +816,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="796"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Efe-Uo-7pK">
+                                <rect key="frame" x="10" y="10" width="107" height="98.000000000000227"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="HamIcon"/>
+                                <connections>
+                                    <segue destination="pcB-WU-Cgh" kind="showDetail" id="a33-Yz-Lbv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="0nn-42-Ou2"/>
@@ -886,7 +894,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UcJ-Kt-1Ab" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="2WM-ec-kdP" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2658" y="-573"/>
+            <point key="canvasLocation" x="2736" y="-547"/>
         </scene>
         <!--MenuVC-->
         <scene sceneID="gBu-5q-IFo">
@@ -1158,6 +1166,7 @@
         <image name="tapToSpeak" width="170.5" height="173"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="a33-Yz-Lbv"/>
         <segue reference="Zds-VP-eBj"/>
         <segue reference="v7m-0l-KID"/>
     </inferredMetricsTieBreakers>

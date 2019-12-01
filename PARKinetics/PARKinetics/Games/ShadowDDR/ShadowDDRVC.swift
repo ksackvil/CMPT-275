@@ -75,14 +75,31 @@ class ShadowDDRVC: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegat
         view.bringSubviewToFront(feedback) // ensures view is loaded in front of others
 
         // setup camera input
-//        self.setupOutput()
-        testWithImage();
+        self.setupOutput()
+//        testWithImage();
         
         // start game at inital pose
         self.isActive = true
         inst.text = pd.textAt(pos: 0)
         poseView.image = pd.imageAt(pos: 0)
         startTimer()
+    }
+    
+    //DES: Transfer score for game to game over screen
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.destination is GameOverVC
+        {
+            let vc = segue.destination as? GameOverVC
+            var tempScore: Double = 0
+            
+            for x in self.poseSuccessArray {
+                if x {
+                    tempScore += 1
+                }
+            }
+            vc?.score = (tempScore / Double(self.numPoses))/10
+        }
     }
     
     // DES: Sets up our view with subviews
@@ -99,7 +116,14 @@ class ShadowDDRVC: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegat
     
     // MARK: Utils
     // DES: Handles animation for flashing feedback on successful pose
-    private func flashFeedback() {
+    private func flashFeedback(success: Bool) {
+        if success {
+            self.feedback.image = UIImage(named: "success.png")
+        }
+        else {
+            self.feedback.image = UIImage(named: "fail.png")
+        }
+        
         UIView.animate(withDuration: 1, delay: 0.0 , animations: {
             self.feedback.alpha = 1
         }, completion: {_ in
@@ -258,16 +282,20 @@ extension ShadowDDRVC {
     @objc
     private func gameLoop() {
         var readyForNext = false
+        var successFlag = false
         
         if !isActive {
             return
         }
+        
+        print(poseSuccess)
         
         if poseSuccess {
             print("success")
             readyForNext = true
             // record successful pose
             self.poseSuccessArray[poseItr] = true
+            successFlag = true
         }
         else if  timeCount >= self.maxPoseTime {
             print("failure")
@@ -280,14 +308,20 @@ extension ShadowDDRVC {
                 self.isActive=false
                 DispatchQueue.main.async {
                     self.gameTimer.invalidate()
-                    self.flashFeedback()
+                    self.flashFeedback(success: successFlag)
                     self.loadNextPose()
                     self.startTimer()
                 }
             }
             else {
                 print("game over")
-                self.gameOver()
+                DispatchQueue.main.async {
+                    self.gameTimer.invalidate()
+                    self.flashFeedback(success: successFlag)
+                    self.isActive = false
+                    self.gameOver()
+                }
+
             }
         }
         
@@ -308,8 +342,8 @@ extension ShadowDDRVC {
     // DES: Destroys captureSession and ends video, sends game results to
     // game over screen
     private func gameOver() {
-        DispatchQueue.main.async {
-            self.isActive = false
+        DispatchQueue.main.asyncAfter(deadline: .now()+2) {
+//            self.isActive = false
 //            self.captureSession.stopRunning()
 //            self.previewView.removeFromSuperview()
 //            self.previewView = nil

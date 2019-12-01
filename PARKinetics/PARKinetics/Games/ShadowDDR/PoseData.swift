@@ -13,12 +13,15 @@ class PoseData {
     private let text: [String] = [
         "Stand with your arms by your side",
         "Raise your hands to shoulder height",
-        "Lung left"
+        "Lunge right",
+        "Lunge left",
+        
     ]
     private let image: [UIImage] = [
         UIImage(named: "standPose.png")!,
         UIImage(named: "starPose.png")!,
-        UIImage(named: "leftLungePose.png")!
+        UIImage(named: "leftLungePose.png")!,
+        UIImage(named: "rightLungePose.png")!
     ]
     
     func textAt(pos: Int) -> String {

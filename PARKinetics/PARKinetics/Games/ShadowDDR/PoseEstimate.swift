@@ -48,6 +48,7 @@ import UIKit
 import Fritz
 
 class PoseEstimate: UIViewController {
+    private let THRESH: Float = 0.1
     // below are all the keypoints of the HumanSkeleton Object whitch we would like to
     // extract from the image. To make it easier on ourselves we divide the body into sections
     // seen below
@@ -106,6 +107,12 @@ class PoseEstimate: UIViewController {
         foundFace = tempFace
     }
     
+    private func distance(p1x: Float, p1y: Float, p2x: Float, p2y: Float) -> Float {
+        let xsqr: Float = (abs(p2x) - abs(p1x))*(abs(p2x) - abs(p1x))
+        let ysqr: Float = (abs(p2y) -  abs(p1y))*(abs(p2y) -  abs(p1y))
+        return sqrtf(xsqr + ysqr)
+    }
+    
     // DES: main function for verifiying our expected poses
     // PRE: A set of poses must be predefined, each case will have an id (0 - inf) this function
     //      will verifiy based on the current poseItr (id).
@@ -114,25 +121,34 @@ class PoseEstimate: UIViewController {
         var verified = false
         
         switch poseNumber {
-        case 0:
-            let rWristAboveShoulder = abs(Float(foundLeftArm[2].position.y) - Float(foundLeftArm[0].position.y)) < 0.1
-            let rWristLeftOfShoulder = Float(foundLeftArm[2].position.x) > Float(foundLeftArm[0].position.x)
+        case 0: // standing normal
+            let rWristDirectlyBelowShoulder = ((Float(foundLeftArm[2].position.y) - Float(foundLeftArm[0].position.y)) > 0) && (abs(Float(foundLeftArm[0].position.x) - Float(foundLeftArm[2].position.x)) < THRESH)
+            let rElbowInlineWithShoulder = abs(Float(foundLeftArm[1].position.x) - Float(foundLeftArm[0].position.x)) < THRESH
+            let lWristDirectlyBelowShoulder = ((Float(foundRightArm[2].position.y) - Float(foundRightArm[0].position.y)) > 0) && (abs(Float(foundRightArm[0].position.x) - Float(foundRightArm[2].position.x)) < THRESH)
+            let lElbowInlineWithShoulder = abs(Float(foundRightArm[1].position.x) - Float(foundRightArm[0].position.x)) < THRESH
             
-            verified = rWristAboveShoulder && rWristLeftOfShoulder
-        case 1:
-            let rWristAboveShoulder = abs(Float(foundLeftArm[2].position.y) - Float(foundLeftArm[0].position.y)) < 0.1
-            let rWristLeftOfShoulder = Float(foundLeftArm[2].position.x) > Float(foundLeftArm[0].position.x)
+            verified = rWristDirectlyBelowShoulder && rElbowInlineWithShoulder && lWristDirectlyBelowShoulder && lElbowInlineWithShoulder
+        case 1: // star pose
+            let rWristAboveShoulder = abs(Float(foundLeftArm[2].position.y) - Float(foundLeftArm[0].position.y)) < THRESH
+            let rWristRightOfShoulder = Float(foundLeftArm[2].position.x) > Float(foundLeftArm[0].position.x)
+            let lWristAboveShoulder = abs(Float(foundRightArm[2].position.y) - Float(foundRightArm[0].position.y)) < THRESH
+            let lWristLeftOfShoulder = Float(foundRightArm[2].position.x) < Float(foundRightArm[0].position.x)
             
-            verified = rWristAboveShoulder && rWristLeftOfShoulder
-        case 2:
-            let rWristAboveShoulder = abs(Float(foundLeftArm[2].position.y) - Float(foundLeftArm[0].position.y)) < 0.1
-            let rWristLeftOfShoulder = Float(foundLeftArm[2].position.x) > Float(foundLeftArm[0].position.x)
-            
-            verified = rWristAboveShoulder && rWristLeftOfShoulder
+            verified = rWristAboveShoulder && rWristRightOfShoulder && lWristAboveShoulder && lWristLeftOfShoulder
+        case 2: // Right Lunge
+            let rWristNearRLeg = distance(p1x: Float(foundLeftArm[2].position.x), p1y: Float(foundLeftArm[2].position.y), p2x: Float(foundLeftLeg[0].position.x), p2y: Float(foundLeftLeg[0].position.x)) < THRESH+0.1
+            let lWristNearRLeg = distance(p1x: Float(foundRightArm[2].position.x), p1y: Float(foundRightArm[2].position.y), p2x: Float(foundLeftLeg[0].position.x), p2y: Float(foundLeftLeg[0].position.x)) < THRESH+0.1
+                
+            verified = rWristNearRLeg && lWristNearRLeg
+        case 3:
+            let rWristNearLLeg = (abs(Float(foundRightLeg[0].position.x) - Float(foundLeftArm[2].position.x)) < THRESH) &&  (abs(Float(foundRightLeg[0].position.y) - Float(foundLeftArm[2].position.y)) < THRESH)
+            let lWristNearLLeg = (abs(Float(foundRightLeg[0].position.x) - Float(foundRightArm[2].position.x)) < THRESH) &&  (abs(Float(foundRightLeg[0].position.y) - Float(foundRightArm[2].position.y)) < THRESH)
+
+            verified = rWristNearLLeg && lWristNearLLeg
         default:
             verified = false
         }
         
-        return(verified)
+        return verified
     }
 }
