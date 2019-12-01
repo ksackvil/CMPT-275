@@ -336,6 +336,8 @@ class AdvantureGameVC: UIViewController {
         self.microphoneButton.alpha = 0.0
         self.storyBox.alpha = 0.0
         self.storyText.text = "Game Over"
+        performSegue(withIdentifier:"AdventureGameOver", sender: self)
+        
     }
     
     //Description: Checks for speech recognition capabilities on target device
@@ -357,6 +359,11 @@ class AdvantureGameVC: UIViewController {
         {
             let vc = segue.destination as? MenuVC
             vc?.score = self.score
+        }
+        if segue.destination is GameOverVC
+        {
+                let vc = segue.destination as? GameOverVC
+            vc?.score = Double(self.score)
         }
     }
     
