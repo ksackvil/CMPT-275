@@ -51,12 +51,15 @@ class AdvantureGameVC: UIViewController {
     var currentAnalysis: String = ""
     var incorrectMatch: Bool = false
     var audioDone : Bool = false
+    var speechDetected = false
     
     //Scoring variables, get the final score by totalScore/fullScore
     var fullScore : Double = 0.0
     var totalScore : Double = 0.0
     var roundScore : Double = 10.0
     var score: Int = 0
+    
+    let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,8 +70,8 @@ class AdvantureGameVC: UIViewController {
         self.view.transform = CGAffineTransform.identity.scaledBy(x: scaleX, y: scaleY)
 
  
-        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-        backgroundImage.image = UIImage(named: "Adventure.png")
+        self.view.backgroundColor = UIColor.black
+        backgroundImage.image = UIImage(named: "jungle")
         backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
         
@@ -115,6 +118,7 @@ class AdvantureGameVC: UIViewController {
     
     @IBAction func microphoneTapped(_ sender: Any) {
         if !audioEngine.isRunning {
+            print("audio running")
             startRecording()
             //microphoneButton.setTitle("Stop Recording", for: .normal)
             microphoneButton.tintColor = #colorLiteral(red: 1, green: 0.1713354463, blue: 0.1736028223, alpha: 1)
@@ -152,11 +156,10 @@ class AdvantureGameVC: UIViewController {
         }
         
         recognitionRequest.shouldReportPartialResults = true
-        
         recognitionTask = speechRecognizer!.recognitionTask(with:
             recognitionRequest, resultHandler: { (result, error) in
-        
-            var isFinal = false
+            
+            print("In Recognition Task")
             
             if result != nil {
                 
@@ -164,17 +167,6 @@ class AdvantureGameVC: UIViewController {
                 if(!self.audioDone){
                     self.storyBox.text = self.currentAnalysis
                 }
-                isFinal = (result?.isFinal)!
-            }
-            
-            if error != nil || isFinal {
-                self.audioEngine.stop()
-                inputNode.removeTap(onBus: 0)
-                
-                self.recognitionRequest = nil
-                self.recognitionTask = nil
-                
-                self.microphoneButton.isEnabled = true
             }
         })
         
@@ -192,8 +184,12 @@ class AdvantureGameVC: UIViewController {
                 if self.audioEngine.isRunning {
                     self.audioEngine.stop()
                     recognitionRequest.endAudio()
-                    self.microphoneButton.isEnabled = false
-                    //self.microphoneButton.setTitle("Start Recording", for: .normal)
+                    //self.microphoneButton.isEnabled = false
+                    inputNode.removeTap(onBus: 0)
+                    self.recognitionRequest = nil
+                    self.recognitionTask = nil
+                    
+                    self.microphoneButton.isEnabled = true
                     self.microphoneButton.tintColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
                 }
                 self.testMatch(phrase: self.currentAnalysis)
@@ -223,7 +219,7 @@ class AdvantureGameVC: UIViewController {
             score = Int((totalScore/fullScore) * 100)
             
             if (correctPhrase1 == phrase){
-                if AdventureStory1.currentStory?.leftChild == nil{
+                if AdventureStory1.currentStory!.gameOver{
                     chapterEnd()
                     print("FullSore: %d", fullScore)
                     print("TotalScore: %d", totalScore)
@@ -244,7 +240,7 @@ class AdvantureGameVC: UIViewController {
                 }
             }
             else{
-                if AdventureStory1.currentStory?.rightChild == nil{
+                if AdventureStory1.currentStory!.gameOver{
                     chapterEnd()
                     print("FullSore: %d", fullScore)
                     print("TotalScore: %d", totalScore)
@@ -306,9 +302,19 @@ class AdvantureGameVC: UIViewController {
         self.leftTextBox.text = AdventureStory1.currentStory?.leftStory
         self.rightTextBox.text = AdventureStory1.currentStory?.rightStory
         self.storyBox.text = ""
-        self.storyText.text = AdventureStory1.currentStory?.storyPlot
+        print("key",AdventureStory1.currentStory!.key)
+        if AdventureStory1.currentStory!.gameOver{
+            self.storyText.text = AdventureStory1.currentStory?.gameOverStory
+            self.backgroundImage.removeFromSuperview()
+        }
+        else{
+           self.backgroundImage.removeFromSuperview()
+           self.storyText.text = AdventureStory1.currentStory?.storyPlot
+           backgroundImage.image = UIImage(named: AdventureStory1.currentStory!.pictureFile)
+           backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
+           self.view.insertSubview(backgroundImage, at: 0)
+        }
 
-        
         UIView.animate(withDuration: 2.0, delay: 1.0, options: .curveEaseOut, animations: {
         self.leftTextBox.alpha = 1.0
         self.rightTextBox.alpha = 1.0
@@ -326,7 +332,7 @@ class AdvantureGameVC: UIViewController {
         self.rightTextBox.alpha = 0.0
         self.microphoneButton.alpha = 0.0
         self.storyBox.alpha = 0.0
-        self.storyText.text = "End of Chapter"
+        self.storyText.text = "Game Over"
     }
     
     //Description: Checks for speech recognition capabilities on target device
