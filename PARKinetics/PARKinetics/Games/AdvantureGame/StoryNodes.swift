@@ -88,18 +88,8 @@ public class StoryList{
     }
     
     public func setChildren(key: Int, targetKey: Int){
-        /*var targetNode = StoryIsHere(key: targetKey)
-        var settingNode = StoryIsHere(key: key)
-        
-        settingNode?.rightChild = targetNode?.rightChild
-        settingNode?.leftChild = targetNode?.leftChild
-        
-        settingNode = nil
-        targetNode = nil*/
-        
         StoryIsHere(key: key)?.rightChild = StoryIsHere(key: targetKey)?.rightChild
         StoryIsHere(key: key)?.leftChild = StoryIsHere(key: targetKey)?.leftChild
-    
     }
     
     
@@ -116,10 +106,9 @@ public class StoryList{
                 currentNode = currentNode!.leftChild
             }
         }
-        currentStory = currentNode
-        return currentStory
+        //currentStory = currentNode
+        return currentNode
     }
-    
 }
 
 //Description: Creation of entire story tree
@@ -129,7 +118,7 @@ func createStory(adventureStoryList: StoryList){
     adventureStoryList.addNode(storyPlot: "Your eyes slowly open to a lush jungle scene. You are hungry and appear to be lost", rightStory: "Get to a high view", leftStory: "Search for food", key: 1000, gameOver: false, gameOverStory: "", pictureFile: "jungle")
     adventureStoryList.addNode(storyPlot: "You hear the chirps and cries of wild animals throughout the forest. There also seems to be lots of edible plant life", rightStory: "Go hunting", leftStory: "Eat some wild berries", key: 500, gameOver: false, gameOverStory: "", pictureFile: "jungle")
     adventureStoryList.addNode(storyPlot: "After a short walk through the brush you arrive at the bottom of a steep hill with a rocky face", rightStory: "Climb the rocks", leftStory: "Go around the long way", key: 2000, gameOver: false, gameOverStory: "", pictureFile: "hill")
-    adventureStoryList.addNode(storyPlot: "The berries were not very filling, but satisfy your immediate hunger. After wandering around aimlessly for a time, you hear a shout in the distance. Someone is screaming for help!", rightStory: "Race toward the sound", leftStory: "Run the other way", key: 400, gameOver: false, gameOverStory: "jungle", pictureFile: "")
+    adventureStoryList.addNode(storyPlot: "The berries were not very filling, but satisfy your immediate hunger. After wandering around aimlessly for a time, you hear a shout in the distance. Someone is screaming for help!", rightStory: "Race toward the sound", leftStory: "Run the other way", key: 400, gameOver: false, gameOverStory: "", pictureFile: "jungle")
     adventureStoryList.addNode(storyPlot: "After some searching you come across a roaring river rife with leaping fish", rightStory: "Prepare a trap", leftStory: "Try to catch a fish", key: 900, gameOver: false, gameOverStory: "", pictureFile: "river")
     adventureStoryList.addNode(storyPlot: "Your bravery pays off and you reach the top of the hill in no time. The hill offers you a view of the entire forest. You see a thick plume of smoke rising from the trees to the north, but a winding river to the south", rightStory: "Follow the smoke", leftStory: "Follow the river", key: 2500, gameOver: false, gameOverStory: "", pictureFile: "hill")
     adventureStoryList.addNode(storyPlot: "You walk the trail around the hill for a long time but seem no nearer to the top", rightStory: "Continue walking", leftStory: "Turn around", key: 1900, gameOver: false, gameOverStory: "", pictureFile: "hill")

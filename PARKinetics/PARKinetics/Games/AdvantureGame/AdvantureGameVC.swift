@@ -210,6 +210,7 @@ class AdvantureGameVC: UIViewController {
     //Pre: Speech has been recognized and user has not spoken for 2 seconds
     //Post: Speech matches story strings and calls transition or returns false if speech did not match
     func testMatch (phrase: String)->Bool{
+        print("key before",AdventureStory1.currentStory!.key,AdventureStory1.currentStory!.gameOver)
         let correctPhrase1 = AdventureStory1.currentStory?.leftStory
         let correctPhrase2 = AdventureStory1.currentStory?.rightStory
         if ((correctPhrase1 == phrase)||(correctPhrase2 == phrase)){
@@ -304,7 +305,7 @@ class AdvantureGameVC: UIViewController {
         self.leftTextBox.text = AdventureStory1.currentStory?.leftStory
         self.rightTextBox.text = AdventureStory1.currentStory?.rightStory
         self.storyBox.text = ""
-        print("key",AdventureStory1.currentStory!.key)
+        print("key after",AdventureStory1.currentStory!.key,AdventureStory1.currentStory!.gameOver)
         if AdventureStory1.currentStory!.gameOver{
             self.storyText.text = AdventureStory1.currentStory?.gameOverStory
             self.backgroundImage.removeFromSuperview()
