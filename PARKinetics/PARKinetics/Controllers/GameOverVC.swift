@@ -23,7 +23,8 @@ import UIKit
 class GameOverVC: UIViewController {
     // MARK: Vars
     var score:Double = -1 // resulting score of the played game
-    
+    var points: Double = -1
+    var count: Double = 0
     // MARK: Outlets
     @IBOutlet weak var gameScoreLabel: UILabel! // label for game score
     
@@ -45,7 +46,23 @@ class GameOverVC: UIViewController {
         let scaleX = screenSize.width / 768//768 is ipadPro screen width
         let scaleY = screenSize.height / 1024 //1024 is ipadPro screen height
         self.view.transform = CGAffineTransform.identity.scaledBy(x: scaleX, y: scaleY)
-        gameScoreLabel.text = "\(Int(score * 1000))"
+        score = 0.76
+        points = score * 1000
+        let time = 0.2/points
+        var _ = Timer.scheduledTimer(timeInterval: time, target: self,selector:#selector(updateScore), userInfo: nil, repeats: true)
         print(score)
+    }
+    @objc func updateScore(_ timer: Timer) {
+        if count <= points {
+            gameScoreLabel.text = "\(count)"
+            if points - count < 100 {
+                count += 1
+            } else {
+                count += 10
+            }
+        }
+        else {
+            timer.invalidate()
+        }
     }
 }
