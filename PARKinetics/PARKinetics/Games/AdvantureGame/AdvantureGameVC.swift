@@ -60,6 +60,7 @@ class AdvantureGameVC: UIViewController {
     var score: Int = 0
     
     let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+    let AdventureStory1 = StoryList()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -106,7 +107,8 @@ class AdvantureGameVC: UIViewController {
                 self.microphoneButton.isEnabled = isButtonEnabled
             }
         }
-        createStory()
+        
+        createStory(adventureStoryList: AdventureStory1)
         AdventureStory1.currentStory = AdventureStory1.first
         //transitionStoryOut()
         self.leftTextBox.text = AdventureStory1.currentStory?.leftStory
