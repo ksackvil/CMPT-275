@@ -26,9 +26,26 @@ class PARKineticsUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testGameLoadingAndProgress() {
+        
+        let app = XCUIApplication()
+        app.staticTexts["Speech based adventure"].tap()
+        app.buttons["Play"].tap()
+        app.buttons["Button"].tap()
+        
+        let mainMenuButton = app.buttons["Main Menu"]
+        mainMenuButton.tap()
+        app.staticTexts["Practice your dexterity"].tap()
+        app.buttons["Level 1"].tap()
+        
+        let hamiconButton = app.buttons["HamIcon"]
+        hamiconButton.tap()
+        app.buttons["Resume"].tap()
+        hamiconButton.tap()
+        mainMenuButton.tap()
+        app.staticTexts["PARKinetics"].swipeLeft()
+        
+        
     }
 
 }

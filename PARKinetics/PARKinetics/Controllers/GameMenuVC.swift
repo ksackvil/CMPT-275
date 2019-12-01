@@ -42,6 +42,12 @@ class GameMenuVC: UIViewController {
     // POST: buttons are rounded
     override func viewDidLoad() {
         super.viewDidLoad()
+        AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
+        let screenSize: CGRect = UIScreen.main.bounds
+        let scaleX = screenSize.width / 768//768 is ipadPro screen width
+        let scaleY = screenSize.height / 1024 //1024 is ipadPro screen height
+        self.view.transform = CGAffineTransform.identity.scaledBy(x: scaleX, y: scaleY)
+
         
         // round buttons
         mainMenu.layer.cornerRadius = 10
