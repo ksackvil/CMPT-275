@@ -346,6 +346,22 @@ extension ShadowDDRVC {
 //            self.previewView.removeFromSuperview()
 //            self.previewView = nil
 //            self.captureSession = nil
+            
+            //Upload game result to Firebase realtime databse
+            let defaults = UserDefaults.standard
+            let userKey = defaults.string(forKey: "uid")
+            if(userKey != nil){
+                var tempScore: Double = 0
+                
+                for x in self.poseSuccessArray {
+                    if x {
+                        tempScore += 1
+                    }
+                }
+                tempScore = tempScore/Double(self.numPoses)*100
+                DbHelper.uploadGame(uid: userKey!, type: "SD", balance: String(Int(tempScore)), facial: "50", speech: "50", dexterity: "50", posture: String(Int(tempScore)))
+                print("Uploaded game data");
+            }
             self.performSegue(withIdentifier: "ShadowDDRGO", sender: self)
         }
     }
