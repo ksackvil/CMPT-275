@@ -575,11 +575,12 @@
                         <outlet property="rightTextBox" destination="xl7-Qz-Z4v" id="pox-vc-BVU"/>
                         <outlet property="storyBox" destination="S6u-Yv-ACX" id="UeJ-QJ-Pic"/>
                         <outlet property="storyText" destination="f8y-Rc-h3x" id="nCv-6i-Bn7"/>
+                        <segue destination="DOh-s2-rPH" kind="showDetail" identifier="AdventureGameOver" id="gIB-Vi-FYd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pH5-ZF-two" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1715" y="904"/>
+            <point key="canvasLocation" x="1742" y="861"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="R2s-qz-XBO">
@@ -1160,7 +1161,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="a33-Yz-Lbv"/>
-        <segue reference="Zds-VP-eBj"/>
+        <segue reference="gIB-Vi-FYd"/>
         <segue reference="v7m-0l-KID"/>
     </inferredMetricsTieBreakers>
 </document>
