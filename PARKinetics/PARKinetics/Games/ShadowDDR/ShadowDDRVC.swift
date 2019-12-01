@@ -288,8 +288,6 @@ extension ShadowDDRVC {
             return
         }
         
-        print(poseSuccess)
-        
         if poseSuccess {
             print("success")
             readyForNext = true
