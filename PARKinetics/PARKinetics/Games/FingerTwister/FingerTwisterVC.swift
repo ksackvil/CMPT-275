@@ -50,7 +50,7 @@ extension UIView {
         let glowAnimation = CABasicAnimation(keyPath: "shadowRadius")
         glowAnimation.fromValue = 0
         glowAnimation.toValue = effect.rawValue
-        glowAnimation.beginTime = CACurrentMediaTime()+0.3
+        glowAnimation.beginTime = CACurrentMediaTime()
         glowAnimation.duration = CFTimeInterval(0.5)
         glowAnimation.fillMode = .removed
         glowAnimation.autoreverses = true
@@ -109,7 +109,7 @@ class FingerTwisterVC: UIViewController {
         else{
             song = "ABBA.mp3"
             myTempo = Tempo(bpm: 118)
-            period = 2 * myTempo.seconds() //2 notes to touch correct tiles
+            period = myTempo.seconds(duration: 1) //1 bar to touch correct tiles
             totalRounds = 20
             bonus = 1 / totalRounds
         }
@@ -220,7 +220,7 @@ class FingerTwisterVC: UIViewController {
         for j in 0...15 {
             if checkOn[buttons[j].tag] == 1 {
                 buttons[j].backgroundColor = .yellow
-                delay(bySeconds: (3.5 * myTempo.seconds())) {
+                delay(bySeconds: (0.5 * period) - 0.25) {
                     self.buttons[j].doGlowAnimation(withColor: UIColor.white, withEffect: .big)
                 }
             }
