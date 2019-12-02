@@ -385,12 +385,17 @@
                                     <segue destination="pcB-WU-Cgh" kind="presentation" id="nJB-aZ-33I"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FuO-nL-wah">
+                                <rect key="frame" x="241" y="0.0" width="286" height="230"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="8g8-4L-IAL"/>
                     </view>
                     <value key="contentSizeForViewInPopover" type="size" width="768" height="1024"/>
                     <connections>
+                        <outlet property="feedback" destination="FuO-nL-wah" id="eH9-gC-lBw"/>
                         <outletCollection property="buttons" destination="Khx-05-CuK" collectionClass="NSMutableArray" id="rfw-Ni-oUT"/>
                         <outletCollection property="buttons" destination="MRT-7W-EIK" collectionClass="NSMutableArray" id="im5-JN-W1S"/>
                         <outletCollection property="buttons" destination="fpj-Bq-xet" collectionClass="NSMutableArray" id="ZdK-aC-0rn"/>
@@ -1157,8 +1162,8 @@
         <image name="tapToSpeak" width="170.5" height="173"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="a33-Yz-Lbv"/>
-        <segue reference="Zds-VP-eBj"/>
+        <segue reference="nJB-aZ-33I"/>
+        <segue reference="jkj-Xt-two"/>
         <segue reference="v7m-0l-KID"/>
     </inferredMetricsTieBreakers>
 </document>

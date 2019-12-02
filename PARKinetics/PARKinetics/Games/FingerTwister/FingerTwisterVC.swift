@@ -61,6 +61,7 @@ extension UIView {
 
 class FingerTwisterVC: UIViewController {
     
+    @IBOutlet weak var feedback: UIImageView! //Image used to show user feedback
     // MARK: Vars
     //Song player
     var audioPlayer : AVAudioPlayer!
@@ -104,7 +105,6 @@ class FingerTwisterVC: UIViewController {
             myTempo = Tempo(bpm: 108)
             period = 2 * myTempo.seconds(duration: 1) //2 bars to touch correct tiles
             totalRounds = 9
-            bonus = 1 / totalRounds
         }
         else{
             song = "ABBA.mp3"
@@ -128,6 +128,12 @@ class FingerTwisterVC: UIViewController {
         backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
         
+        feedback.image = UIImage(named:"check.png")
+        feedback.contentMode = .center
+        feedback.alpha = 0
+        
+        view.addSubview(feedback)
+        view.bringSubviewToFront(feedback) // ensures view is loaded in front of others
         NotificationCenter.default.addObserver(self, selector: #selector(self.modalDismissHandler), name: NSNotification.Name(rawValue: "modalDissmised"), object: nil)
 
         Reset()
@@ -145,7 +151,8 @@ class FingerTwisterVC: UIViewController {
         AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
         self.navigationController?.setToolbarHidden(true, animated: animated)
     }
-
+    
+    //DES: handles button being pressed
     @IBAction func touchedDown(_ sender: UIButton) {
          print("\(sender.tag) Touched")
          checkTouched[sender.tag] = 1;
@@ -154,7 +161,8 @@ class FingerTwisterVC: UIViewController {
         }
          successfulNote() //Check to see if all notes were touched successfully
      }
-
+    
+    //DES: Handles buttons being released
     @IBAction func touchedUp(_ sender: UIButton) {
         print("\(sender.tag) Released")
         checkTouched[sender.tag] = 0;
@@ -181,14 +189,7 @@ class FingerTwisterVC: UIViewController {
         Reset()
     }
     
-    //DES:  Counts down time until next round and resets board
-    @objc func timerFunc() {
-        if correctTap == Double(level + 1) {
-            multiplier += bonus
-        }
-        Reset()
-    }
-    
+    //DES: Checks how many notes have been successfully tapped and adds bonus where applicable
     func successfulNote() {
         var correct: Double = 0
         for i in 0...15 {
@@ -198,11 +199,14 @@ class FingerTwisterVC: UIViewController {
         }
         if correct > correctTap {
             correctTap = correct
+            if (correctTap == Double(level + 1)) {
+                multiplier += bonus
+            }
             print("Correct Tap: \(correctTap)")
         }
     }
     
-    //DES: Highlight Buttons to be pressed
+    //DES: Highlight tiles to be pressed and setup bonus score time
     @objc func initialize() {
         checkOn = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
         checkTouched = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
@@ -222,7 +226,12 @@ class FingerTwisterVC: UIViewController {
                 buttons[j].backgroundColor = .yellow
                 //self.buttons[j].doGlowAnimation(withColor: UIColor.white, withEffect: .big)
                 delay(bySeconds: (0.5 * period) - 0.25) {
+                    self.bonus = 1 / self.totalRounds
                     self.buttons[j].doGlowAnimation(withColor: UIColor.green, withEffect: .big)
+                    self.bonus = 0;
+                    delay(bySeconds: 1.0) {
+                        self.flashFeedback()
+                    }
                 }
             }
         }
@@ -245,7 +254,7 @@ class FingerTwisterVC: UIViewController {
             gameOverHandler(result: score)
         }
         else {
-            gameTimer = Timer.scheduledTimer(timeInterval: period, target: self,selector:#selector(FingerTwisterVC.timerFunc), userInfo: nil, repeats: false)
+            gameTimer = Timer.scheduledTimer(timeInterval: period, target: self,selector:#selector(FingerTwisterVC.Reset), userInfo: nil, repeats: false)
             currentRound += 1
             print("Note Count: \(currentRound)")
             initialize()
@@ -284,6 +293,27 @@ class FingerTwisterVC: UIViewController {
         }
     }
     
+    //DES: flash icon to indicate game feedback
+    private func flashFeedback() {
+        if correctTap == Double(level + 1) {
+            self.feedback.image = UIImage(named: "perfect.png")
+        }
+        else if correctTap == 0.0{
+            self.feedback.image = UIImage(named: "cross.png")
+        } else {
+            self.feedback.image = UIImage(named: "check.png")
+        }
+        
+        UIView.animate(withDuration: 1, delay: 0.0 , animations: {
+            self.feedback.alpha = 1
+        }, completion: {_ in
+            UIView.animate(withDuration: 1.2, delay: 0.0 , animations: {
+                  self.feedback.alpha = 0
+            })
+        })
+    }
+    
+    //DES: send scores to database
     func gameOverHandler(result:Double) {
         //Upload game result to Firebase realtime databse
         let defaults = UserDefaults.standard
@@ -315,7 +345,7 @@ enum DispatchLevel {
         }
     }
 }
-
+//DES: sets up music tempo to seconds to help match tile flashes to music
 struct Tempo {
     var bpm: Double
     func seconds(duration: Double = 0.25) -> Double {
