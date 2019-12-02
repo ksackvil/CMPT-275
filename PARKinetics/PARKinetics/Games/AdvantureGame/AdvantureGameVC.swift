@@ -39,8 +39,7 @@ class AdvantureGameVC: UIViewController {
     @IBOutlet weak var microphoneButton: UIButton!
     
     @IBAction func AdventureMenu(_ sender: Any) {
-        print("button pressed")
-    self.shouldPerformSegue(withIdentifier: "AdventureMenueSegue", sender: self)
+        self.shouldPerformSegue(withIdentifier: "AdventureMenueSegue", sender: self)
     }
     private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "en-US"))
     
@@ -120,7 +119,6 @@ class AdvantureGameVC: UIViewController {
     
     @IBAction func microphoneTapped(_ sender: Any) {
         if !audioEngine.isRunning {
-            print("audio running")
             startRecording()
             //microphoneButton.setTitle("Stop Recording", for: .normal)
             microphoneButton.setImage(UIImage(named: "speakNow.png"), for: .normal)
@@ -160,9 +158,7 @@ class AdvantureGameVC: UIViewController {
         recognitionRequest.shouldReportPartialResults = true
         recognitionTask = speechRecognizer!.recognitionTask(with:
             recognitionRequest, resultHandler: { (result, error) in
-            
-            print("In Recognition Task")
-            
+                        
             if result != nil {
                 
                 self.currentAnalysis = (result?.bestTranscription.formattedString)!
@@ -210,7 +206,6 @@ class AdvantureGameVC: UIViewController {
     //Pre: Speech has been recognized and user has not spoken for 2 seconds
     //Post: Speech matches story strings and calls transition or returns false if speech did not match
     func testMatch (phrase: String)->Bool{
-        print("key before",AdventureStory1.currentStory!.key,AdventureStory1.currentStory!.gameOver)
         let correctPhrase1 = AdventureStory1.currentStory?.leftStory
         let correctPhrase2 = AdventureStory1.currentStory?.rightStory
         if ((correctPhrase1 == phrase)||(correctPhrase2 == phrase)){
@@ -224,10 +219,7 @@ class AdvantureGameVC: UIViewController {
             if (correctPhrase1 == phrase){
                 if AdventureStory1.currentStory!.gameOver{
                     chapterEnd()
-                    print("FullSore: %d", fullScore)
-                    print("TotalScore: %d", totalScore)
-                    print("RoundScore: %d", roundScore)
-                    print ("Score:" ,score)
+
                     return true
                 }
                 else{
@@ -235,30 +227,20 @@ class AdvantureGameVC: UIViewController {
                     transitionStoryOut()
                     self.incorrectMatch = false
                     
-                    print("FullSore: %d", fullScore)
-                    print("TotalScore: %d", totalScore)
-                    print("RoundScore: %d", roundScore)
-                    print ("Score:" ,score)
                     return true
                 }
             }
             else{
                 if AdventureStory1.currentStory!.gameOver{
                     chapterEnd()
-                    print("FullSore: %d", fullScore)
-                    print("TotalScore: %d", totalScore)
-                    print("RoundScore: %d", roundScore)
-                    print ("Score:" ,score)
+ 
                     return true
                 }
                 else{
                     AdventureStory1.currentStory = AdventureStory1.currentStory?.rightChild
                     transitionStoryOut()
                     self.incorrectMatch = false
-                    print("FullSore: %d", fullScore)
-                    print("TotalScore: %d", totalScore)
-                    print("RoundScore: %d", roundScore)
-                    print ("Score:" ,score)
+
                     return true
                 }
             }
@@ -271,10 +253,7 @@ class AdvantureGameVC: UIViewController {
             }
             self.incorrectMatch = true
             self.storyBox.text = "Please try again"
-            print("FullSore: %d", fullScore)
-            print("TotalScore: %d", totalScore)
-            print("RoundScore: %d", roundScore)
-            print ("Score:" ,score)
+
             return false
         }
     }
@@ -305,7 +284,6 @@ class AdvantureGameVC: UIViewController {
         self.leftTextBox.text = AdventureStory1.currentStory?.leftStory
         self.rightTextBox.text = AdventureStory1.currentStory?.rightStory
         self.storyBox.text = ""
-        print("key after",AdventureStory1.currentStory!.key,AdventureStory1.currentStory!.gameOver)
         if AdventureStory1.currentStory!.gameOver{
             self.storyText.text = AdventureStory1.currentStory?.gameOverStory
             self.backgroundImage.removeFromSuperview()

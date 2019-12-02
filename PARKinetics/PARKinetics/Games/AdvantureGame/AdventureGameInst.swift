@@ -23,7 +23,6 @@ class AdventureGameInst: UIViewController {
 
     // DES: handles unwind to home screen
     @IBAction func backButton1(_ sender: Any) {
-        print("in")
         performSegue(withIdentifier: "unwindToHomeFromAdventureStoryInst", sender: self)
     }
     

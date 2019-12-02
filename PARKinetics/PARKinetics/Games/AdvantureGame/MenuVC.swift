@@ -30,12 +30,10 @@ class MenuVC: UIViewController {
         
        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "modalDissmised"), object: nil)
         dismiss(animated: true, completion: nil)
-        print("Resume To adventure")
         //self.shouldPerformSegue(withIdentifier: "ResumeToAdventureSegue", sender: self)
     }
     
     @IBAction func Quit(_ sender: Any) {
-        print("Quite pressed")
         //Upload game data to Firebase realtime database
         let defaults = UserDefaults.standard
         let userKey = defaults.string(forKey: "uid")
@@ -54,7 +52,6 @@ class MenuVC: UIViewController {
         let scaleY = screenSize.height / 1024 //1024 is ipadPro screen height
         self.view.transform = CGAffineTransform.identity.scaledBy(x: scaleX, y: scaleY)
         gameScore.text = "\(score)"
-        print(score)
       
         // Do any additional setup after loading the view.
     }

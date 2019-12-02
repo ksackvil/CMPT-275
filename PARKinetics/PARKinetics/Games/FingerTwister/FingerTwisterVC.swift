@@ -99,7 +99,7 @@ class FingerTwisterVC: UIViewController {
         let scaleX = screenSize.width / 768//768 is ipadPro screen width
         let scaleY = screenSize.height / 1024 //1024 is ipadPro screen height
         self.view.transform = CGAffineTransform.identity.scaledBy(x: scaleX, y: scaleY)
-        print(level)
+
         if (level==1){
             song = "Queen.mp3"
             myTempo = Tempo(bpm: 108)
@@ -154,7 +154,6 @@ class FingerTwisterVC: UIViewController {
     
     //DES: handles button being pressed
     @IBAction func touchedDown(_ sender: UIButton) {
-         print("\(sender.tag) Touched")
          checkTouched[sender.tag] = 1;
         if checkOn[sender.tag] == 0 {
             sender.backgroundColor = .red
@@ -164,7 +163,6 @@ class FingerTwisterVC: UIViewController {
     
     //DES: Handles buttons being released
     @IBAction func touchedUp(_ sender: UIButton) {
-        print("\(sender.tag) Released")
         checkTouched[sender.tag] = 0;
         if sender.backgroundColor == .red {
             sender.backgroundColor = .gray
@@ -202,7 +200,6 @@ class FingerTwisterVC: UIViewController {
             if (correctTap == Double(level + 1)) {
                 multiplier += bonus
             }
-            print("Correct Tap: \(correctTap)")
         }
     }
     
@@ -245,25 +242,22 @@ class FingerTwisterVC: UIViewController {
         if currentRound >= totalRounds {
             audioPlayer.stop() //@Negar: Stop the Song
             gameTimer.invalidate()
-            print("Game END*********")
-            print("correctNoteCount = \(correctNoteCount)")
-            print("currentRound = \(currentRound)")
-            print("level + 1 = \(level + 1)")
+
             score = correctNoteCount/(currentRound * Double(level + 1)) * 100
-            print("score: \(score)" )
+
             gameOverHandler(result: score)
         }
         else {
             gameTimer = Timer.scheduledTimer(timeInterval: period, target: self,selector:#selector(FingerTwisterVC.Reset), userInfo: nil, repeats: false)
             currentRound += 1
-            print("Note Count: \(currentRound)")
+
             initialize()
         }
     }
 
     //DES: obtain music for game and begin playing it
     func music(fileNamed: String) {
-        print("here")
+
         let sound = Bundle.main.url(forResource: fileNamed, withExtension: nil)
         guard let newUrl = sound else {
             print(" Could not find the file Called \(fileNamed)")
