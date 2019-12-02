@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "plane.jpeg",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "plane.jpeg",
       "scale" : "2x"
     },
     {

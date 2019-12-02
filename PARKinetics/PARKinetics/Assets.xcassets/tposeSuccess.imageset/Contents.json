@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "tposeSuccess.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "tposeSuccess.png",
       "scale" : "2x"
     },
     {
