@@ -23,7 +23,6 @@ class PoseData {
         UIImage(named: "leftLungePose.png")!,
         UIImage(named: "rightLungePose.png")!
     ]
-    
     func textAt(pos: Int) -> String {
         return self.text[pos]
     }
