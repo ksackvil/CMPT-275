@@ -41,6 +41,14 @@
  15 | left ankle
  16 | right ankle
  
+ //  Contributors:
+ //      Kai Sackville-Hii
+ //          - File creation
+ //          - Pose creation
+ //          - Pose verification
+ //      Evan Huang
+ //          - Score calculation
+ //          - Score uploading to Firebase
  */
 
 import Foundation

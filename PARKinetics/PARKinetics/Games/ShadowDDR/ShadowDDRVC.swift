@@ -4,7 +4,20 @@
 //
 //  Created by Kai Sackville-Hii on 2019-11-15.
 //  Copyright © 2019 Kai Sackville-Hii. All rights reserved.
+//
+//  Description:
+//      This file is the view controller of the ShadowDDR game
 
+//  Contributors:
+//      Kai Sackville-Hii
+//          - File creation
+//          - view setup and animations
+//          - unwindToViewController() segue
+//          - Video Capture session
+//          - Gameplay
+//      Evan Huang
+//          - Score calculation
+//          - Score uploading to Firebase
 
 import UIKit
 import Foundation
@@ -98,7 +111,7 @@ class ShadowDDRVC: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegat
                     tempScore += 1
                 }
             }
-            vc?.score = (tempScore / Double(self.numPoses))
+            vc?.score = (tempScore / Double(self.numPoses))*100
         }
     }
     

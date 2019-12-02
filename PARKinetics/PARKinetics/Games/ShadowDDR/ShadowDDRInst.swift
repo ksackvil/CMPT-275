@@ -4,16 +4,26 @@
 //
 //  Created by Kai Sackville-Hii on 2019-11-29.
 //  Copyright © 2019 Kai Sackville-Hii. All rights reserved.
+//
+//  Description:
+//      This file is the view controller for the shadow DDR instructions screen
+//
+//  Contributors:
+//      Kai Sackville-Hii
+//          - File creation
+//          - helper functions
 
 import Foundation
 import UIKit
 
 class ShadownDDRInst: UIViewController {
 
+    // DES: handles unwind to home screen
     @IBAction func backButton1(_ sender: Any) {
         performSegue(withIdentifier: "unwindToHomeFromShadowDDR", sender: self)
     }
     
+    // DES: Formats view to dynamically change depending on screen size
     override func viewDidLoad() {
         super.viewDidLoad()
         let screenSize: CGRect = UIScreen.main.bounds
@@ -22,16 +32,6 @@ class ShadownDDRInst: UIViewController {
         self.view.transform = CGAffineTransform.identity.scaledBy(x: scaleX, y: scaleY)
     }
 }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
 
 
