@@ -123,7 +123,7 @@ class AdvantureGameVC: UIViewController {
             print("audio running")
             startRecording()
             //microphoneButton.setTitle("Stop Recording", for: .normal)
-            microphoneButton.tintColor = #colorLiteral(red: 1, green: 0.1713354463, blue: 0.1736028223, alpha: 1)
+            microphoneButton.setImage(UIImage(named: "speakNow.png"), for: .normal)
             self.incorrectMatch = false
         }
     }
@@ -192,7 +192,7 @@ class AdvantureGameVC: UIViewController {
                     self.recognitionTask = nil
                     
                     self.microphoneButton.isEnabled = true
-                    self.microphoneButton.tintColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
+                    self.microphoneButton.setImage(UIImage(named: "tapToSpeak.png"), for: .normal)
                 }
                 self.testMatch(phrase: self.currentAnalysis)
         })
