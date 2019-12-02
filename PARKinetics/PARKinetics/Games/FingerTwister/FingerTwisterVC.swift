@@ -220,7 +220,7 @@ class FingerTwisterVC: UIViewController {
         for j in 0...15 {
             if checkOn[buttons[j].tag] == 1 {
                 buttons[j].backgroundColor = .yellow
-                self.buttons[j].doGlowAnimation(withColor: UIColor.white, withEffect: .big)
+                //self.buttons[j].doGlowAnimation(withColor: UIColor.white, withEffect: .big)
                 delay(bySeconds: (0.5 * period) - 0.25) {
                     self.buttons[j].doGlowAnimation(withColor: UIColor.green, withEffect: .big)
                 }
