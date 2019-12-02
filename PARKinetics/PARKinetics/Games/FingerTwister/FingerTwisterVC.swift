@@ -295,10 +295,7 @@ class FingerTwisterVC: UIViewController {
     
     //DES: flash icon to indicate game feedback
     private func flashFeedback() {
-        if correctTap == Double(level + 1) {
-            self.feedback.image = UIImage(named: "perfect.png")
-        }
-        else if correctTap == 0.0{
+        if correctTap == 0.0{
             self.feedback.image = UIImage(named: "cross.png")
         } else {
             self.feedback.image = UIImage(named: "check.png")
