@@ -98,7 +98,7 @@ class ShadowDDRVC: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegat
                     tempScore += 1
                 }
             }
-            vc?.score = (tempScore / Double(self.numPoses))/10
+            vc?.score = (tempScore / Double(self.numPoses))
         }
     }
     
