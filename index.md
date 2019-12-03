@@ -24,7 +24,7 @@ git clone https://github.com/ksackvil/CMPT-275.git
 
 3. Ensure that you are running XCode 11.2.1 and up, and building on iOS 10 and up. Older versions have compatabilitiy issues with this repo.
 
-4. To run the project in XCode, use the keyboard shortcut [cmd][R] or in the toolbar click Product->Run. If the build succeeded, then the iOS simulator should appear with the build project. If the build failed check the console for the errors. Our app is developed for iPad, please ensure to run simulator on iPad Pro(9.7 inch). 
+4. To run the project in XCode, use the keyboard shortcut [cmd][R] or in the toolbar click Product->Run. If the build succeeded, then the iOS simulator should appear with the build project. If the build failed check the console for the errors. Our app is developed for iPad, please ensure to run simulator on iPad Pro(9.7 inch). Note that loading the image assets may take a minute to load.
 
 ### Team Members
 
