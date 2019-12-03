@@ -185,7 +185,7 @@ Interests:
 - [Assignment 2 - Version 1](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/Group-06-A2.zip)
 - [Assignment 3 - Version 2](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/2019-3-CMPT275-Group-06_doc.zip)
 - [Assignment 4 - Version 3](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/A4.zip)
-- Assignment 5 - Final
+- [Assignment 5 - Final](https://raw.githubusercontent.com/ksackvil/CMPT-275/master/static/docs/A5.zip)
 
 ### Meetings
 
