@@ -11,6 +11,7 @@
 ### Quickstart Guide
 
 1. Get a version of our code using one of the following methods.
+
 * Our subversion repository is located at [this Github repo](https://github.com/ksackvil/CMPT-275).
 
 * To get access to our source code you can download the zip file [here](https://github.com/ksackvil/CMPT-275), or you can use git via the following command:
