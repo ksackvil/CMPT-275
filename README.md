@@ -1,5 +1,9 @@
 # PARKinetics
 
+“PARKinetics” aims to bring “Big changes with small movements”. We will emulate known stretches and self-administered treatments via mini games that target 1 or more of 5 major symptoms (5 categories) of Parkinson’s disease (PD): balance, facial rigidity, speech, digit dexterity, and posture. We hope to make learning to manage PD from home fun and engaging. The games not only educate the patient but also help track the slow the regression of facial, fine-motor and rhythmic abilities to give them a better understanding of their own abilities.
+
+See final product demo in the video below.
+
 [![PARKinetics demo](https://img.youtube.com/vi/gzLat6ZRzsc/0.jpg)](https://www.youtube.com/watch?v=gzLat6ZRzsc)
 
 ## Getting Started
