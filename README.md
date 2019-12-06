@@ -1,6 +1,6 @@
 # PARKinetics
 
-// One Paragraph of project description goes here
+![PARKinetics](https://drive.google.com/file/d/1g3216kc72av9lUJB8YgOaEZaR7mqOwl5/view?usp=sharing)
 
 ## Getting Started
 
