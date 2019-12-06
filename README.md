@@ -1,6 +1,6 @@
 # PARKinetics
 
-![PARKinetics](https://drive.google.com/file/d/1g3216kc72av9lUJB8YgOaEZaR7mqOwl5/view?usp=sharing)
+[![PARKinetics demo](https://img.youtube.com/vi/gzLat6ZRzsc/0.jpg)](https://www.youtube.com/watch?v=gzLat6ZRzsc)
 
 ## Getting Started
 
