@@ -19,11 +19,17 @@ To run this project, you will need the following:
 
 ## Running the project
 
-1. Open the file called PARKinetics.xcworkspace in xcode (NOT the file called PARKinetics.xcodeproj). This file has the dependancies pre installed.
+1. In the PARKinetics fodler install dependancies with the following command:
 
-2. Ensure that you are running XCode 11.2.1 and up, and building on iOS 10 and up. Older versions have compatabilitiy issues with this repo.
+```
+pip install
+```
 
-3. To run the project in XCode, use the keyboard shortcut [cmd][R] or in the toolbar click Product->Run. If the build succeeded, then the iOS simulator should appear with the build project. If the build failed check the console for the errors. Our app is developed for iPad, please ensure to run simulator on iPad Pro(9.7 inch). Note that loading the image assets may take a minute to load.
+2. Open the file called PARKinetics.xcworkspace in xcode (NOT the file called PARKinetics.xcodeproj). This file has the dependancies pre installed.
+
+3. Ensure that you are running XCode 11.2.1 and up, and building on iOS 10 and up. Older versions have compatabilitiy issues with this repo.
+
+4. To run the project in XCode, use the keyboard shortcut [cmd][R] or in the toolbar click Product->Run. If the build succeeded, then the iOS simulator should appear with the build project. If the build failed check the console for the errors. Our app is developed for iPad, please ensure to run simulator on iPad Pro(9.7 inch). Note that loading the image assets may take a minute to load.
 
 ## Running the tests
 
