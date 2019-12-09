@@ -19,7 +19,7 @@ To run this project, you will need the following:
 
 ## Running the project
 
-1. In the PARKinetics fodler install dependancies with the following command:
+1. In the PARKinetics folder install dependencies with the following command:
 
 ```
 pip install
@@ -34,10 +34,6 @@ pip install
 ## Running the tests
 
 To run tests on the project in XCode, use the keyboard shortcut [cmd][U] or in the toolbar click Product->Test. You should see the status of each test (pass or fail) in the left sidebar.
-
-### Break down into end to end tests
-
-// Explain what these tests test and why
 
 ## Contributing
 
